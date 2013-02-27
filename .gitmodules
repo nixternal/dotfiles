@@ -34,3 +34,6 @@
 [submodule "vim/bundle/vim-ctrlp"]
 	path = vim/bundle/vim-ctrlp
 	url = git://github.com/kien/ctrlp.vim.git
+[submodule "vim/bundle/vim-ultisnips"]
+	path = vim/bundle/vim-ultisnips
+	url = git://github.com/SirVer/ultisnips.git

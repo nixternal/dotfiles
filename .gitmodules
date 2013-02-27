@@ -10,3 +10,9 @@
 [submodule "vim/bundle/vim-less"]
 	path = vim/bundle/vim-less
 	url = git://github.com/groenewege/vim-less.git
+[submodule "vim/bundle/vim-latex"]
+	path = vim/bundle/vim-latex
+	url = git://vim-latex.git.sourceforge.net/gitroot/vim-latex/vim-latex
+[submodule "vim/bundle/vim-lustyjuggler"]
+	path = vim/bundle/vim-lustyjuggler
+	url = git://github.com/vim-scripts/LustyJuggler.git

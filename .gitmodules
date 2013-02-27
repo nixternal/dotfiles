@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-python-mode"]
 	path = vim/bundle/vim-python-mode
 	url = git://github.com/klen/python-mode.git
+[submodule "vim/bundle/vim-syntastic"]
+	path = vim/bundle/vim-syntastic
+	url = git://github.com/scrooloose/syntastic.git

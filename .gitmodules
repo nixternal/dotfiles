@@ -22,3 +22,6 @@
 [submodule "vim/bundle/vim-syntastic"]
 	path = vim/bundle/vim-syntastic
 	url = git://github.com/scrooloose/syntastic.git
+[submodule "vim/bundle/vim-tagbar"]
+	path = vim/bundle/vim-tagbar
+	url = git://github.com/majutsushi/tagbar.git

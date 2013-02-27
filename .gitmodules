@@ -1,0 +1,12 @@
+[submodule "vim/bundle/vim-pathogen"]
+	path = vim/bundle/vim-pathogen
+	url = git://github.com/tpope/vim-pathogen.git
+[submodule "vim/bundle/vim-css-color"]
+	path = vim/bundle/vim-css-color
+	url = git://github.com/ap/vim-css-color.git
+[submodule "vim/bundle/vim-flake8"]
+	path = vim/bundle/vim-flake8
+	url = git://github.com/vim-scripts/vim-flake8.git
+[submodule "vim/bundle/vim-less"]
+	path = vim/bundle/vim-less
+	url = git://github.com/groenewege/vim-less.git

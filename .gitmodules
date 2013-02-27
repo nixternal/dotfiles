@@ -31,3 +31,6 @@
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
+[submodule "vim/bundle/vim-ctrlp"]
+	path = vim/bundle/vim-ctrlp
+	url = git://github.com/kien/ctrlp.vim.git

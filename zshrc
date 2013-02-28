@@ -94,6 +94,7 @@ alias diff=colordiff
 alias ll='ls -al'
 alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
+alias smupdate='git submodule foreach git pull'
 alias top=htop
 if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
     alias dotfiles='cd $HOME/mystuff/dev/github/dotfiles'

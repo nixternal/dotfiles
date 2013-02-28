@@ -7,9 +7,8 @@
 " -----------------------------------------------------------------------------
 filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
 call pathogen#helptags()
-"call pathogen#infect()
 filetype plugin indent on                   " load indent file for filetype
 set nocompatible                            " don't be compatible with vi
 syntax on                                   " enable syntax highlighting

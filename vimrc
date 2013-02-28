@@ -112,14 +112,22 @@ set wildignore+=*.pyc                               " Python byte code
 " ------------------------------------------------------------------------------
 " PLUGINS
 " ------------------------------------------------------------------------------
+"
 " --JavaScript Libraries Syntax
+"
 let g:used_javascript_libs='jquery'
+"
 " --LustyJuggler
+"
 nmap <silent> <Leader>b :LustyJuggler<CR>
+"
 " --NERDTree
+"
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.class$', '\.pdf$']
 map <leader>n :NERDTreeToggle<CR>
+"
 " --Powerline
+"
 augroup FastEscape
     autocmd!
     au InsertEnter * set timeoutlen=0
@@ -128,33 +136,57 @@ augroup END
 if isdirectory('/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim')
     set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
 endif
+"
 " --Syntastic
+"
 let g:syntastic_phpcs_conf="--standard=WordPress"
+"
 " --SyntaxComplete
+"
 if has("autocmd") && exists("+omnifunc")
     autocmd Filetype *
         \   if &omnifunc == "" |
         \       setlocal omnifunc=syntaxcomplete#Complete |
         \   endif
 endif
+"
 " --Tagbar
+"
 nmap <silent> <leader>tt :TagbarToggle<CR>
+"
 " --UtilSnips
+"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
 let g:UltiSnipsUsePythonVersion=2
 let g:UltiSnipsEditSplit="horizontal"
 " ------------------------------------------------------------------------------
 " LANGUAGE SETTINGS
 " ------------------------------------------------------------------------------
+" --C/C++
+autocmd FileType c setlocal omnifunc=ccomplete#Complete
+autocmd FileType cpp setlocal omnifunc=cppcomplete#CompleteCPP
+" --CSS
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" --HTML
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+" --JavaScript
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 " --LaTeX
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='/usr/bin/okular'
 " --PHP
+autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType php let php_sql_query=1
 autocmd FileType php let php_htmlInStrings=1
 autocmd FileType php let php_noShortTags=1
 autocmd FileType php DoMatchParen
-" --Spell Checking
+" --Python
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+" --XML
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+" ------------------------------------------------------------------------------
+" SPELL CHECKING
+" ------------------------------------------------------------------------------
 set spell
 set spell spelllang=en_us
 set spellfile =~/.vim/dict.add

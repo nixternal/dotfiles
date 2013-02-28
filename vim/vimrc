@@ -31,12 +31,13 @@ set history=100
 set hlsearch
 set ignorecase
 set incsearch
-set laststatus=2
+set laststatus=2                                    " Always display statusline
 set lazyredraw
 set matchtime=2
 set modeline
 set mousehide
 set nocp
+set noshowmode                                      " Hide the default mode text
 set notimeout
 set number
 set numberwidth=1
@@ -75,3 +76,11 @@ set wildignore+=*.sw?                               " vim swap files
 set wildignore+=*.luac                              " Lua byte code
 set wildignore+=migrations                          " Django migrations
 set wildignore+=*.pyc                               " Python byte code
+" -----------------------------------------------------------------------------
+" POWERLINE
+" -----------------------------------------------------------------------------
+augroup FastEscape
+    autocmd!
+    au InsertEnter * set timeoutlen=0
+    au InsertLeave * set timeoutlen=1000
+augroup END

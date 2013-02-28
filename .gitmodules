@@ -55,3 +55,6 @@
 [submodule "vim/bundle/vim-local-vimrc"]
 	path = vim/bundle/vim-local-vimrc
 	url = git://github.com/MarcWeber/vim-addon-local-vimrc.git
+[submodule "vim/bundle/vim-javascript-libraries-syntax"]
+	path = vim/bundle/vim-javascript-libraries-syntax
+	url = git://github.com/othree/javascript-libraries-syntax.vim.git

@@ -1,5 +1,8 @@
-*.swp
+*~
+.*.sw[a-z]
+*.un~
 *.o
 *.class
 *.a
 *.pyc
+.sass-cache

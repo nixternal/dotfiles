@@ -71,6 +71,7 @@
     autocrlf = false
     editor = vim
     excludesfile = ~/.gitignore
+	pager = less -F -X
 
 [advice]
     statusHints = false

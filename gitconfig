@@ -52,14 +52,9 @@
 [mergetool]
     prompt = false
 
-[mergetool "vdiff"]
-    cmd="vim -c 'Gdiff' $MERGED"    # use fugitive.vim for 3-way merge
-    keepbackup = false
-
 [merge]
     summary = true
     verbosity = 1
-    tool = vdiff
 
 [apply]
     whitespace = nowarn
@@ -75,9 +70,6 @@
 
 [advice]
     statusHints = false
-
-[diff]
-    mnemonicprefix = true
 
 [rerere]
     # Remember my merges

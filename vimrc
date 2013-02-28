@@ -112,6 +112,8 @@ set wildignore+=*.pyc                               " Python byte code
 " ------------------------------------------------------------------------------
 " PLUGINS
 " ------------------------------------------------------------------------------
+" --JavaScript Libraries Syntax
+let g:used_javascript_libs='jquery'
 " --LustyJuggler
 nmap <silent> <Leader>b :LustyJuggler<CR>
 " --NERDTree
@@ -128,6 +130,13 @@ if isdirectory('/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim')
 endif
 " --Syntastic
 let g:syntastic_phpcs_conf="--standard=WordPress"
+" --SyntaxComplete
+if has("autocmd") && exists("+omnifunc")
+    autocmd Filetype *
+        \   if &omnifunc == "" |
+        \       setlocal omnifunc=syntaxcomplete#Complete |
+        \   endif
+endif
 " --Tagbar
 nmap <silent> <leader>tt :TagbarToggle<CR>
 " --UtilSnips

@@ -68,6 +68,12 @@ set ttyfast                                 " smoother changes
 set vb t_vb=                                " disable visual bell
 set wrapscan
 " ------------------------------------------------------------------------------
+" CUSTOM OPTIONS
+" ------------------------------------------------------------------------------
+" -- MyTodo - highlight TODO: FIXME: and XXX:
+syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
+hi def link MyTodo Todo
+" ------------------------------------------------------------------------------
 " AUTO COMMANDS
 " ------------------------------------------------------------------------------
 if has("autocmd")
@@ -123,9 +129,7 @@ endif
 " --Syntastic
 let g:syntastic_phpcs_conf="--standard=WordPress"
 " --Tagbar
-nmap <silent> <leader>t :TagbarToggle<CR>
-" --TaskList
-map T :TaskList<CR>
+nmap <silent> <leader>tt :TagbarToggle<CR>
 " --UtilSnips
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
 let g:UltiSnipsUsePythonVersion=2
@@ -239,8 +243,12 @@ map <silent><A-Left> :tabprevious<CR>
 map <Leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-nnoremap <SID>I_WONT_EVER_TYPE_THIS <Plug>IMAP_JumpForward
-nmap <C-j> <C-w>j
-nmap <C-k> <C-w>k
-nmap <C-h> <C-w>h
-nmap <C-l> <C-w>l
+"nnoremap <SID>I_WONT_EVER_TYPE_THIS <Plug>IMAP_JumpForward
+"nmap <C-j> <C-w>j
+"nmap <C-k> <C-w>k
+"nmap <C-h> <C-w>h
+"nmap <C-l> <C-w>l
+nmap <S-j> <C-w>j
+nmap <S-k> <C-w>k
+nmap <S-h> <C-w>h
+nmap <S-l> <C-w>l

@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 ZSH=$HOME/mystuff/dev/github/dotfiles/oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
-plugins=(git django encode64 git-extras github history npm pip python taskwarrior)
+#plugins=(git django encode64 git-extras github npm pip python taskwarrior)
 source $ZSH/oh-my-zsh.sh
 # ------------------------------------------------------------------------------
 # MY CUSTOMIZATIONS
@@ -16,6 +16,10 @@ export GPG_TTY=`tty`
 export GPGKEY=D8C44738                  # my key
 export BCKEY=FB0385C2                   # Bluecherry key
 export DEBEMAIL=nixternal@ubuntu.com
+# --Some Variables
+TZ="America/Chicago"
+HOSTNAME="`hostname`"
+EDITOR='vim'
 # --General Exports
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
@@ -57,10 +61,14 @@ alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias smupdate='git submodule foreach git pull'
 alias top=htop
+alias ta='tmux attach'
 if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
-    alias dotfiles='cd $HOME/mystuff/dev/github/dotfiles'
+    export DOTFILES=$HOME/mystuff/dev/github/dotfiles
+    alias dotfiles=$DOTFILES
 fi
 # ------------------------------------------------------------------------------
-# COMPLETION
+# ZSH ZSTYLE CONFIGS
 # ------------------------------------------------------------------------------
-zstyle ':completion:*' rehash true
+zstyle ':completion:*:commands' rehash true
+unsetopt hist_verify
+setopt globdots

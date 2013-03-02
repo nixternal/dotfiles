@@ -32,16 +32,23 @@ export QUILT_PATCHES=debian/patches
 export PBUILDFOLDER=$HOME/mystuff/dev/pbuilder
 # --Dotfiles
 if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
-    export DOTFILES=$HOME/mystuff/dev/github/dotfiles
-    if [ -d "$DOTFILES/bin" ]; then
-        export PATH=$PATH:$DOTFILES/bin
+    export dotfiles=$HOME/mystuff/dev/github/dotfiles
+    if [ -d "$dotfiles/bin" ]; then
+        export PATH=$PATH:$dotfiles/bin
     fi
 fi
 # --Export ~/bin
 if [ -d "$HOME/bin" ]; then
     export PATH=$PATH:$HOME/bin
 fi
-# --Export $DOTFILES/bin
+# --Export ~/mystuff/cycling/abd
+if [ -d "$HOME/mystuff/cycling/abd" ]; then
+    export abd=$HOME/mystuff/cycling/abd
+fi
+# --Export ~/mystuff/business
+if [ -d "$HOME/mystuff/business" ]; then
+    export biz=$HOME/mystuff/business
+fi
 # --Android Development
 if [ -d "$HOME/mystuff/dev/android/android-sdk-linux" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux
@@ -70,9 +77,6 @@ alias man='LC_ALL=C LANG=C man'
 alias smupdate='git submodule foreach git pull'
 alias top=htop
 alias ta='tmux attach'
-if [ -d "$DOTFILES" ]; then
-    alias dotfiles=$DOTFILES
-fi
 # ------------------------------------------------------------------------------
 # ZSH ZSTYLE CONFIGS
 # ------------------------------------------------------------------------------

@@ -1,2 +1,3 @@
 #!/bin/sh
-ifconfig | awk -F':' '/inet addr/&&!/127.0.0.1/{split($2,_," ");print _[1]}'
+ifconfig | grep -B1 "inet addr" | awk '{if($1=="inet"){print $2} else if($2=="Link"){printf "%s:", $1}}' | awk -F: '{print $1 ": " $3}'
+echo "ext: $(curl -s ipecho.net/plain)"

@@ -170,6 +170,11 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 " --JavaScript
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
+let g:nodejs_complete_config = {
+    \ 'js_compl_fn': 'jscomplete#CompleteJS',
+    \ 'max_node_compl_len': 15
+\}
 " --LaTeX
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='/usr/bin/okular'
@@ -188,7 +193,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 " ------------------------------------------------------------------------------
 set spell
 set spell spelllang=en_us
-set spellfile =~/.vim/dict.add
+set spellfile =~/.vim/dict/dict.add
 highlight clear SpellBad
 highlight SpellBad term=standout ctermfg=1
 highlight SpellBad term=underline cterm=underline

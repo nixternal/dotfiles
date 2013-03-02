@@ -30,10 +30,18 @@ export GREP_OPTIONS='--color=auto'
 # --Debian/Ubuntu Packaging Exports
 export QUILT_PATCHES=debian/patches
 export PBUILDFOLDER=$HOME/mystuff/dev/pbuilder
+# --Dotfiles
+if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
+    export DOTFILES=$HOME/mystuff/dev/github/dotfiles
+    if [ -d "$DOTFILES/bin" ]; then
+        export PATH=$PATH:$DOTFILES/bin
+    fi
+fi
 # --Export ~/bin
 if [ -d "$HOME/bin" ]; then
     export PATH=$PATH:$HOME/bin
 fi
+# --Export $DOTFILES/bin
 # --Android Development
 if [ -d "$HOME/mystuff/dev/android/android-sdk-linux" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux
@@ -62,8 +70,7 @@ alias man='LC_ALL=C LANG=C man'
 alias smupdate='git submodule foreach git pull'
 alias top=htop
 alias ta='tmux attach'
-if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
-    export DOTFILES=$HOME/mystuff/dev/github/dotfiles
+if [ -d "$DOTFILES" ]; then
     alias dotfiles=$DOTFILES
 fi
 # ------------------------------------------------------------------------------

@@ -5,4 +5,5 @@
 *.class
 *.a
 *.pyc
+*.autosave
 .sass-cache

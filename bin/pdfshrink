@@ -1,0 +1,46 @@
+#!/bin/sh
+
+PDFSETTINGS='printer'
+INFILE='foo.pdf'
+OUTFILE='mfoo.pdf'
+
+usage() {
+    echo "pdfshrink --pdfsettings=printer --infile=foo.pdf --outfile=mfoo.pdf"
+    echo ""
+    echo "-h --help"
+    echo "--pdfsettings=screen|ebook|printer"
+    echo "    screen - low res output & lowest file size"
+    echo "    ebook - medium res output"
+    echo "    printer - high res output"
+    echo "--infile=<input file location & name>"
+    echo "--outfile=<output file location & name>"
+    echo ""
+}
+
+while [ "$1" != "" ]; do
+    PARAM=`echo $1 | awk -F= '{print $1}'`
+    VALUE=`echo $1 | awk -F= '{print $2}'`
+    case $PARAM in
+        -h | --help)
+            usage
+            exit
+            ;;
+        --pdfsettings)
+            PDFSETTINGS=$VALUE
+            ;;
+        --infile)
+            INFILE=$VALUE
+            ;;
+        --outfile)
+            OUTFILE=$VALUE
+            ;;
+        *)
+            echo "ERROR: unknown paramater \"$PARAM\""
+            usage
+            exit 1
+            ;;
+    esac
+    shift
+done
+
+gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/${PDFSETTINGS} -sOutputFile=${OUTFILE} ${INFILE}

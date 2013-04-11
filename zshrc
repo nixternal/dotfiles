@@ -66,6 +66,12 @@ fi
 if [ -d "/usr/local/lib/jsctags" ]; then
     export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
 fi
+# --Adobe Flex
+if [ -d "$HOME/mystuff/dev/adobe-flex/flex46" ]; then
+    export PATH=$PATH:$HOME/mystuff/dev/adobe-flex/flex46/bin
+    flexlib=$HOME/mystuff/dev/adobe-flex/flex46/frameworks
+    export flexlib
+fi
 # ------------------------------------------------------------------------------
 # MY ALIASES
 # ------------------------------------------------------------------------------

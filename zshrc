@@ -3,6 +3,7 @@
 # ------------------------------------------------------------------------------
 ZSH=$HOME/mystuff/dev/github/dotfiles/oh-my-zsh
 COMPLETION_WAITING_DOTS="true"
+DISABLE_AUTO_UPDATE="true"
 #plugins=(git django encode64 git-extras github npm pip python taskwarrior)
 source $ZSH/oh-my-zsh.sh
 # ------------------------------------------------------------------------------

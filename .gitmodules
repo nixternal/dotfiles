@@ -64,3 +64,6 @@
 [submodule "vim/bundle/vim-nodejs"]
 	path = vim/bundle/vim-nodejs
 	url = git://github.com/mmalecki/vim-node.js.git
+[submodule "vim/bundle/vim-wmgraphviz"]
+	path = vim/bundle/vim-wmgraphviz
+	url = https://github.com/wannesm/wmgraphviz.vim.git

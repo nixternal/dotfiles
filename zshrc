@@ -11,6 +11,8 @@ source $ZSH/oh-my-zsh.sh
 # ------------------------------------------------------------------------------
 # --Source Powerline ZSH theme
 . /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
+# --Source command not found completions
+. /etc/zsh_command_not_found
 # --GPG Exports
 unset GPG_AGENT_INFO
 export GPG_TTY=`tty`

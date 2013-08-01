@@ -7,3 +7,4 @@
 *.pyc
 *.autosave
 .sass-cache
+*.netrwhist

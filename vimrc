@@ -85,7 +85,7 @@ if has("autocmd")
         " :make to check script w/ perl
         au FileType perl set makeprg=perl\ -c\ %\ $* errorformat=%f:%l:%m
         " :make to compile even w/o Makefile
-        au FileType c,cpp if glob('Makefile') = ""|let &mp="gcc -o %< %"|endif
+        au FileType c,cpp if glob('Makefile') == ""|let &mp="gcc -o %< %"|endif
         " switch to dir of current file unless help file
         au BufEnter * if &ft!='help'|silent! cd %:p:h|endif
         " kill calltip window if cursor moved
@@ -111,6 +111,11 @@ set wildignore+=*.pyc                               " Python byte code
 " ------------------------------------------------------------------------------
 " PLUGINS
 " ------------------------------------------------------------------------------
+"
+" --WM Graphviz
+"
+nmap <silent> <Leader>li :GraphvizInteractive<CR>
+nmap <silent> <Leader>ll :GraphvizCompile<CR>
 "
 " --JavaScript Libraries Syntax
 "

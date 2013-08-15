@@ -1,9 +1,9 @@
 #!/bin/sh
 # Cisco ASDM Launcher
 
-A=$HOME/.local/share/asdm
+A=$dotfiles/asdm
 
-exec /usr/lib/jvm/java-6-sun/bin/java -Xms64m -Xmx512m -XX:MaxNewSize=1024k \
+exec /usr/lib/jvm/java-6-oracle/bin/java -Xms64m -Xmx512m -XX:MaxNewSize=1024k \
     -Dsun.swing.enableImprovedDragGesture=true \
     -Dapple.laf.useScreenMenuBar=true \
     -Dapple.awt.graphics.UseQuartz=true \

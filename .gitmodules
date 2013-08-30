@@ -9,7 +9,7 @@
 	url = git://github.com/groenewege/vim-less.git
 [submodule "vim/bundle/vim-latex"]
 	path = vim/bundle/vim-latex
-    url = http://git.code.sf.net/p/vim-latex/vim-latex
+    url = git://git.code.sf.net/p/vim-latex/vim-latex
 [submodule "vim/bundle/vim-lustyjuggler"]
 	path = vim/bundle/vim-lustyjuggler
 	url = git://github.com/vim-scripts/LustyJuggler.git

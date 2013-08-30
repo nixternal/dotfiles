@@ -143,7 +143,7 @@ endif
 "
 " --Syntastic
 "
-let g:syntastic_phpcs_conf="--standard=WordPress"
+let g:syntastic_php_phpcs_args="--standard=WordPress"
 "
 " --SyntaxComplete
 "

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [ "$1" = "-q" ]; then
+    mplayer -vo null -ao null -frames 0 -quiet -really-quiet -identify $2
+else
+    mplayer -vo null -ao null -frames 0 -identify $1
+fi
+exit 0

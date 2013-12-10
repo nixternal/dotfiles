@@ -166,6 +166,9 @@ let g:UltiSnipsEditSplit="horizontal"
 " ------------------------------------------------------------------------------
 " LANGUAGE SETTINGS
 " ------------------------------------------------------------------------------
+" --ActionScript & Flash
+autocmd BufRead *.as set filetype=actionscript
+autocmd BufRead *.mxml set filetype=mxml
 " --C/C++
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 autocmd FileType cpp setlocal omnifunc=cppcomplete#CompleteCPP

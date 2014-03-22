@@ -76,12 +76,3 @@
 [submodule "vim/bundle/vim-dtd"]
 	path = vim/bundle/vim-dtd
 	url = https://github.com/cespare/dtd.vim.git
-[submodule "vim/bundle/vim-align"]
-	path = vim/bundle/vim-align
-	url = https://github.com/vim-scripts/Align.git
-[submodule "vim/bundle/vim-tracwiki"]
-	path = vim/bundle/vim-tracwiki
-	url = https://github.com/vim-scripts/tracwiki.git
-[submodule "vim/bundle/vim-vitra"]
-	path = vim/bundle/vim-vitra
-	url = https://github.com/nsmgr8/vitra.git

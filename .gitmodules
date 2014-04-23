@@ -73,3 +73,6 @@
 [submodule "vim/bundle/vim-dtd"]
 	path = vim/bundle/vim-dtd
 	url = https://github.com/cespare/dtd.vim.git
+[submodule "vim/bundle/vim-latex"]
+	path = vim/bundle/vim-latex
+	url = https://github.com/gerw/vim-latex-suite.git

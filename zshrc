@@ -75,6 +75,10 @@ if [ -d "$HOME/mystuff/dev/adobe-flex/flex36" ]; then
     flexlib=$HOME/mystuff/dev/adobe-flex/flex36/frameworks
     export flexlib
 fi
+# --Sencha
+if [ -d "/opt/Sencha/Cmd/4.0.4.84" ]; then
+    export PATH=$PATH:/opt/Sencha/Cmd/4.0.4.84
+fi
 # ------------------------------------------------------------------------------
 # MY ALIASES
 # ------------------------------------------------------------------------------

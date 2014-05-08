@@ -60,10 +60,14 @@ if [ -d "$HOME/mystuff/dev/android/android-sdk-linux" ]; then
 fi
 # --VirtualEnv
 if [ -e "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
-    source /usr/local/bin/virtualenvwrapper.sh
-    export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    export PIP_RESPECT_VIRTUALENV=true
+    #export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
+    #source /usr/local/bin/virtualenvwrapper.sh
+    #export PIP_VIRTUALENV_BASE=$WORKON_HOME
+    #export PIP_RESPECT_VIRTUALENV=true
+    export WORKON_HOME=$HOME/.virtualenvs
+    export PROJECT_HOME=$HOME/mystuff/dev/virtenv-projects
+    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
+    source /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
 # --Node.js
 if [ -d "/usr/local/lib/jsctags" ]; then

@@ -290,6 +290,7 @@ nnoremap <silten> <Leader>bD :Bclose!<CR>
 " ------------------------------------------------------------------------------
 nmap <Leader>c :copen<CR>
 nmap <Leader>cc :cclose<CR>
+nmap <silent> <Leader>bdw :write<CR>:bdelete<CR>
 cmap w!! w !sudo tee % >/dev/null
 map <silent><A-Right> :tabnext<CR>
 map <silent><A-Left> :tabprevious<CR>

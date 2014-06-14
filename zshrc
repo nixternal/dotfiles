@@ -94,6 +94,7 @@ alias man='LC_ALL=C LANG=C man'
 alias smupdate='git submodule foreach git pull'
 alias top=htop
 alias ta='tmux attach'
+alias jserve='bundle exec jekyll serve'
 # ------------------------------------------------------------------------------
 # ZSH ZSTYLE CONFIGS
 # ------------------------------------------------------------------------------

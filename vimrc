@@ -164,6 +164,14 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
 let g:UltiSnipsUsePythonVersion=2
 let g:UltiSnipsEditSplit="horizontal"
 " ------------------------------------------------------------------------------
+"  INDENTATION
+" ------------------------------------------------------------------------------
+autocmd FileType javascript,html,css,php,yaml,less set ai
+autocmd FileType javascript,html,css,php,yaml,less set sw=2
+autocmd FileType javascript,html,css,php,yaml,less set ts=2
+autocmd FileType javascript,html,css,php,yaml,less set sts=2
+
+" ------------------------------------------------------------------------------
 " LANGUAGE SETTINGS
 " ------------------------------------------------------------------------------
 " --ActionScript & Flash

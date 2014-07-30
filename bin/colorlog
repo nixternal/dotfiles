@@ -1,0 +1,6 @@
+#!/bin/sh
+logs='/var/log'
+null='/dev/null'
+find ${logs} -type f -regex '.*[^\.][^0-9]+$' -not -iregex '.*gz$' 2>${null} \
+    | sudo xargs tail -n0 -f \
+    | ccze -A

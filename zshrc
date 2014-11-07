@@ -33,8 +33,9 @@ EDITOR="vim"
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
-export LESS=' -R '
 export GREP_OPTIONS='--color=auto'
+export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
 
 #-- Debian/Ubuntu Packaging Exports
 export QUILT_PATCHES=debian/patches

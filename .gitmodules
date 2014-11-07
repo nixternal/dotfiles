@@ -34,9 +34,6 @@
 [submodule "vim/bundle/vim-matchtag"]
 	path = vim/bundle/vim-matchtag
 	url = git://github.com/gregsexton/MatchTag.git
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = git://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/vim-tasklist"]
 	path = vim/bundle/vim-tasklist
 	url = git://github.com/vim-scripts/TaskList.vim.git

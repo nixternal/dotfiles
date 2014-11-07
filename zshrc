@@ -1,103 +1,105 @@
-# ------------------------------------------------------------------------------
+#------------------------------------------------------------------------------
+# POWERLINE
+#------------------------------------------------------------------------------
+. $HOME/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+
+#------------------------------------------------------------------------------
 # OH-MY-ZSH CUSTOMIZATION
-# ------------------------------------------------------------------------------
-ZSH=$HOME/mystuff/dev/github/dotfiles/oh-my-zsh
+#------------------------------------------------------------------------------
 COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE="true"
-#plugins=(git django encode64 git-extras github npm pip python taskwarrior)
-source $ZSH/oh-my-zsh.sh
-# ------------------------------------------------------------------------------
-# MY CUSTOMIZATIONS
-# ------------------------------------------------------------------------------
-# --Source Powerline ZSH theme
-. /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh
-# --Source command not found completions
-. /etc/zsh_command_not_found
-# --GPG Exports
-unset GPG_AGENT_INFO
-export GPG_TTY=`tty`
-export GPGKEY=D8C44738                  # my key
-export BCKEY=FB0385C2                   # Bluecherry key
-export DEBEMAIL=nixternal@ubuntu.com
-# --Some Variables
+
+#------------------------------------------------------------------------------
+# ANTIGEN
+#------------------------------------------------------------------------------
+. /usr/share/zsh-antigen/antigen.zsh
+antigen use oh-my-zsh
+antigen bundle git
+antigen bundle pip
+antigen bundle command-not-found
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+antigen apply
+
+#------------------------------------------------------------------------------
+# BULLET-TRAIN THEME TWEAKS
+#------------------------------------------------------------------------------
+BULLETTRAIN_TIME_SHOW=false
+
+#------------------------------------------------------------------------------
+# MY TWEAKS
+#------------------------------------------------------------------------------
+export GPGKEY=D8C44738
 TZ="America/Chicago"
 HOSTNAME="`hostname`"
-EDITOR='vim'
-# --General Exports
+EDITOR="vim"
+
+#-- General Exports
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
-export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 export GREP_OPTIONS='--color=auto'
-# --Debian/Ubuntu Packaging Exports
+
+#-- Debian/Ubuntu Packaging Exports
 export QUILT_PATCHES=debian/patches
 export PBUILDFOLDER=$HOME/mystuff/dev/pbuilder
-# --Dotfiles
+
+#-- Dotfiles
 if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
     export dotfiles=$HOME/mystuff/dev/github/dotfiles
     if [ -d "$dotfiles/bin" ]; then
         export PATH=$PATH:$dotfiles/bin
     fi
 fi
-# --Export ~/bin
+
+#-- ~/bin
 if [ -d "$HOME/bin" ]; then
     export PATH=$PATH:$HOME/bin
 fi
-# --Export ~/mystuff/cycling/abd
-if [ -d "$HOME/mystuff/cycling/abd" ]; then
-    export abd=$HOME/mystuff/cycling/abd
-fi
-# --Export ~/mystuff/business
+
+#-- Laziness
 if [ -d "$HOME/mystuff/business" ]; then
     export biz=$HOME/mystuff/business
 fi
-# --Android Development
+
+#-- Android Development
 if [ -d "$HOME/mystuff/dev/android/android-sdk-linux" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux
     export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux/tools
     export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux/platform-tools
 fi
-# --VirtualEnv
+
+#-- VirtualEnv
 if [ -e "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    #export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
-    #source /usr/local/bin/virtualenvwrapper.sh
-    #export PIP_VIRTUALENV_BASE=$WORKON_HOME
-    #export PIP_RESPECT_VIRTUALENV=true
     export WORKON_HOME=$HOME/.virtualenvs
     export PROJECT_HOME=$HOME/mystuff/dev/virtenv-projects
     export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-    source /usr/local/bin/virtualenvwrapper_lazy.sh
+    . /usr/local/bin/virtualenvwrapper_lazy.sh
 fi
-# --Node.js
+
+#-- Node.js
 if [ -d "/usr/local/lib/jsctags" ]; then
     export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
 fi
-# --Adobe Flex
+
+#-- Adobe Flex
 if [ -d "$HOME/mystuff/dev/adobe-flex/flex36" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/adobe-flex/flex36/bin
-    flexlib=$HOME/mystuff/dev/adobe-flex/flex36/frameworks
-    export flexlib
+    export flexlib=$HOME/mystuff/dev/adobe-flex/flex36/frameworks
 fi
-# --Sencha
-if [ -d "/opt/Sencha/Cmd/4.0.4.84" ]; then
-    export PATH=$PATH:/opt/Sencha/Cmd/4.0.4.84
-fi
-# ------------------------------------------------------------------------------
-# MY ALIASES
-# ------------------------------------------------------------------------------
+
+#-- Aliases
 alias df=dfc
 alias diff=colordiff
 alias ll='ls -al'
 alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
-alias smupdate='git submodule foreach git pull'
 alias top=htop
 alias ta='tmux attach'
 alias jserve='bundle exec jekyll serve'
-# ------------------------------------------------------------------------------
-# ZSH ZSTYLE CONFIGS
-# ------------------------------------------------------------------------------
+
+#-- ZSH ZStyle Configs
 zstyle ':completion:*:commands' rehash true
 unsetopt hist_verify
 setopt globdots

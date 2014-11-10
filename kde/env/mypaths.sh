@@ -1,1 +1,1 @@
-export PATH=$PATH:$HOME/.local/bin:$HOME/mystuff/dev/github/dotfiles/bin
+export PATH=$PATH:$HOME/mystuff/dev/github/dotfiles/bin

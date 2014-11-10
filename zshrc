@@ -24,6 +24,8 @@ BULLETTRAIN_EXIT_SHOW=true
 #------------------------------------------------------------------------------
 # MY TWEAKS
 #------------------------------------------------------------------------------
+unset GPG_AGENT_INFO
+export GPG_TTY=`tty`
 export GPGKEY=D8C44738
 TZ="America/Chicago"
 HOSTNAME="`hostname`"
@@ -38,6 +40,7 @@ export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
 #-- Debian/Ubuntu Packaging Exports
+export DEBEMAIL=nixternal@ubuntu.com
 export QUILT_PATCHES=debian/patches
 export PBUILDFOLDER=$HOME/mystuff/dev/pbuilder
 
@@ -75,8 +78,8 @@ if [ -e "/usr/local/bin/virtualenvwrapper.sh" ]; then
 fi
 
 #-- Node.js
-if [ -d "/usr/local/lib/jsctags" ]; then
-    export NODE_PATH=/usr/local/lib/jsctags:$NODE_PATH
+if [ -d "/usr/lib/node_modules/jsctags" ]; then
+    export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 fi
 
 #-- Adobe Flex

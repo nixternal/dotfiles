@@ -112,6 +112,10 @@ set wildignore+=*.pyc                               " Python byte code
 " PLUGINS
 " ------------------------------------------------------------------------------
 "
+" --Airline
+"
+let g:airline_powerline_fonts=1
+"
 " --WM Graphviz
 "
 nmap <silent> <Leader>li :GraphvizInteractive<CR>
@@ -129,17 +133,6 @@ nmap <silent> <Leader>b :LustyJuggler<CR>
 "
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.class$', '\.pdf$']
 map <leader>n :NERDTreeToggle<CR>
-"
-" --Powerline
-"
-augroup FastEscape
-    autocmd!
-    au InsertEnter * set timeoutlen=0
-    au InsertLeave * set timeoutlen=1000
-augroup END
-if isdirectory('/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim')
-    set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim
-endif
 "
 " --Syntastic
 "

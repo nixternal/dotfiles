@@ -5,7 +5,7 @@
 " -----------------------------------------------------------------------------
 " PATHOGEN & PRE-OPTIONS
 " -----------------------------------------------------------------------------
-filetype off
+"filetype off
 runtime bundle/vim-pathogen/autoload/pathogen.vim
 call pathogen#infect()
 call pathogen#helptags()
@@ -163,10 +163,11 @@ autocmd FileType javascript,html,css,php,yaml,less set ai
 autocmd FileType javascript,html,css,php,yaml,less set sw=2
 autocmd FileType javascript,html,css,php,yaml,less set ts=2
 autocmd FileType javascript,html,css,php,yaml,less set sts=2
-
 " ------------------------------------------------------------------------------
 " LANGUAGE SETTINGS
 " ------------------------------------------------------------------------------
+" --Re-detect on write
+autocmd BufWritePost * if ! &filetype | :filetype detect | endif
 " --ActionScript & Flash
 autocmd BufRead *.as set filetype=actionscript
 autocmd BufRead *.mxml set filetype=mxml

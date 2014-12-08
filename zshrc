@@ -88,6 +88,11 @@ if [ -d "$HOME/mystuff/dev/adobe-flex/flex36" ]; then
     export flexlib=$HOME/mystuff/dev/adobe-flex/flex36/frameworks
 fi
 
+#-- Sencha
+if [ -d "$HOME/mystuff/dev/Sencha/Cmd/5.0.3.324" ]; then
+    export PATH=$PATH:$HOME/mystuff/dev/Sencha/Cmd/5.0.3.324
+fi
+
 #-- Aliases
 alias df=dfc
 alias diff=colordiff

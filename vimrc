@@ -3,18 +3,81 @@
 " Source: https://github.com/nixternal/dotfiles
 
 " -----------------------------------------------------------------------------
-" PATHOGEN & PRE-OPTIONS
+"  Vim Plugin Configuration / Vundle
 " -----------------------------------------------------------------------------
-"filetype off
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
-filetype plugin indent on                   " load indent file for filetype
-set nocompatible                            " don't be compatible with vi
-syntax on                                   " enable syntax highlighting
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" -- Let vundle manage vundle
+Bundle "gmarik/vundle"
+
+" -- CSS-Color: Highlight colors in CSS files
+Bundle "ap/vim-css-color"
+
+" -- Emmet: greatly improves HTML & CSS workflow (http://emmet.io)
+Bundle "mattn/emmet-vim"
+
+" -- Fugitive: a Git wrapper so awesome it should be illegal
+Bundle "tpope/vim-fugitive"
+
+" -- Git Gutter: shows a git diff in the gutter & stages/reverts hunks
+Bundle "airblade/vim-gitgutter"
+
+" -- HTML5: omnicomplete, indent, & syntax for HTML5
+Bundle "othree/html5.vim"
+
+" -- JavaScript Libraries Syntax
+Bundle "othree/javascript-libraries-syntax.vim"
+
+" -- YAJS: Yet Another JavaScript Syntax
+Bundle "othree/yajs"
+
+" -- LaTeX Suite
+Bundle "gerw/vim-latex-suite"
+
+" -- LESS Syntax
+Bundle "groenewege/vim-less"
+
+" -- Lightlinte: light & configurable statusline/tabline
+Bundle "itchyny/lightline.vim"
+
+" -- NerdTree: tree explorer of filesystem
+Bundle "scrooloose/nerdtree"
+
+" -- Python Mode: python-mode, PyLint, Rope, Pydoc, breakpoints & more
+Bundle "klen/python-mode"
+
+" -- Syntastic: syntax checking
+Bundle "scrooloose/syntastic"
+
+" -- SyntaxComplete: OMNI completion
+Bundle "vim-scripts/SyntaxComplete"
+
+" -- Tagbar: easy way to browse tags of current file & get overview of structure
+Bundle "majutsushi/tagbar"
+
+" -- UltiSnips: ultimate snippet solution
+Bundle "SirVer/ultisnips"
+
+" -- Unite: search & display info from various sources (ie files, buffers, etc)
+Bundle "Shougo/unite.vim"
+
+" -- WM Graphviz: Graphviz dot plugin
+Bundle "wannesm/wmgraphviz.vim"
+
+" -- MatchTagAlways: always highlights enclosing HTML/XML tags
+Bundle "Valloric/MatchTagAlways"
+
+" -- HTML will actually indent within PHP
+Bundle "captbaritone/better-indent-support-for-php-with-html"
+
 " -----------------------------------------------------------------------------
 " BASIC OPTIONS
 " -----------------------------------------------------------------------------
+filetype plugin indent on                   " load indent file for filetype
+syntax on                                   " enable syntax highlighting
 set autoindent
 set background=dark                         " use colors for a dark background
 set backspace=2                             " backspace over anything
@@ -66,12 +129,14 @@ set ttimeoutlen=10
 set ttyfast                                 " smoother changes
 set vb t_vb=                                " disable visual bell
 set wrapscan
+
 " ------------------------------------------------------------------------------
 " CUSTOM OPTIONS
 " ------------------------------------------------------------------------------
 " -- MyTodo - highlight TODO: FIXME: and XXX:
 syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
 hi def link MyTodo Todo
+
 " ------------------------------------------------------------------------------
 " AUTO COMMANDS
 " ------------------------------------------------------------------------------
@@ -94,6 +159,7 @@ if has("autocmd")
         au InsertLeave * if pumvisible()==0|pclose|endif
     augroup END
 endif
+
 " -----------------------------------------------------------------------------
 " WILDMENU COMPLETION
 " -----------------------------------------------------------------------------
@@ -108,6 +174,7 @@ set wildignore+=*.sw?                               " vim swap files
 set wildignore+=*.luac                              " Lua byte code
 set wildignore+=migrations                          " Django migrations
 set wildignore+=*.pyc                               " Python byte code
+
 " ------------------------------------------------------------------------------
 " PLUGINS
 " ------------------------------------------------------------------------------
@@ -185,24 +252,29 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
     return lightline#statusline(0)
 endfunction
 let g:unite_force_overwrite_statusline = 0
+
 "
 " --WM Graphviz
 "
 nmap <silent> <Leader>li :GraphvizInteractive<CR>
 nmap <silent> <Leader>ll :GraphvizCompile<CR>
+
 "
 " --JavaScript Libraries Syntax
 "
 let g:used_javascript_libs='jquery'
+
 "
 " --NERDTree
 "
 let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.class$', '\.pdf$']
 map <leader>n :NERDTreeToggle<CR>
+
 "
 " --Syntastic
 "
 let g:syntastic_php_phpcs_args="--standard=WordPress"
+
 "
 " --SyntaxComplete
 "
@@ -212,16 +284,19 @@ if has("autocmd") && exists("+omnifunc")
         \       setlocal omnifunc=syntaxcomplete#Complete |
         \   endif
 endif
+
 "
 " --Tagbar
 "
 nmap <silent> <leader>tt :TagbarToggle<CR>
+
 "
 " --UtilSnips
 "
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
 let g:UltiSnipsUsePythonVersion=2
 let g:UltiSnipsEditSplit="horizontal"
+
 " ------------------------------------------------------------------------------
 "  INDENTATION
 " ------------------------------------------------------------------------------
@@ -229,31 +304,40 @@ autocmd FileType javascript,html,css,php,yaml,less set ai
 autocmd FileType javascript,html,css,php,yaml,less set sw=2
 autocmd FileType javascript,html,css,php,yaml,less set ts=2
 autocmd FileType javascript,html,css,php,yaml,less set sts=2
+
 " ------------------------------------------------------------------------------
 " LANGUAGE SETTINGS
 " ------------------------------------------------------------------------------
 " --Re-detect on write
 autocmd BufWritePost * if ! &filetype | :filetype detect | endif
+
 " --C/C++
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 autocmd FileType cpp setlocal omnifunc=cppcomplete#CompleteCPP
+
 " --CSS
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+
 " --HTML
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+
 " --LaTeX
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='/usr/bin/okular'
+
 " --PHP
 autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
 autocmd FileType php let php_sql_query=1
 autocmd FileType php let php_htmlInStrings=1
 autocmd FileType php let php_noShortTags=1
 autocmd FileType php DoMatchParen
+
 " --Python
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+
 " --XML
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
 " ------------------------------------------------------------------------------
 " SPELL CHECKING
 " ------------------------------------------------------------------------------
@@ -269,6 +353,7 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
+
 " ------------------------------------------------------------------------------
 " MAPPINGS
 " ------------------------------------------------------------------------------
@@ -281,11 +366,6 @@ map <silent><A-Left> :tabprevious<CR>
 map <Leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-"nnoremap <SID>I_WONT_EVER_TYPE_THIS <Plug>IMAP_JumpForward
-"nmap <C-j> <C-w>j
-"nmap <C-k> <C-w>k
-"nmap <C-h> <C-w>h
-"nmap <C-l> <C-w>l
 nmap <S-j> <C-w>j
 nmap <S-k> <C-w>k
 nmap <S-h> <C-w>h

@@ -112,9 +112,79 @@ set wildignore+=*.pyc                               " Python byte code
 " PLUGINS
 " ------------------------------------------------------------------------------
 "
-" --Airline
+" -- Lightline
 "
-let g:airline_powerline_fonts=1
+let g:lightline = {
+    \ 'active': {
+    \   'left': [['mode', 'paste'], ['fugitive', 'filename']],
+    \   'right': [['syntastic', 'lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'MyFugitive',
+    \   'filename': 'MyFilename',
+    \   'fileformat': 'MyFileformat',
+    \   'filetype': 'MyFiletype',
+    \   'fileencoding': 'MyFileencoding',
+    \   'mode': 'MyMode',
+    \   'readonly': 'MyReadonly',
+    \ },
+    \ 'component_expand': {
+    \   'syntastic': 'SyntasticStatuslineFlag',
+    \ },
+    \ 'component_type': {
+    \   'syntastic': 'error',
+    \ },
+    \ 'separator': {'left': '', 'right': ''},
+    \ 'subseparator': {'left': '', 'right': ''}
+    \ }
+function! MyModified()
+    return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+function! MyReadonly()
+    return &ft !~? 'help' && &readonly ? '' : ''
+endfunction
+function! MyFilename()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? g:lightline.fname :
+        \ fname =~ '__Gundo\|NERD_tree' ? '' :
+        \ &ft == 'unite' ? unite#get_status_string() :
+        \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ ('' != fname ? fname : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+function! MyFugitive()
+    try
+        if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && exists('*fugitive#head')
+            let mark = ''
+            let _ = fugitive#head()
+            return strlen(_) ? mark._ : ''
+        endif
+    catch
+    endtry
+    return ''
+endfunction
+function! MyFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+function! MyFileencoding()
+    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+function! MyMode()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? 'Tagbar' :
+                \ fname == 'NERD_tree' ? 'NERDTree' :
+                \ &ft == 'unite' ? 'Unite' :
+                \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+let g:tagbar_status_func = 'TagbarStatusFunc'
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+    let g:lightline.fname = a:fname
+    return lightline#statusline(0)
+endfunction
+let g:unite_force_overwrite_statusline = 0
 "
 " --WM Graphviz
 "
@@ -124,10 +194,6 @@ nmap <silent> <Leader>ll :GraphvizCompile<CR>
 " --JavaScript Libraries Syntax
 "
 let g:used_javascript_libs='jquery'
-"
-" --LustyJuggler
-"
-nmap <silent> <Leader>b :LustyJuggler<CR>
 "
 " --NERDTree
 "
@@ -168,9 +234,6 @@ autocmd FileType javascript,html,css,php,yaml,less set sts=2
 " ------------------------------------------------------------------------------
 " --Re-detect on write
 autocmd BufWritePost * if ! &filetype | :filetype detect | endif
-" --ActionScript & Flash
-autocmd BufRead *.as set filetype=actionscript
-autocmd BufRead *.mxml set filetype=mxml
 " --C/C++
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 autocmd FileType cpp setlocal omnifunc=cppcomplete#CompleteCPP
@@ -178,13 +241,6 @@ autocmd FileType cpp setlocal omnifunc=cppcomplete#CompleteCPP
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 " --HTML
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-" --JavaScript
-autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
-au FileType javascript set dictionary+=$HOME/.vim/dict/node.dict
-let g:nodejs_complete_config = {
-    \ 'js_compl_fn': 'jscomplete#CompleteJS',
-    \ 'max_node_compl_len': 15
-\}
 " --LaTeX
 let g:tex_flavor='latex'
 let g:Tex_ViewRule_pdf='/usr/bin/okular'
@@ -213,80 +269,6 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
-" ------------------------------------------------------------------------------
-" BUFFER MANAGEMENT
-" Delete buffer while keeping window layout (don't close buffer's windows).
-" http://stackoverflow.com/a/1864427
-" ------------------------------------------------------------------------------
-if v:version<700 || exists('loaded_bclose') || &cp
-    finish
-endif
-let loaded_bclose=1
-if !exists('bclose_multiple')
-    let bclose_multiple=1
-endif
-" -- Display an error message
-function! s:Warn(msg)
-    echohl ErrorMsg
-    echomsg a:msg
-    echohl NONE
-endfunction
-" --Command ':Bclose' executes ':bd' to delete buffer in current window.
-" --The window will show the alt buffer (Ctrl-^) if it exists, or the previous
-" --buffer (:bp), or a blank buffer if no previous.
-" --Command ':Bclose' is the same, but executes ':bd!' (discard changes).
-" --An optional argument can specify which buffer to close (name or number).
-function! s:Bclose(bang, buffer)
-    if empty(a:buffer)
-        let btarget=bufnr('%')
-    elseif a:buffer=~'^\d\+$'
-        let btarget=bufnr(str2nr(a:buffer))
-    else
-        let btarget=bufnr(a:buffer)
-    endif
-    if btarget<0
-        call s:Warn('No matching buffer for '.a:buffer)
-        return
-    endif
-    if empty(a:bang) && getbufvar(btarget, '&modified')
-        call s:Warn('No write since last change for buffer '.btarget.' (Use :Bclose!)')
-        return
-    endif
-    " numbers of windows that view target buffer which we will delete
-    let wnums=filter(range(1, winnr('$')), 'winbufnr(v:val)==btarget')
-    if !g:bclose_multiple && len(wnums) > 1
-        call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
-        return
-    endif
-    let wcurrent=winnr()
-    for w in wnums
-        execute w.'wincmd w'
-        let prevbuf=bufnr('#')
-        if prevbuf>0 && buflisted(prevbuf) && prevbuf!=w
-            buffer #
-        else
-            bprevious
-        endif
-        if btarget==bufnr('%')
-            " numbers of listed buffers which are not the target to be deleted
-            let blisted=filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val!=btarget')
-            " listed, not target, and not displayed
-            let bhidden=filter(copy(blisted), 'bufwinnr(v:val)<0')
-            " take the first buffer, if any (could be more intelligent)
-            let bjump=(bhidden+blisted+[-1])[0]
-            if bjump>0
-                execute 'buffer '.bjump
-            else
-                execute 'enew'.a:bang
-            endif
-        endif
-    endfo
-    execute 'bdelete'.a:bang.' '.btarget
-    execute wcurrent.'wincmd w'
-endfunction
-command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose('<bang>', '<args>')
-nnoremap <silent> <Leader>bd :Bclose<CR>
-nnoremap <silten> <Leader>bD :Bclose!<CR>
 " ------------------------------------------------------------------------------
 " MAPPINGS
 " ------------------------------------------------------------------------------

@@ -82,3 +82,6 @@
 [submodule "vim/bundle/vim-lightline"]
 	path = vim/bundle/vim-lightline
 	url = https://github.com/itchyny/lightline.vim.git
+[submodule "vim/bundle/vim-unite"]
+	path = vim/bundle/vim-unite
+	url = https://github.com/Shougo/unite.vim.git

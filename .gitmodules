@@ -22,9 +22,6 @@
 [submodule "vim/bundle/vim-nerdtree"]
 	path = vim/bundle/vim-nerdtree
 	url = git://github.com/scrooloose/nerdtree.git
-[submodule "vim/bundle/vim-ctrlp"]
-	path = vim/bundle/vim-ctrlp
-	url = git://github.com/kien/ctrlp.vim.git
 [submodule "vim/bundle/vim-ultisnips"]
 	path = vim/bundle/vim-ultisnips
 	url = git://github.com/SirVer/ultisnips.git
@@ -82,3 +79,6 @@
 [submodule "vim/bundle/vim-bufferline"]
 	path = vim/bundle/vim-bufferline
 	url = https://github.com/bling/vim-bufferline
+[submodule "vim/bundle/vim-lightline"]
+	path = vim/bundle/vim-lightline
+	url = https://github.com/itchyny/lightline.vim.git

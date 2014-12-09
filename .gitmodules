@@ -61,9 +61,6 @@
 [submodule "vim/bundle/vim-mxml"]
 	path = vim/bundle/vim-mxml
 	url = https://github.com/cespare/mxml.vim.git
-[submodule "vim/bundle/vim-actionscript"]
-	path = vim/bundle/vim-actionscript
-	url = https://github.com/jeroenbourgois/vim-actionscript.git
 [submodule "vim/bundle/vim-dtd"]
 	path = vim/bundle/vim-dtd
 	url = https://github.com/cespare/dtd.vim.git
@@ -82,3 +79,6 @@
 [submodule "vim/bundle/vim-unite"]
 	path = vim/bundle/vim-unite
 	url = https://github.com/Shougo/unite.vim.git
+[submodule "vim/bundle/vim-emmet"]
+	path = vim/bundle/vim-emmet
+	url = https://github.com/mattn/emmet-vim.git

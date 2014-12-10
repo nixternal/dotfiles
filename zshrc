@@ -18,13 +18,14 @@ antigen bundle git
 antigen bundle pip
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen apply
 
 #-- Disable auto updates of oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
 #-- Bullet Train antigen theme - show custom prompt on a bad exit status
 BULLETTRAIN_EXIT_SHOW=true
+ZSH_THEME_GIT_PROMPT_PREFIX="  "
 
 #------------------------------------------------------------------------------
 # MY TWEAKS

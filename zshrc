@@ -1,13 +1,18 @@
+# ------------------------------------------------------------------------------
+# DOTFILES
+# ------------------------------------------------------------------------------
+export dotfiles=$HOME/mystuff/dev/github/dotfiles
+export PATH=$PATH:$dotfiles/bin
+
 #------------------------------------------------------------------------------
 # OH-MY-ZSH CUSTOMIZATION
 #------------------------------------------------------------------------------
-#COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_UPDATE="true"
 
 #------------------------------------------------------------------------------
 # ANTIGEN
 #------------------------------------------------------------------------------
-. /usr/share/zsh-antigen/antigen.zsh
+source $dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle git
 antigen bundle pip
@@ -16,9 +21,9 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme https://github.com/caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen apply
 
-#------------------------------------------------------------------------------
-# BULLET-TRAIN THEME TWEAKS
-#------------------------------------------------------------------------------
+#-- Disable auto updates of oh-my-zsh
+DISABLE_AUTO_UPDATE="true"
+#-- Bullet Train antigen theme - show custom prompt on a bad exit status
 BULLETTRAIN_EXIT_SHOW=true
 
 #------------------------------------------------------------------------------
@@ -43,14 +48,6 @@ export LESS=' -R '
 export DEBEMAIL=nixternal@ubuntu.com
 export QUILT_PATCHES=debian/patches
 export PBUILDFOLDER=$HOME/mystuff/dev/pbuilder
-
-#-- Dotfiles
-if [ -d "$HOME/mystuff/dev/github/dotfiles" ]; then
-    export dotfiles=$HOME/mystuff/dev/github/dotfiles
-    if [ -d "$dotfiles/bin" ]; then
-        export PATH=$PATH:$dotfiles/bin
-    fi
-fi
 
 #-- ~/bin
 if [ -d "$HOME/bin" ]; then

@@ -5,11 +5,6 @@ export dotfiles=$HOME/mystuff/dev/github/dotfiles
 export PATH=$PATH:$dotfiles/bin
 
 #------------------------------------------------------------------------------
-# OH-MY-ZSH CUSTOMIZATION
-#------------------------------------------------------------------------------
-DISABLE_AUTO_UPDATE="true"
-
-#------------------------------------------------------------------------------
 # ANTIGEN
 #------------------------------------------------------------------------------
 source $dotfiles/antigen/antigen.zsh
@@ -23,9 +18,15 @@ antigen apply
 
 #-- Disable auto updates of oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
-#-- Bullet Train antigen theme - show custom prompt on a bad exit status
-BULLETTRAIN_EXIT_SHOW=true
+#-- Theme Customization
 ZSH_THEME_GIT_PROMPT_PREFIX="  "
+BULLETTRAIN_EXIT_SHOW=true
+if [[ -n "$SSH_CLIENT" ]]; then
+    BULLETTRAIN_CONTEXT_BG=yellow
+    BULLETTRAIN_CONTEXT_FG=blue
+else
+    BULLETTRAIN_CONTEXT_SHOW=false
+fi
 
 #------------------------------------------------------------------------------
 # MY TWEAKS

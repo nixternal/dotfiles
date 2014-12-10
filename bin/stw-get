@@ -1,0 +1,10 @@
+#!/bin/sh
+# Download playlist file (.pls) for a radio station
+# Note that not all stations will use the following URL, but most do.
+# usage: stw-get <station call sign><am|fm>
+# FM example:  stw-get wusnfm
+# AM example:  stw-get wgnam
+wget -q http://provisioning.streamtheworld.com/pls/${1}aac.pls
+if [ "$?" -ne 0 ]; then
+    echo "${1} Not Found"
+fi

@@ -21,8 +21,6 @@ DISABLE_AUTO_UPDATE="true"
 #-- Theme Customization
 ZSH_THEME_GIT_PROMPT_PREFIX="  "
 BULLETTRAIN_EXIT_SHOW=true
-BULLETTRAIN_TIME_BG=black
-BULLETTRAIN_TIME_FG=standard
 if [[ -n "$SSH_CLIENT" ]]; then
     BULLETTRAIN_CONTEXT_BG=yellow
     BULLETTRAIN_CONTEXT_FG=blue
@@ -41,6 +39,7 @@ HOSTNAME="`hostname`"
 EDITOR="vim"
 
 #-- General Exports
+export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"

@@ -1,4 +1,6 @@
 #!/bin/sh
+# Add pls file to mpc - mpd playlist
+# usage:  add2mpc-pls filename.pls
 mpc clear
 grep '^File[0-9]*' $1 | sed -e 's/^File[0-9]*=//' | mpc add
 mpc play

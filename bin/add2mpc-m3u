@@ -1,6 +1,0 @@
-#!/bin/sh
-# Add m3u file to mpc - mpd playlist
-# usage:  add2mpc-m3u filename.m3u
-mpc clear
-cat $1 | sed -e '/^#/D' | mpc add
-mpc play

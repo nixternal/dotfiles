@@ -1,0 +1,16 @@
+#!/bin/sh
+# Add playlist file {.pls | .m3u} to mpc/mpd playlist
+# usage: add2mpc filename.{pls|m3u}
+# examples:
+#   add2mpc foobar.pls
+#   add2mpc foobar.m3u
+TYPE=${1##*.}
+if [ "$TYPE" = "pls" ]; then
+    mpc clear
+    grep '^File[0-9]*' $1 | sed -e 's/^File[0-9]*=//' | mpc add
+    mpc play
+elif [ "$TYPE" = "m3u" ]; then
+    mpc clear
+    cat $1 | sed -e '/^#/D' | mpc add
+    mpc play
+fi

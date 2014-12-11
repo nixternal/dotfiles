@@ -137,6 +137,26 @@ set wrapscan
 syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
 hi def link MyTodo Todo
 
+" -- ColorColumn tweak - show where column is longer than 80 chars
+let g:pymode_options_colorcolumn=0
+highlight ColorColumn ctermbg=white ctermfg=red
+call matchadd('ColorColumn', '\%81v', 100)
+
+" -- On searching highlight what I am searching for makign it easier to see
+nnoremap <silent> n n:call HLNext(0.4)<cr>
+nnoremap <silent> N N:call HLNext(0.4)<cr>
+function! HLNext (blinktime)
+    highlight WhiteOnRed ctermbg=red ctermfg=white
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#\%('.@/.'\)'
+    let ring = matchadd('WhiteOnRed', target_pat, 101)
+    redraw
+    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
+    call matchdelete(ring)
+    redraw
+endfunction
+
 " ------------------------------------------------------------------------------
 " AUTO COMMANDS
 " ------------------------------------------------------------------------------
@@ -370,3 +390,8 @@ nmap <S-j> <C-w>j
 nmap <S-k> <C-w>k
 nmap <S-h> <C-w>h
 nmap <S-l> <C-w>l
+" -- Swap : and ; to make colon commands easier to type
+nnoremap ; :
+" -- VMATH Plugin
+vmap <expr> ++ VMATH_YankAndAnalyse()
+nmap ++ vip++

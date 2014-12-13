@@ -1,93 +1,47 @@
+" --[ Author Information                             ]{{{1
 " .vimrc
 " Author: Rich Johnson <nixternal@gmail.com>
 " Source: https://github.com/nixternal/dotfiles
 
-" -----------------------------------------------------------------------------
-"  Vim Plugin Configuration / Vundle
-" -----------------------------------------------------------------------------
+" --[ Vundle                                         ]{{{1
 set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
-
-" -- Let vundle manage vundle
 Bundle "gmarik/vundle"
-
-" -- CSS-Color: Highlight colors in CSS files
-Bundle "ap/vim-css-color"
-
-" -- Emmet: greatly improves HTML & CSS workflow (http://emmet.io)
-Bundle "mattn/emmet-vim"
-
-" -- Fugitive: a Git wrapper so awesome it should be illegal
-Bundle "tpope/vim-fugitive"
-
-" -- Git Gutter: shows a git diff in the gutter & stages/reverts hunks
-Bundle "airblade/vim-gitgutter"
-
-" -- HTML5: omnicomplete, indent, & syntax for HTML5
-Bundle "othree/html5.vim"
-
-" -- JavaScript Libraries Syntax
-Bundle "othree/javascript-libraries-syntax.vim"
-
-" -- YAJS: Yet Another JavaScript Syntax
-Bundle "othree/yajs"
-
-" -- LaTeX Suite
-Bundle "gerw/vim-latex-suite"
-
-" -- LESS Syntax
-Bundle "groenewege/vim-less"
-
-" -- Lightlinte: light & configurable statusline/tabline
 Bundle "itchyny/lightline.vim"
-
-" -- NerdTree: tree explorer of filesystem
-Bundle "scrooloose/nerdtree"
-
-" -- Python Mode: python-mode, PyLint, Rope, Pydoc, breakpoints & more
-Bundle "klen/python-mode"
-
-" -- Syntastic: syntax checking
+Bundle "Valloric/YouCompleteMe"
 Bundle "scrooloose/syntastic"
-
-" -- SyntaxComplete: OMNI completion
-Bundle "vim-scripts/SyntaxComplete"
-
-" -- Tagbar: easy way to browse tags of current file & get overview of structure
+Bundle "klen/python-mode"
+Bundle "ap/vim-css-color"
+Bundle "mattn/emmet-vim"
 Bundle "majutsushi/tagbar"
-
-" -- UltiSnips: ultimate snippet solution
 Bundle "SirVer/ultisnips"
-
-" -- Unite: search & display info from various sources (ie files, buffers, etc)
 Bundle "Shougo/unite.vim"
-
-" -- WM Graphviz: Graphviz dot plugin
-Bundle "wannesm/wmgraphviz.vim"
-
-" -- MatchTagAlways: always highlights enclosing HTML/XML tags
 Bundle "Valloric/MatchTagAlways"
+Bundle "godlygeek/tabular"
+Bundle "vim-latex/vim-latex"
+Bundle "DavidGamba/vim-vmath"
+Bundle "jelera/vim-javascript-syntax"
+Bundle "pangloss/vim-javascript"
+Bundle "hail2u/vim-css3-syntax"
+Bundle "marijnh/tern_for_vim"
+Bundle "groenewege/vim-less"
+Bundle "Raimondi/delimitMate"
+filetype plugin indent on
+syntax on
 
-" -- HTML will actually indent within PHP
-Bundle "captbaritone/better-indent-support-for-php-with-html"
-
-" -----------------------------------------------------------------------------
-" BASIC OPTIONS
-" -----------------------------------------------------------------------------
-filetype plugin indent on                   " load indent file for filetype
-syntax on                                   " enable syntax highlighting
+" --[ Basic Settings                                 ]{{{1
 set autoindent
 set background=dark                         " use colors for a dark background
 set backspace=2                             " backspace over anything
-set complete=.,w,b,u,t
+set complete=.,w,b,u,t,i
 set completeopt=longest,menuone,preview
 set confirm                                 " Y-N-C prompt if closing w/changes
-set encoding=utf-8                          " set VIM lang to UTF-8
+set encoding=utf-8
 set expandtab
-set foldlevelstart=99                       " all folds open by default
-set foldmethod=syntax                       " use syntax to determine folds
+set foldlevelstart=0
+set foldmethod=marker
 set formatoptions-=tc                       " I can format for myself
 set grepprg=grep\ -nH\ $*                   " setup grep to always gen filename
 set guitablabel=%N/\ %t\ %M                 " tab labels show filename w/o path
@@ -130,77 +84,110 @@ set ttyfast                                 " smoother changes
 set vb t_vb=                                " disable visual bell
 set wrapscan
 
-" ------------------------------------------------------------------------------
-" CUSTOM OPTIONS
-" ------------------------------------------------------------------------------
-" -- MyTodo - highlight TODO: FIXME: and XXX:
-syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
-hi def link MyTodo Todo
+" --[ Spell Checking                                 ]{{{1
+set spell
+set spell spelllang=en_us
+set spellfile =~/.vim/dict/dict.add
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1
+highlight SpellBad term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
 
-" -- ColorColumn tweak - show where column is longer than 80 chars
-let g:pymode_options_colorcolumn=0
-highlight ColorColumn ctermbg=white ctermfg=red
-call matchadd('ColorColumn', '\%81v', 100)
-
-" -- On searching highlight what I am searching for makign it easier to see
+" --[ Mappings                                       ]{{{1
+nmap <Leader>c :copen<CR>
+nmap <Leader>cc :cclose<CR>
+map <Leader>v :sp ~/.vimrc<CR><C-W>_
+map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+nmap <S-j> <C-w>j
+nmap <S-k> <C-w>k
+nmap <S-h> <C-w>h
+nmap <S-l> <C-w>l
+" -- Use ; to access shift+:, just quicker
+nnoremap ; :
+" -- Blink my search results forward/backward
 nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
-function! HLNext (blinktime)
+" -- VMath
+vmap <expr> ++ VMATH_YankAndAnalyse()
+nmap ++ vip++
+
+" --[ Color Tweaks                                   ]{{{1
+" -- Highlight TODO: FIXME and XXX:
+syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
+hi def link MyTodo Todo
+" -- Show where column is longer than 80 characters
+highlight ColorColumn ctermbg=white ctermfg=red
+call matchadd('ColorColumn', '\%81v', 100)
+" -- Search results highlight to make it easier to see where I am
+function! HLNext(blinktime)
     highlight WhiteOnRed ctermbg=red ctermfg=white
     let [bufnum, lnum, col, off] = getpos('.')
     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
-    let target_pat = '\c\%#\%('.@/.'\)'
-    let ring = matchadd('WhiteOnRed', target_pat, 101)
-    redraw
-    exec 'sleep ' . float2nr(a:blinktime * 1000) . 'm'
-    call matchdelete(ring)
-    redraw
+    let target_pat = '\c\%#'.@/
+    let blinks = 3
+    for n in range(1, blinks)
+        let red = matchadd('WhiteOnRed', target_pat, 101)
+        redraw
+        exec 'sleep ' . float2nr(a:blinktime / (2 * blinks) * 1000) . 'm'
+        call matchdelete(red)
+        redraw
+        exec 'sleep ' . float2nr(a:blinktime / (2 * blinks) * 1000) . 'm'
+    endfor
 endfunction
 
-" ------------------------------------------------------------------------------
-" AUTO COMMANDS
-" ------------------------------------------------------------------------------
-if has("autocmd")
-    augroup vimrcEx
-        au!
-        " text & svn wrap automatically
-        au FileType text,svn setlocal tw=78 fo+=t
-        " try to jump back to last spot cursor was in before exit
-        au BufReadPost * if line("'\'")>0 && line("'\'")<=line("$")|exe "normal g`\""|endif
-        " :make to check script w/ perl
-        au FileType perl set makeprg=perl\ -c\ %\ $* errorformat=%f:%l:%m
-        " :make to compile even w/o Makefile
-        au FileType c,cpp if glob('Makefile') == ""|let &mp="gcc -o %< %"|endif
-        " switch to dir of current file unless help file
-        au BufEnter * if &ft!='help'|silent! cd %:p:h|endif
-        " kill calltip window if cursor moved
-        au CursorMovedI * if pumvisible()==0|pclose|endif
-        " kill calltip window if insert mode left
-        au InsertLeave * if pumvisible()==0|pclose|endif
-    augroup END
-endif
-
-" -----------------------------------------------------------------------------
-" WILDMENU COMPLETION
-" -----------------------------------------------------------------------------
-set wildmenu
+" --[ Wildmenu                                       ]{{{1
 set wildmode=longest,list
 set wildignore+=.hg,.git,.svn                       " version control
 set wildignore+=*.aux,*.out,*.toc                   " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg      " binary images
 set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest    " compiled object files
-set wildignore+=*.spl                               " compiled spelling word lists
+set wildignore+=*.spl                               " compiled spelling lists
 set wildignore+=*.sw?                               " vim swap files
 set wildignore+=*.luac                              " Lua byte code
 set wildignore+=migrations                          " Django migrations
 set wildignore+=*.pyc                               " Python byte code
 
-" ------------------------------------------------------------------------------
-" PLUGINS
-" ------------------------------------------------------------------------------
-"
-" -- Lightline
-"
+" --[ Auto Commands                                  ]{{{1
+augroup vimrcEx
+    au!
+    " try to jump back to last spot cursor was before exit
+    au BufReadPost * if line("'\'") >0 && line("'\'") <= line("$") | exe "normal g'\"" | endif
+    " :make to check script w/ perl
+    au FileType perl set makeprg=perl\ -c\ %\ $* errorformat=%f:%l:%m
+    " :make to compile even w/o Makefile
+    au FileType c,cpp if glob('Makefile') == "" | let &mp="gcc -o %< %" | endif
+    " switch to directory of current file unless help file
+    au BufEnter * if &ft != 'help' | silent! cd %:p:h | endif
+    " kill calltip window if cursor moved
+    au CursorMovedI * if pumvisible() == 0 | pclose | endif
+    " kill calltip window if insert mode left
+    au InsertLeave * if pumvisible() == 0 | pclose | endif
+augroup END
+
+" --[ Indentation                                    ]{{{1
+" -- JavaScript, HTML, CSS, PHP, Yaml, LESS, SASS
+autocmd FileType javascript,html,css,php,yaml,less,sass set ai
+autocmd FileType javascript,html,css,php,yaml,less,sass set sw=2
+autocmd FileType javascript,html,css,php,yaml,less,sass set ts=2
+autocmd FileType javascript,html,css,php,yaml,less,sass set sts=2
+
+" -- LaTex
+autocmd FileType tex set sw=2
+
+" --[ Programming/Markup/Scripting Language Settings ]{{{1
+" -- Re-detect filetype on write
+autocmd BufWritePost * if ! &filetype | :filetype detect | endif
+
+" -- LaTeX
+let g:tex_flavor='latex'
+let g:Tex_ViewRule_pdf='/usr/bin/okular'
+
+" --[ PLUGIN: Lightline                              ]{{{1
 let g:lightline = {
     \ 'active': {
     \   'left': [['mode', 'paste'], ['fugitive', 'filename']],
@@ -273,125 +260,61 @@ function! TagbarStatusFunc(current, sort, fname, ...) abort
 endfunction
 let g:unite_force_overwrite_statusline = 0
 
-"
-" --WM Graphviz
-"
-nmap <silent> <Leader>li :GraphvizInteractive<CR>
-nmap <silent> <Leader>ll :GraphvizCompile<CR>
+" --[ PLUGIN: YouCompleteMe                          ]{{{1
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_min_num_identifier_candidate_chars=4
+let g:ycm_path_to_python_interpreter='/usr/bin/python'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_extra_conf_vim_data=['&filetype']
 
-"
-" --JavaScript Libraries Syntax
-"
-let g:used_javascript_libs='jquery'
-
-"
-" --NERDTree
-"
-let NERDTreeIgnore = ['\.pyc$', '\.pyo$', '\.class$', '\.pdf$']
-map <leader>n :NERDTreeToggle<CR>
-
-"
-" --Syntastic
-"
-let g:syntastic_php_phpcs_args="--standard=WordPress"
-
-"
-" --SyntaxComplete
-"
-if has("autocmd") && exists("+omnifunc")
-    autocmd Filetype *
-        \   if &omnifunc == "" |
-        \       setlocal omnifunc=syntaxcomplete#Complete |
-        \   endif
-endif
-
-"
-" --Tagbar
-"
-nmap <silent> <leader>tt :TagbarToggle<CR>
-
-"
-" --UtilSnips
-"
+" --[ PLUGIN: UltiSnips                              ]{{{1
+let g:UltiSnipsExpandTrigger='<C-@>'    "Ctrl+Space
+let g:UltiSnipsJumpForwardTrigger='<C-%>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
-let g:UltiSnipsUsePythonVersion=2
 let g:UltiSnipsEditSplit="horizontal"
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        call UltiSnips#JumpForwards()
+        if g:ulti_jump_forwards_res == 0
+            return ""
+        endif
+    endif
+    return ""
+endfunction
+au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
-" ------------------------------------------------------------------------------
-"  INDENTATION
-" ------------------------------------------------------------------------------
-autocmd FileType javascript,html,css,php,yaml,less set ai
-autocmd FileType javascript,html,css,php,yaml,less set sw=2
-autocmd FileType javascript,html,css,php,yaml,less set ts=2
-autocmd FileType javascript,html,css,php,yaml,less set sts=2
+" --[ PLUGIN: Python-Mode                            ]{{{1
+let g:pymode_options_colorcolumn=0
+let g:pymode_rope_complete_on_dot=0
+au BufWriteCmd *.py write || :PymodeLint
 
-" ------------------------------------------------------------------------------
-" LANGUAGE SETTINGS
-" ------------------------------------------------------------------------------
-" --Re-detect on write
-autocmd BufWritePost * if ! &filetype | :filetype detect | endif
+" --[ PLUGIN: Syntastic                              ]{{{1
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [
+        \ "c",
+        \ "cpp",
+        \ "python"
+    \ ]
+\ }
+let g:syntastic_mode_map = { "mode": "active",
+                           \ "active_filetypes": ["python"]}
 
-" --C/C++
-autocmd FileType c setlocal omnifunc=ccomplete#Complete
-autocmd FileType cpp setlocal omnifunc=cppcomplete#CompleteCPP
+" --[ PLUGIN: DelmitMate                             ]{{{1
+function BreakLine()
+    if (mode() == 'i')
+        return ((getline(".")[col(".")-2] == '{' && getline(".")[col(".")-1] == '}') ||
+              \ (getline(".")[col(".")-2] == '(' && getline(".")[col(".")-1] == ')'))
+    else
+        return 0
+    endif
+endfunction
+inoremap <expr> <CR> BreakLine() ? "<CR><ESC>O" : "<CR>"
 
-" --CSS
-autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+" --[ PLUGIN: CSS3 Syntaxt                           ]{{{1
+highlight VendorPrefix ctermfg=#00ffff
+match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-z]\+/
 
-" --HTML
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-
-" --LaTeX
-let g:tex_flavor='latex'
-let g:Tex_ViewRule_pdf='/usr/bin/okular'
-
-" --PHP
-autocmd FileType php setlocal omnifunc=phpcomplete#CompletePHP
-autocmd FileType php let php_sql_query=1
-autocmd FileType php let php_htmlInStrings=1
-autocmd FileType php let php_noShortTags=1
-autocmd FileType php DoMatchParen
-
-" --Python
-autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
-
-" --XML
-autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
-
-" ------------------------------------------------------------------------------
-" SPELL CHECKING
-" ------------------------------------------------------------------------------
-set spell
-set spell spelllang=en_us
-set spellfile =~/.vim/dict/dict.add
-highlight clear SpellBad
-highlight SpellBad term=standout ctermfg=1
-highlight SpellBad term=underline cterm=underline
-highlight clear SpellCap
-highlight SpellCap term=underline cterm=underline
-highlight clear SpellRare
-highlight SpellRare term=underline cterm=underline
-highlight clear SpellLocal
-highlight SpellLocal term=underline cterm=underline
-
-" ------------------------------------------------------------------------------
-" MAPPINGS
-" ------------------------------------------------------------------------------
-nmap <Leader>c :copen<CR>
-nmap <Leader>cc :cclose<CR>
-nmap <silent> <Leader>bdw :write<CR>:bdelete<CR>
-cmap w!! w !sudo tee % >/dev/null
-map <silent><A-Right> :tabnext<CR>
-map <silent><A-Left> :tabprevious<CR>
-map <Leader>v :sp ~/.vimrc<CR><C-W>_
-map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
-nmap <S-j> <C-w>j
-nmap <S-k> <C-w>k
-nmap <S-h> <C-w>h
-nmap <S-l> <C-w>l
-" -- Swap : and ; to make colon commands easier to type
-nnoremap ; :
-" -- VMATH Plugin
-vmap <expr> ++ VMATH_YankAndAnalyse()
-nmap ++ vip++
+"}}}

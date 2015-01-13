@@ -95,13 +95,14 @@ fi
 
 #-- Aliases
 alias df=dfc
+alias dget='dget --insecure'
 alias diff=colordiff
+alias jserve='bundle exec jekyll serve'
 alias ll='ls -al'
 alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias top=htop
 alias ta='tmux attach'
-alias jserve='bundle exec jekyll serve'
 
 #-- ZSH ZStyle Configs
 zstyle ':completion:*:commands' rehash true

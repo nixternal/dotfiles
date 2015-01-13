@@ -171,10 +171,7 @@ augroup END
 
 " --[ Indentation                                    ]{{{1
 " -- JavaScript, HTML, CSS, PHP, Yaml, LESS, SASS
-autocmd FileType javascript,html,css,php,yaml,less,sass set ai
-autocmd FileType javascript,html,css,php,yaml,less,sass set sw=2
-autocmd FileType javascript,html,css,php,yaml,less,sass set ts=2
-autocmd FileType javascript,html,css,php,yaml,less,sass set sts=2
+au FileType css,html,javascript,json,less,php,sass,yaml setl ai sw=2 ts=2 sts=2
 
 " -- LaTex
 autocmd FileType tex set sw=2
@@ -314,7 +311,7 @@ endfunction
 inoremap <expr> <CR> BreakLine() ? "<CR><ESC>O" : "<CR>"
 
 " --[ PLUGIN: CSS3 Syntaxt                           ]{{{1
-highlight VendorPrefix ctermfg=#00ffff
+highlight VendorPrefix ctermfg=51
 match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-z]\+/
 
 "}}}

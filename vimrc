@@ -53,7 +53,7 @@ set laststatus=2                            " always show statusline
 set lazyredraw                              " don't repaint when scripts running
 let mapleader=","                           " change the leader to be a comma
 set matchtime=2                             " for .2 seconds
-set modeline                                " last lines in file set vim mode
+set modeline modelines=5                    " last lines in file set vim mode
 set mousehide                               " hide mouse pointer while typing
 set nocp                                    " enable features non-vi-compat
 set noshowmode                              " hide the default mode text

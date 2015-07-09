@@ -63,10 +63,10 @@ if [ -d "$HOME/mystuff/business" ]; then
 fi
 
 #-- Android Development
-if [ -d "$HOME/mystuff/dev/android/android-sdk-linux" ]; then
-    export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux
-    export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux/tools
-    export PATH=$PATH:$HOME/mystuff/dev/android/android-sdk-linux/platform-tools
+if [ -d "$HOME/mystuff/dev/android/sdk" ]; then
+    export PATH=$PATH:$HOME/mystuff/dev/android/sdk
+    export PATH=$PATH:$HOME/mystuff/dev/android/sdk/tools
+    export PATH=$PATH:$HOME/mystuff/dev/android/sdk/platform-tools
 fi
 
 #-- VirtualEnv
@@ -93,10 +93,16 @@ if [ -d "$HOME/mystuff/dev/Sencha/Cmd/5.0.3.324" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/Sencha/Cmd/5.0.3.324
 fi
 
+#-- AWS
+if [ -f "/usr/local/bin/aws_zsh_completer.sh" ]; then
+    . /usr/local/bin/aws_zsh_completer.sh
+fi
+
 #-- Aliases
 alias df=dfc
 alias dget='dget --insecure'
 alias diff=colordiff
+alias dmesg='dmesg -T'
 alias jserve='bundle exec jekyll serve'
 alias ll='ls -al'
 alias ls='ls --color=auto '

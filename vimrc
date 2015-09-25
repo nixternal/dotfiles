@@ -6,9 +6,9 @@
 " --[ Vundle                                         ]{{{1
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle "gmarik/vundle"
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Bundle "VundleVim/Vundle.vim"
 Bundle "itchyny/lightline.vim"
 Bundle "Valloric/YouCompleteMe"
 Bundle "scrooloose/syntastic"
@@ -28,6 +28,7 @@ Bundle "hail2u/vim-css3-syntax"
 Bundle "marijnh/tern_for_vim"
 Bundle "groenewege/vim-less"
 Bundle "Raimondi/delimitMate"
+call vundle#end()
 filetype plugin indent on
 syntax on
 

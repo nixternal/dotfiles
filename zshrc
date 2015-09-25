@@ -69,9 +69,8 @@ if [ -d "$HOME/mystuff/dev/android/sdk" ]; then
 fi
 
 #-- Go
-if [ -d "/opt/go/bin" ]; then
-    export GOROOT=/opt/go
-    export PATH=$PATH:$GOROOT/bin
+if [ -d "/usr/local/go/bin" ]; then
+    export PATH=$PATH:/usr/local/go/bin
 fi
 
 #-- VirtualEnv

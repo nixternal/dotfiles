@@ -43,7 +43,6 @@ export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
-export GREP_OPTIONS='--color=auto'
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
 
@@ -67,6 +66,12 @@ if [ -d "$HOME/mystuff/dev/android/sdk" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/android/sdk
     export PATH=$PATH:$HOME/mystuff/dev/android/sdk/tools
     export PATH=$PATH:$HOME/mystuff/dev/android/sdk/platform-tools
+fi
+
+#-- Go
+if [ -d "/opt/go/bin" ]; then
+    export GOROOT=/opt/go
+    export PATH=$PATH:$GOROOT/bin
 fi
 
 #-- VirtualEnv
@@ -103,6 +108,7 @@ alias df=dfc
 alias dget='dget --insecure'
 alias diff=colordiff
 alias dmesg='dmesg -T'
+alias grep='/bin/grep --color=auto'
 alias jserve='bundle exec jekyll serve'
 alias ll='ls -al'
 alias ls='ls --color=auto '

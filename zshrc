@@ -74,11 +74,12 @@ if [ -d "/usr/local/go/bin" ]; then
 fi
 
 #-- VirtualEnv
-if [ -e "/usr/local/bin/virtualenvwrapper.sh" ]; then
-    export WORKON_HOME=$HOME/.virtualenvs
-    export PROJECT_HOME=$HOME/mystuff/dev/virtenv-projects
-    export VIRTUALENVWRAPPER_SCRIPT=/usr/local/bin/virtualenvwrapper.sh
-    . /usr/local/bin/virtualenvwrapper_lazy.sh
+if [ -e "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME=$HOME/mystuff/dev/virtualenvs/environments
+    export PROJECT_HOME=$HOME/mystuff/dev/virtualenvs/projects
+    export VIRTUALENVWRAPPER_SCRIPT=$HOME/.local/bin/virtualenvwrapper.sh
+    export PATH=$PATH:$HOME/.local/bin
+    . $HOME/.local/bin/virtualenvwrapper_lazy.sh
 fi
 
 #-- Node.js
@@ -90,6 +91,15 @@ fi
 if [ -d "$HOME/mystuff/dev/adobe-flex/flex36" ]; then
     export PATH=$PATH:$HOME/mystuff/dev/adobe-flex/flex36/bin
     export flexlib=$HOME/mystuff/dev/adobe-flex/flex36/frameworks
+fi
+
+#-- Ruby
+if [ -d "$HOME/.rbenv/bin" ]; then
+    export PATH=$PATH:$HOME/.rbenv/bin
+    eval "$(rbenv init -)"
+fi
+if [ -d "$HOME/.rbenv/plugins/ruby-build/bin" ]; then
+    export PATH=$PATH:$HOME/.rbenv/plugins/ruby-build/bin
 fi
 
 #-- Sencha

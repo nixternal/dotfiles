@@ -39,7 +39,7 @@ HOSTNAME="`hostname`"
 EDITOR="vim"
 
 #-- General Exports
-export TERM=xterm-256color
+export TERM=screen
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
@@ -54,6 +54,8 @@ export PATH=$PATH:~/bin
 export DEBEMAIL=nixternal@ubuntu.com
 export QUILT_PATCHES=debian/patches
 export PBUILDFOLDER=~/mystuff/dev/pbuilder
+export MIRRORSITE="http://us-east-1.ec2.archive.ubuntu.com/ubuntu/"
+export COMPONENTS="main restricted universe multiverse"
 
 #-- AWS
 . /usr/local/bin/aws_zsh_completer.sh

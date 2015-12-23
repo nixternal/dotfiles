@@ -267,8 +267,9 @@ let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_extra_conf_vim_data=['&filetype']
 
 " --[ PLUGIN: UltiSnips                              ]{{{1
-let g:UltiSnipsExpandTrigger='<C-@>'    "Ctrl+Space
-let g:UltiSnipsJumpForwardTrigger='<C-%>'
+let g:UltiSnipsExpandTrigger='<C-space>'
+let g:UltiSnipsJumpForwardTrigger='<C-j>'
+let g:UltiSnipsJumpBackwardTrigger='<C-k>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnips"]
 let g:UltiSnipsEditSplit="horizontal"
 function! g:UltiSnips_Complete()

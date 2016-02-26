@@ -49,6 +49,11 @@ export LESS=' -R '
 #-- Paths
 export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 export PATH=$PATH:~/bin
+export PATH=$PATH:~/Android/Sdk/platform-tools
+
+#-- Go Language
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #-- Debian/Ubuntu Packaging Exports
 export DEBEMAIL=nixternal@ubuntu.com

@@ -65,6 +65,10 @@ export COMPONENTS="main restricted universe multiverse"
 #-- AWS
 . /usr/local/bin/aws_zsh_completer.sh
 
+#-- VirtuaEnv (& wrapper)
+export WORKON_HOME=~/mystuff/dev/virtualenvs
+. /usr/local/bin/virtualenvwrapper.sh
+
 #-- Aliases
 alias df=dfc
 alias dget='dget --insecure'

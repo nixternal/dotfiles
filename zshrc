@@ -11,7 +11,7 @@ source $dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
-antigen theme nixternal/bullet-train-oh-my-zsh-theme bullet-train
+antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen apply
 
 #-- Disable auto updates of oh-my-zsh

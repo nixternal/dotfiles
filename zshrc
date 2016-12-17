@@ -23,8 +23,7 @@ BULLETTRAIN_VIRTUALENV_BG=green
 if [[ -n "$SSH_CLIENT" ]]; then
     BULLETTRAIN_CONTEXT_BG=yellow
     BULLETTRAIN_CONTEXT_FG=blue
-else
-    #BULLETTRAIN_CONTEXT_SHOW=false
+    BULLETTRAIN_CONTEXT_SHOW=true
 fi
 
 #------------------------------------------------------------------------------

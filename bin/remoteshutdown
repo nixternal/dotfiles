@@ -1,0 +1,9 @@
+#!/bin/sh
+
+if [ $# -ne 2 ]; then
+    echo "remoteshutdown <username> <ip address>"
+    echo "example: remoteshutdown ppp 192.168.168.1"
+    exit 1
+fi
+ssh $1@$2 "sudo shutdown -h now"
+exit 0

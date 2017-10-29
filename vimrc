@@ -28,6 +28,7 @@ Bundle "hail2u/vim-css3-syntax"
 Bundle "marijnh/tern_for_vim"
 Bundle "groenewege/vim-less"
 Bundle "Raimondi/delimitMate"
+Bundle "Konfekt/FastFold"
 call vundle#end()
 filetype plugin indent on
 syntax on

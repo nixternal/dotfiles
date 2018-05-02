@@ -1,0 +1,15 @@
+#!/usr/bin/env python
+
+from socketIO_client import SocketIO
+import os
+
+
+if __name__ == '__main__':
+    s = SocketIO('volumio.local')
+    cmd = os.path.basename(__file__)
+    if cmd == 'volumio-next':
+        s.emit('next')
+    elif cmd == 'volumio-prev':
+        s.emit('prev')
+    elif cmd == 'volumio-pause':
+        s.emit('prev')

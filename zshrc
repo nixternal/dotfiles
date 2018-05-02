@@ -44,6 +44,7 @@ export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -R '
+export VDPAU_DRIVER=va_gl
 
 #-- Paths
 export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
@@ -80,6 +81,7 @@ alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias top=htop
 alias ta='tmux attach'
+alias dynamicrange='/home/rich/mystuff/dev/SRC/dr14_t.meter/dr14_tmeter'
 
 #-- ZSH ZStyle Configs
 zstyle ':completion:*:commands' rehash true

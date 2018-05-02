@@ -7,9 +7,15 @@ import os
 if __name__ == '__main__':
     s = SocketIO('volumio.local')
     cmd = os.path.basename(__file__)
+    pause = '{}/.volumio-paused'.format(os.path.expanduser('~'))
     if cmd == 'volumio-next':
         s.emit('next')
     elif cmd == 'volumio-prev':
         s.emit('prev')
     elif cmd == 'volumio-pause':
-        s.emit('prev')
+        if not os.path.exists(pause):
+            s.emit('pause')
+            open(pause, 'a').close()
+        else:
+            s.emit('play')
+            os.remove(pause)

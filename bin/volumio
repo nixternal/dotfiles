@@ -1,21 +1,33 @@
 #!/usr/bin/env python
 
-from socketIO_client import SocketIO
+import argparse
 import os
+import socketIO_client
 
 
 if __name__ == '__main__':
-    s = SocketIO('volumio.local')
-    cmd = os.path.basename(__file__)
-    pause = '{}/.volumio-paused'.format(os.path.expanduser('~'))
-    if cmd == 'volumio-next':
-        s.emit('next')
-    elif cmd == 'volumio-prev':
-        s.emit('prev')
-    elif cmd == 'volumio-pause':
-        if not os.path.exists(pause):
-            s.emit('pause')
-            open(pause, 'a').close()
-        else:
-            s.emit('play')
-            os.remove(pause)
+    try:
+        s = socketIO_client.SocketIO(
+            'volumio.local',
+            wait_for_connection=False
+        )
+        p = argparse.ArgumentParser(description='Remote Control for Volumio')
+        p.add_argument('--next', action='store_true', help='Next')
+        p.add_argument('--prev', action='store_true', help='Previous')
+        p.add_argument('--pause', action='store_true', help='Pause/Play')
+        args = p.parse_args()
+        pause = '{}/.volumio-paused'.format('/tmp')
+        if args.next:
+            cmd = 'next'
+        elif args.prev:
+            cmd = 'prev'
+        elif args.pause:
+            if not os.path.exists(pause):
+                cmd = 'pause'
+                open(pause, 'a').close()
+            else:
+                cmd = 'play'
+                os.remove(pause)
+        s.emit(cmd)
+    except socketIO_client.exceptions.ConnectionError:
+        pass

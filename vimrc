@@ -286,9 +286,16 @@ endfunction
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 
 " --[ PLUGIN: Python-Mode                            ]{{{1
+let g:pymode=1
+let g:pymode_folding=1
 let g:pymode_options_colorcolumn=0
 let g:pymode_rope_complete_on_dot=0
 au BufWriteCmd *.py write || :PymodeLint
+augroup unset_folding_in_insert_mode
+    autocmd!
+    autocmd InsertEnter *.py setlocal foldmethod=marker
+    autocmd InsertLeave *.py setlocal foldmethod=expr
+augroup END
 
 " --[ PLUGIN: Syntastic                              ]{{{1
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']

@@ -16,6 +16,8 @@ antigen apply
 
 #-- Disable auto updates of oh-my-zsh
 DISABLE_AUTO_UPDATE="true"
+#-- Disable Completion of Dot Directories
+zstyle ':completion:*' special-dirs false
 #-- Theme Customization
 ZSH_THEME_GIT_PROMPT_PREFIX="  "
 BULLETTRAIN_EXIT_SHOW=true

@@ -76,14 +76,14 @@ alias df=dfc
 alias dget='dget --insecure'
 alias diff=colordiff
 alias dmesg='dmesg -T'
+alias dynamicrange='/home/rich/mystuff/dev/SRC/dr14_t.meter/dr14_tmeter'
 alias grep='/bin/grep --color=auto'
 alias jserve='bundle exec jekyll serve'
 alias ll='ls -al'
 alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
-alias top=htop
 alias ta='tmux attach'
-alias dynamicrange='/home/rich/mystuff/dev/SRC/dr14_t.meter/dr14_tmeter'
+alias top=htop
 
 #-- ZSH ZStyle Configs
 zstyle ':completion:*:commands' rehash true

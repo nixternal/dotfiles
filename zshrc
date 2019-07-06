@@ -51,7 +51,8 @@ export VDPAU_DRIVER=va_gl
 #-- Paths
 export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 export PATH=$PATH:~/bin
-export PATH=$PATH:~/Android/Sdk/platform-tools
+export PATH=$PATH:~/.local/bin
+#export PATH=$PATH:~/Android/Sdk/platform-tools
 
 #-- Go Language
 export GOPATH=$HOME/.go
@@ -65,11 +66,11 @@ export MIRRORSITE="http://us-east-1.ec2.archive.ubuntu.com/ubuntu/"
 export COMPONENTS="main restricted universe multiverse"
 
 #-- AWS
-. /usr/local/bin/aws_zsh_completer.sh
+. $HOME/.local/bin/aws_zsh_completer.sh
 
 #-- VirtuaEnv (& wrapper)
-export WORKON_HOME=~/mystuff/dev/virtualenvs
-. /usr/local/bin/virtualenvwrapper.sh
+#export WORKON_HOME=~/mystuff/dev/virtualenvs
+#. /usr/local/bin/virtualenvwrapper.sh
 
 #-- Aliases
 alias df=dfc

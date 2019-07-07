@@ -45,7 +45,7 @@ export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-export LESS=' -R '
+export LESS=' -RN '
 export VDPAU_DRIVER=va_gl
 
 #-- Paths
@@ -53,6 +53,15 @@ export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 #export PATH=$PATH:~/Android/Sdk/platform-tools
+
+#-- Source Highlight manpages
+export LESS_TERMCAP_mb=$'\e[01;31m'
+export LESS_TERMCAP_md=$'\e[01;38;5;74m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_se=$'\e[0m'
+export LESS_TERMCAP_so=$'\E[37;44m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[04;38;5;146m'
 
 #-- Go Language
 export GOPATH=$HOME/.go
@@ -69,8 +78,9 @@ export COMPONENTS="main restricted universe multiverse"
 . $HOME/.local/bin/aws_zsh_completer.sh
 
 #-- VirtuaEnv (& wrapper)
-#export WORKON_HOME=~/mystuff/dev/virtualenvs
-#. /usr/local/bin/virtualenvwrapper.sh
+export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
+export PROJECT_HOME=$HOME/mystuff/dev/virtualenv-dev
+. /usr/local/bin/virtualenvwrapper.sh
 
 #-- Aliases
 alias df=dfc

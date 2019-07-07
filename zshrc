@@ -74,13 +74,15 @@ export PBUILDFOLDER=~/mystuff/dev/pbuilder
 export MIRRORSITE="http://us-east-1.ec2.archive.ubuntu.com/ubuntu/"
 export COMPONENTS="main restricted universe multiverse"
 
-#-- AWS
-. $HOME/.local/bin/aws_zsh_completer.sh
-
-#-- VirtuaEnv (& wrapper)
-export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
-export PROJECT_HOME=$HOME/mystuff/dev/virtualenv-dev
-. /usr/local/bin/virtualenvwrapper.sh
+if [[ -z "$SSH_CLIENT" ]]; then
+    #-- AWS
+    . $HOME/.local/bin/aws_zsh_completer.sh
+    
+    #-- VirtuaEnv (& wrapper)
+    export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
+    export PROJECT_HOME=$HOME/mystuff/dev/virtualenv-dev
+    . /usr/local/bin/virtualenvwrapper.sh
+fi
 
 #-- Aliases
 alias df=dfc

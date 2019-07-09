@@ -12,7 +12,7 @@ antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle zsh-users/zsh-completions
-antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
+antigen theme romkatv/powerlevel10k
 antigen apply
 
 #-- Disable auto updates of oh-my-zsh
@@ -20,14 +20,13 @@ DISABLE_AUTO_UPDATE="true"
 #-- Disable Completion of Dot Directories
 zstyle ':completion:*' special-dirs false
 #-- Theme Customization
-ZSH_THEME_GIT_PROMPT_PREFIX="  "
-BULLETTRAIN_EXIT_SHOW=true
-BULLETTRAIN_VIRTUALENV_BG=green
-if [[ -n "$SSH_CLIENT" ]]; then
-    BULLETTRAIN_CONTEXT_BG=yellow
-    BULLETTRAIN_CONTEXT_FG=white
-    BULLETTRAIN_CONTEXT_SHOW=true
-fi
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir_writable dir vcs)
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
+POWERLEVEL9K_SHORTEN_DELIMITER=""
 
 #------------------------------------------------------------------------------
 # MY TWEAKS
@@ -41,7 +40,8 @@ HOSTNAME="`hostname`"
 EDITOR="vim"
 
 #-- General Exports
-export TERM=screen
+#export TERM=screen
+export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
@@ -91,13 +91,14 @@ alias dget='dget --insecure'
 alias diff=colordiff
 alias dmesg='dmesg -T'
 alias dynamicrange='/home/rich/mystuff/dev/SRC/dr14_t.meter/dr14_tmeter'
-alias grep='/bin/grep --color=auto'
+alias grep='/bin/grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias jserve='bundle exec jekyll serve'
 alias ll='ls -al'
 alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias ta='tmux attach'
 alias top=htop
+alias -s {c,cpp,cfg,conf,html,css,less,sass,js,json,yml,yaml,php,py,service,ino,txt}=vim
 
 #-- ZSH ZStyle Configs
 zstyle ':completion:*:commands' rehash true

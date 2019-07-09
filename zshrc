@@ -27,10 +27,12 @@ POWERLEVEL9K_CONTEXT_REMOTE_FOREGROUND='white'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
-POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="↳ "
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(ssh context dir_writable dir vcs)
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="$ "
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time command_execution_time)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=4
 POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_COMMAND_EXECUTION_TIME_THRESHOLD=2
 
 #------------------------------------------------------------------------------
 # MY TWEAKS
@@ -44,7 +46,6 @@ HOSTNAME="`hostname`"
 EDITOR="vim"
 
 #-- General Exports
-#export TERM=screen
 export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"

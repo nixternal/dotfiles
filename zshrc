@@ -11,6 +11,7 @@ source $dotfiles/antigen/antigen.zsh
 antigen use oh-my-zsh
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-completions
 antigen theme caiogondim/bullet-train-oh-my-zsh-theme bullet-train
 antigen apply
 
@@ -102,3 +103,7 @@ alias top=htop
 zstyle ':completion:*:commands' rehash true
 unsetopt hist_verify
 setopt globdots
+
+#-- ZSH Tweaks
+autoload -U compinit
+compinit

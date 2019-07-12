@@ -30,7 +30,7 @@ Bundle "groenewege/vim-less"
 Bundle "Raimondi/delimitMate"
 Bundle "Konfekt/FastFold"
 call vundle#end()
-filetype plugin on
+filetype plugin indent on
 syntax on
 
 " --[ Basic Settings                                 ]{{{1
@@ -119,6 +119,8 @@ nnoremap <silent> N N:call HLNext(0.4)<cr>
 " -- VMath
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
+" -- Custom snippets
+nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
 
 " --[ Color Tweaks                                   ]{{{1
 " -- Highlight TODO: FIXME and XXX:

@@ -30,7 +30,7 @@ Bundle "groenewege/vim-less"
 Bundle "Raimondi/delimitMate"
 Bundle "Konfekt/FastFold"
 call vundle#end()
-filetype plugin indent on
+filetype plugin on
 syntax on
 
 " --[ Basic Settings                                 ]{{{1
@@ -63,6 +63,7 @@ set noshowmode                              " hide the default mode text
 set notimeout
 set number                                  " show line numbers
 set numberwidth=1                           " use 1 col + 1 space for numbers
+set path+=**
 set printoptions=header:0,duplex:long,paper:letter
 set report=0                                " notify me when any lines changed
 set ruler                                   " line numbers & column cursor on
@@ -144,7 +145,8 @@ function! HLNext(blinktime)
 endfunction
 
 " --[ Wildmenu                                       ]{{{1
-set wildmode=longest,list
+set wildmenu                                        " Display all matching files when we tab complete
+set wildmode=longest,list,full
 set wildignore+=.hg,.git,.svn                       " version control
 set wildignore+=*.aux,*.out,*.toc                   " LaTeX intermediate files
 set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg      " binary images
@@ -154,6 +156,9 @@ set wildignore+=*.sw?                               " vim swap files
 set wildignore+=*.luac                              " Lua byte code
 set wildignore+=migrations                          " Django migrations
 set wildignore+=*.pyc                               " Python byte code
+set wildignore+=*/node_modules/*                    " Node modules
+set wildignore+=*/pi*gen/*                          " Ignore pi-gen folders
+set wildignore+=*/pub/*                             " Ignore public build directories
 
 " --[ Auto Commands                                  ]{{{1
 augroup vimrcEx

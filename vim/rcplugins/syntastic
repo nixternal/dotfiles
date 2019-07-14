@@ -1,0 +1,14 @@
+Plug 'scrooloose/syntastic'
+
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "active_filetypes": [
+        \ "c",
+        \ "cpp",
+        \ "python"
+    \ ]
+\ }
+let g:syntastic_mode_map = {"mode": "active", "active_filetypes": ["python"]}
+
+" vim:ft=vim

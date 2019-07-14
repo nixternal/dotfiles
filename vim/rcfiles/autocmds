@@ -1,0 +1,17 @@
+augroup vimrcEx
+    au!
+    " try to jump back to last spot cursor was before exit
+    au BufReadPost * if line("'\'") >0 && line("'\'") <= line("$") | exe "normal g'\"" | endif
+    " :make to check script w/ perl
+    au FileType perl set makeprg=perl\ -c\ %\ $* errorformat=%f:%l:%m
+    " :make to compile even w/o Makefile
+    au FileType c,cpp if glob('Makefile') == "" | let &mp="gcc -o %< %" | endif
+    " switch to directory of current file unless help file
+    au BufEnter * if &ft != 'help' | silent! cd %:p:h | endif
+    " kill calltip window if cursor moved
+    au CursorMovedI * if pumvisible() == 0 | pclose | endif
+    " kill calltip window if insert mode left
+    au InsertLeave * if pumvisible() == 0 | pclose | endif
+augroup END
+
+" vim:ft=vim

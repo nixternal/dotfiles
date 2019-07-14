@@ -1,0 +1,24 @@
+" -- Highlight TODO: FIXME and XXX:
+syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
+hi def link MyTodo Todo
+" -- Show where column is longer than 80 characters
+highlight ColorColumn ctermbg=white ctermfg=red
+call matchadd('ColorColumn', '\%81v', 100)
+" -- Search results highlight to make it easier to see where I am
+function! HLNext(blinktime)
+    highlight WhiteOnRed ctermbg=red ctermfg=white
+    let [bufnum, lnum, col, off] = getpos('.')
+    let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
+    let target_pat = '\c\%#'.@/
+    let blinks = 3
+    for n in range(1, blinks)
+        let red = matchadd('WhiteOnRed', target_pat, 101)
+        redraw
+        exec 'sleep ' . float2nr(a:blinktime / (2 * blinks) * 1000) . 'm'
+        call matchdelete(red)
+        redraw
+        exec 'sleep ' . float2nr(a:blinktime / (2 * blinks) * 1000) . 'm'
+    endfor
+endfunction
+
+" vim:ft=vim

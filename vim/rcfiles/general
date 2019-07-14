@@ -1,0 +1,55 @@
+set autoindent
+set background=dark                                 " use colors for a dark background
+set backspace=2                                     " backspace over anything
+set complete=.,w,b,u,t,i
+set completeopt=longest,menuone,preview
+set confirm                                         " Y-N-C prompt if closing w/changes
+set encoding=utf-8
+set expandtab
+set foldlevelstart=0
+set foldmethod=marker
+set formatoptions-=tc                               " I can format for myself
+set grepprg=grep\ -nH\ $*                           " setup grep to always gen filename
+set guitablabel=%N/\ %t\ %M                         " tab labels show filename w/o path
+set history=100                                     " 100 lines of history
+set hlsearch                                        " highlight matches to the search
+set ignorecase                                      " search is case insensitive
+set incsearch                                       " show best match so far
+set laststatus=2                                    " always show statusline
+set lazyredraw                                      " don't repaint when scripts running
+let mapleader=","                                   " change the leader to be a comma
+set matchtime=2                                     " for .2 seconds
+set modeline                                        " last lines in file set vim mode
+set modelines=5                                     " last lines in file set vim mode
+set mousehide                                       " hide mouse pointer while typing
+set nocp                                            " enable features non-vi-compat
+set noshowmode                                      " hide the default mode text
+set notimeout
+set number                                          " show line numbers
+set numberwidth=1                                   " use 1 col + 1 space for numbers
+set path+=**
+set printoptions=header:0,duplex:long,paper:letter
+set report=0                                        " notify me when any lines changed
+set ruler                                           " line numbers & column cursor on
+set scrolloff=3                                     " keep 3 lines below & above cursor
+set shiftwidth=4                                    " number of space to (auto)indent
+set shortmess+=a                                    " use [+]/[RO]/[W] for mod/ro/mod
+set showcmd                                         " display command waiting for op
+set showfulltag                                     " show more info when completing tag
+set showmatch                                       " briefly jump to prev match parent
+set smartcase                                       " search case sensitive if caps on
+set softtabstop=4                                   " 4 spaces as a tab for bs/del
+set splitbelow                                      " open horizontal split below
+set splitright                                      " open vertical split right
+set synmaxcol=800                                   " don't hilite lines longer than 800
+set tabstop=4                                       " number of space of tab char
+set t_Co=256                                        " 256 colors baby
+set textwidth=80                                    " 80 columns wide
+set title                                           " show title in console title bar
+set ttimeout
+set ttimeoutlen=10
+set ttyfast                                         " smoother changes
+set vb t_vb=                                        " disable visual bell
+set wrapscan
+
+" vim:ft=vim

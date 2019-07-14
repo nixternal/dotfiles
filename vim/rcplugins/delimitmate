@@ -1,0 +1,14 @@
+Plug 'Raimondi/delimitMate'
+
+function BreakLine()
+    if (mode() == 'i')
+        return ((getline(".")[col(".")-2] == '{' && getline(".")[col(".")-1] == '}') ||
+            \   (getline(".")[col(".")-2] == '(' && getline(".")[col(".")-1] == ')'))
+    else
+        return 0
+    endif
+endfunction
+inoremap <expr> <CR> BreakLine() ? "<CR><ESC>O" : "<CR>"
+
+
+" vim:ft=vim

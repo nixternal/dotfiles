@@ -1,0 +1,14 @@
+set spell
+set spell spelllang=en_us
+set spellfile =~/.vim/dict/dict.add
+highlight clear SpellBad
+highlight SpellBad term=standout ctermfg=1
+highlight SpellBad term=underline cterm=underline
+highlight clear SpellCap
+highlight SpellCap term=underline cterm=underline
+highlight clear SpellRare
+highlight SpellRare term=underline cterm=underline
+highlight clear SpellLocal
+highlight SpellLocal term=underline cterm=underline
+
+" vim:ft=vim

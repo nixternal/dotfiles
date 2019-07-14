@@ -1,0 +1,16 @@
+set wildmenu                                        " Display all matching files when we tab complete
+set wildmode=longest,list,full
+set wildignore+=.hg,.git,.svn                       " version control
+set wildignore+=*.aux,*.out,*.toc                   " LaTeX intermediate files
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg      " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest    " compiled object files
+set wildignore+=*.spl                               " compiled spelling lists
+set wildignore+=*.sw?                               " vim swap files
+set wildignore+=*.luac                              " Lua byte code
+set wildignore+=migrations                          " Django migrations
+set wildignore+=*.pyc                               " Python byte code
+set wildignore+=*/node_modules/*                    " Node modules
+set wildignore+=*/pi*gen/*                          " Ignore pi-gen folders
+set wildignore+=*/pub/*                             " Ignore public build directories
+
+" vim:ft=vim

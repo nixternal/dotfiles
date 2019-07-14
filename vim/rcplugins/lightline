@@ -1,0 +1,75 @@
+Plug 'itchyny/lightline.vim'
+
+let g:lightline = {
+    \ 'active': {
+    \   'left': [['mode', 'paste'], ['fugitive', 'filename']],
+    \   'right': [['syntastic', 'lineinfo'], ['percent'], ['fileformat', 'fileencoding', 'filetype']]
+    \ },
+    \ 'component_function': {
+    \   'fugitive': 'MyFugitive',
+    \   'filename': 'MyFilename',
+    \   'fileformat': 'MyFileformat',
+    \   'filetype': 'MyFiletype',
+    \   'fileencoding': 'MyFileencoding',
+    \   'mode': 'MyMode',
+    \   'readonly': 'MyReadonly',
+    \ },
+    \ 'component_expand': {
+    \   'syntastic': 'SyntasticStatuslineFlag',
+    \ },
+    \ 'component_type': {
+    \   'syntastic': 'error',
+    \ },
+    \ 'separator': {'left': '', 'right': ''},
+    \ 'subseparator': {'left': '', 'right': ''}
+    \ }
+function! MyModified()
+    return &ft =~ 'help' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+function! MyReadonly()
+    return &ft !~? 'help' && &readonly ? '' : ''
+endfunction
+function! MyFilename()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? g:lightline.fname :
+        \ fname =~ '__Gundo\|NERD_tree' ? '' :
+        \ &ft == 'unite' ? unite#get_status_string() :
+        \ ('' != MyReadonly() ? MyReadonly() . ' ' : '') .
+        \ ('' != fname ? fname : '[No Name]') .
+        \ ('' != MyModified() ? ' ' . MyModified() : '')
+endfunction
+function! MyFugitive()
+    try
+        if expand('%:t') !~? 'Tagbar\|Gundo\|NERD' && exists('*fugitive#head')
+            let mark = ''
+            let _ = fugitive#head()
+            return strlen(_) ? mark._ : ''
+        endif
+    catch
+    endtry
+    return ''
+endfunction
+function! MyFileformat()
+    return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+function! MyFiletype()
+    return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+function! MyFileencoding()
+    return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+function! MyMode()
+    let fname = expand('%:t')
+    return fname == '__Tagbar__' ? 'Tagbar' :
+                \ fname == 'NERD_tree' ? 'NERDTree' :
+                \ &ft == 'unite' ? 'Unite' :
+                \ winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+let g:tagbar_status_func = 'TagbarStatusFunc'
+function! TagbarStatusFunc(current, sort, fname, ...) abort
+    let g:lightline.fname = a:fname
+    return lightline#statusline(0)
+endfunction
+let g:unite_force_overwrite_statusline = 0
+
+" vim:ft=vim

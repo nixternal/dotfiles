@@ -1,0 +1,7 @@
+Plug 'hail2u/vim-css3-syntax'
+
+highlight VendorPrefix ctermfg=51
+match VendorPrefix /-\(moz\|webkit\|o\|ms\)-[a-zA-z]\+/
+
+
+" vim:ft=vim

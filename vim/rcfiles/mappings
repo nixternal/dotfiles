@@ -2,10 +2,6 @@ nmap <Leader>c :copen<CR>
 nmap <Leader>cc :cclose<CR>
 map <Leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-nmap <S-j> <C-w>j
-nmap <S-k> <C-w>k
-nmap <S-h> <C-w>h
-nmap <S-l> <C-w>l
 " -- Use ; to access shift+:, just quicker
 nnoremap ; :
 " -- Blink my search results forward/backward

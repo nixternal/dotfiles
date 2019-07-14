@@ -1,16 +1,20 @@
+" Change the leader to be a ,
+let mapleader=","
+
 nmap <Leader>c :copen<CR>
 nmap <Leader>cc :cclose<CR>
 map <Leader>v :sp ~/.vimrc<CR><C-W>_
 map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+
 " -- Use ; to access shift+:, just quicker
 nnoremap ; :
+
 " -- Blink my search results forward/backward
 nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
+
 " -- VMath
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
-" -- Custom snippets
-nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
 
 " vim:ft=vim

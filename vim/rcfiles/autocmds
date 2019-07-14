@@ -14,4 +14,7 @@ augroup vimrcEx
     au InsertLeave * if pumvisible() == 0 | pclose | endif
 augroup END
 
+" Re-detect filetype on write
+autocmd BufWritePost * if ! &filetype | :filetype detect | endif
+
 " vim:ft=vim

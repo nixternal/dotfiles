@@ -3,35 +3,31 @@
 " Author: Rich Johnson <nixternal@gmail.com>
 " Source: https://github.com/nixternal/dotfiles
 
-" --[ Vundle                                         ]{{{1
+" --[ vim-plug                                       ]{{{1
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Bundle "VundleVim/Vundle.vim"
-Bundle "itchyny/lightline.vim"
-Bundle "Valloric/YouCompleteMe"
-Bundle "scrooloose/syntastic"
-Bundle "klen/python-mode"
-Bundle "ap/vim-css-color"
-Bundle "mattn/emmet-vim"
-Bundle "majutsushi/tagbar"
-Bundle "SirVer/ultisnips"
-Bundle "Shougo/unite.vim"
-Bundle "Valloric/MatchTagAlways"
-Bundle "godlygeek/tabular"
-Bundle "vim-latex/vim-latex"
-Bundle "DavidGamba/vim-vmath"
-Bundle "jelera/vim-javascript-syntax"
-Bundle "pangloss/vim-javascript"
-Bundle "hail2u/vim-css3-syntax"
-Bundle "marijnh/tern_for_vim"
-Bundle "groenewege/vim-less"
-Bundle "Raimondi/delimitMate"
-Bundle "Konfekt/FastFold"
-call vundle#end()
-filetype plugin indent on
-syntax on
+"filetype off
+call plug#begin('~/.vim/plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'scrooloose/syntastic'
+Plug 'klen/python-mode'
+Plug 'ap/vim-css-color'
+Plug 'mattn/emmet-vim'
+Plug 'majutsushi/tagbar'
+Plug 'SirVer/ultisnips'
+Plug 'Shougo/unite.vim'
+Plug 'Valloric/MatchTagAlways'
+Plug 'godlygeek/tabular'
+Plug 'vim-latex/vim-latex'
+Plug 'DavidGamba/vim-vmath'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'pangloss/vim-javascript'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'marijnh/tern_for_vim'
+Plug 'groenewege/vim-less'
+Plug 'Raimondi/delimitMate'
+Plug 'Konfekt/FastFold'
+call plug#end()
 
 " --[ Basic Settings                                 ]{{{1
 set autoindent
@@ -297,6 +293,7 @@ let g:pymode=1
 let g:pymode_folding=1
 let g:pymode_options_colorcolumn=0
 let g:pymode_rope_complete_on_dot=0
+let g:pymode_lint_ignore = ["W605"]
 au BufWriteCmd *.py write || :PymodeLint
 augroup unset_folding_in_insert_mode
     autocmd!

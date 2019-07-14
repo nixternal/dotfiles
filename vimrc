@@ -5,7 +5,7 @@
 
 " --[ vim-plug                                       ]{{{1
 set nocompatible
-"filetype off
+filetype off
 call plug#begin('~/.vim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }

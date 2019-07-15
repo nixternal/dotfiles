@@ -30,6 +30,6 @@ vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
 
 " -- Skeletons
-nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
+nnoremap <Leader>html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
 
 " vim:ft=vim

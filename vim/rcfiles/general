@@ -9,7 +9,6 @@ set encoding=utf-8
 set expandtab
 set foldlevelstart=0
 set foldmethod=marker
-set formatoptions-=tc                               " I can format for myself
 set grepprg=grep\ -nH\ $*                           " setup grep to always gen filename
 set guitablabel=%N/\ %t\ %M                         " tab labels show filename w/o path
 set history=100                                     " 100 lines of history

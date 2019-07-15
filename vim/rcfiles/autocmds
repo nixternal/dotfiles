@@ -17,4 +17,7 @@ augroup END
 " Re-detect filetype on write
 autocmd BufWritePost * if ! &filetype | :filetype detect | endif
 
+" Disable automatic commenting on newline
+autocmd FileType * setlocal formatoptions-=r formatoptions-=o
+
 " vim:ft=vim

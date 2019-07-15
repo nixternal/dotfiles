@@ -13,6 +13,15 @@ nnoremap ; :
 nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
 
+" -- Move around splits
+nmap <S-h> <C-w>h
+nmap <S-j> <C-w>j
+nmap <S-k> <C-w>k
+nmap <S-l> <C-w>l
+
+" -- Shellcheck scripts
+nmap <Leader>s :!clear && shellcheck %<CR>
+
 " -- TagBar
 nmap <F8> :TagbarToggle<CR>
 

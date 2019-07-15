@@ -13,8 +13,14 @@ nnoremap ; :
 nnoremap <silent> n n:call HLNext(0.4)<cr>
 nnoremap <silent> N N:call HLNext(0.4)<cr>
 
+" -- TagBar
+nmap <F8> :TagbarToggle<CR>
+
 " -- VMath
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
+
+" -- Skeletons
+nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
 
 " vim:ft=vim

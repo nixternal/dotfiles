@@ -1,10 +1,9 @@
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer' }
+Plug 'ycm-core/YouCompleteMe', { 'do': './install.py --clang-completer' }
 
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_min_num_identifier_candidate_chars=4
 let g:ycm_path_to_python_interpreter='/usr/bin/python'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_extra_conf_vim_data=['&filetype']
-
 
 " vim:ft=vim

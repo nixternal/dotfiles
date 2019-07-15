@@ -1,3 +1,4 @@
+filetype plugin on
 set autoindent
 set background=dark                                 " use colors for a dark background
 set backspace=2                                     " backspace over anything
@@ -26,6 +27,7 @@ set noshowmode                                      " hide the default mode text
 set notimeout
 set number                                          " show line numbers
 set numberwidth=1                                   " use 1 col + 1 space for numbers
+set omnifunc=syntaxcomplete#Complete
 set path+=**
 set printoptions=header:0,duplex:long,paper:letter
 set report=0                                        " notify me when any lines changed

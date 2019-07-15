@@ -1,4 +1,0 @@
-" -- HTML Skeleton File
-nnoremap ,html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
-
-" vim:ft=vim

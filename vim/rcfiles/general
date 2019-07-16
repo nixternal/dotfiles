@@ -1,92 +1,55 @@
+" :h '<option>' <- to see what each of these does
 filetype plugin on
 set autoindent
-" -- Use colors for a dark background
 set background=dark
-" -- Backspace over anything
 set backspace=2
 set complete=.,w,b,u,t,i
 set completeopt=longest,menuone,preview
-" -- Yes/No/Cancel prompt if closing buffer with changes
 set confirm
 set encoding=utf-8
 set expandtab
 set foldlevelstart=0
 set foldmethod=marker
-" -- Setup grep to always generate filename
 set grepprg=grep\ -nH\ $*
-" -- Tab labels show filename without path
 set guitablabel=%N/\ %t\ %M
-" -- 100 lines of history
 set history=100
-" -- Highlight matches to the search
 set hlsearch
-" -- Search is case insensitive
 set ignorecase
-" -- Show best match so far
 set incsearch
-" -- Always show the status line
 set laststatus=2
-" -- Do not repaint when scripts are running
 set lazyredraw
-" -- Wait for .2s to show () matches
 set matchtime=2
-" -- Last lines in file set the vim mode
 set modeline
-" -- Last 5 lines in file set the vim mode
 set modelines=5
-" -- Hide the mouse pointer while typing
 set mousehide
-" -- nocompatible enables features which are not Vi compatible but nice to have
 set nocp
-" -- Hide the default mode text
 set noshowmode
 set notimeout
-" -- Show line numbers relative to the line with the cursor
 set relativenumber
-" -- Use 1 column + 1 space for numbers
 set numberwidth=1
 set omnifunc=syntaxcomplete#Complete
 set path+=**
 set printoptions=header:0,duplex:long,paper:letter
-" -- Notify me when any lines have changed
 set report=0
-" -- Show line and column numbers that cursor is currently on
 set ruler
-" -- Keep 3 lines below and above the cursor
 set scrolloff=3
-" -- Number of spaces to auto indent
 set shiftwidth=4
-" -- Use [+]/[RO]/[w] for modified/readonly/written etc
 set shortmess+=a
-" -- Display command waiting for op
 set showcmd
-" -- Show more info when completing tag
 set showfulltag
-" -- Briefly jump to previous match parent
 set showmatch
-" -- Search case sensitive if caps lock is on
 set smartcase
-" -- 4 spaces as a tab for backspace/delete
 set softtabstop=4
-" -- Open horizontal split below main screen
 set splitbelow
-" -- Open vertical split to the right of main screen
 set splitright
-" -- Don't high-light lines long than 800 columns
 set synmaxcol=800
-" -- Number of spaces for tab character
 set tabstop=4
-" -- 256 colors
 set t_Co=256
-" -- 80 columns wide
 set textwidth=80
-" -- Show title in console title bar
 set title
 set ttimeout
 set ttimeoutlen=10
-" -- Smoother changes
 set ttyfast
-" -- Disable the visual bell
 set vb t_vb=
 set wrapscan
 

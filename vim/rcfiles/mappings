@@ -24,6 +24,18 @@ nnoremap <Leader>L *N:%s//\L&/g<CR>N
 " -- Select a word and set all instances to uppercase
 nnoremap <Leader>U *N:%s//\U&/g<CR>N
 
+" -- Enable Column & Line highlighting to see indentation
+nnoremap <Leader>I :call ToggleIndentationHighlight()<CR>
+function! ToggleIndentationHighlight()
+    if &cursorcolumn && &cursorline
+        set cursorcolumn&
+        set cursorline&
+    else
+        set cursorcolumn
+        set cursorline
+    endif
+endfunction
+
 " -- Shellcheck scripts
 nmap <Leader>s :!clear && shellcheck %<CR>
 

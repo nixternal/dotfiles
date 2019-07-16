@@ -19,6 +19,11 @@ nmap <S-j> <C-w>j
 nmap <S-k> <C-w>k
 nmap <S-l> <C-w>l
 
+" -- Select a word and set all instances to lowercase
+nnoremap <Leader>L *N:%s//\L&/g<CR>N
+" -- Select a word and set all instances to uppercase
+nnoremap <Leader>U *N:%s//\U&/g<CR>N
+
 " -- Shellcheck scripts
 nmap <Leader>s :!clear && shellcheck %<CR>
 

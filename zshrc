@@ -73,8 +73,8 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[04;38;5;146m'
 
 #-- Go Language
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
+export GOPATH=$HOME/mystuff/dev/go
+export PATH=$PATH:$GOPATH/bin
 
 #-- Debian/Ubuntu Packaging Exports
 export DEBEMAIL=nixternal@ubuntu.com

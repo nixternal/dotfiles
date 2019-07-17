@@ -1,6 +1,6 @@
 Plug 'Raimondi/delimitMate'
 
-function BreakLine()
+function! BreakLine()
     if (mode() == 'i')
         return ((getline(".")[col(".")-2] == '{' && getline(".")[col(".")-1] == '}') ||
             \   (getline(".")[col(".")-2] == '(' && getline(".")[col(".")-1] == ')'))

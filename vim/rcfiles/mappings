@@ -1,11 +1,6 @@
 " Change the leader to be a ,
 let mapleader=","
 
-nmap <Leader>c :copen<CR>
-nmap <Leader>cc :cclose<CR>
-map <Leader>v :sp ~/.vimrc<CR><C-W>_
-map <silent> <Leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
-
 " -- Use ; to access shift+:, just quicker
 nnoremap ; :
 
@@ -48,5 +43,16 @@ nmap ++ vip++
 
 " -- Skeletons
 nnoremap <Leader>html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
+
+" -- Make life a little easier
+nmap <Leader>co :copen<CR>
+nmap <Leader>cc :cclose<CR>
+nnoremap <Leader>bi :!bundle install<CR>
+nnoremap <Leader>src :source %<CR>:echo expand('%') . ' successfuly sourced!'<CR>
+nnoremap <Leader>pi :PlugInstall<CR>
+nnoremap <Leader>pu :PlugUpdate<CR>
+nmap <Leader>tpipe :Tabularize /\|<CR>
+nmap <Leader>tcom :Tabularize /\,<CR>
+nmap <Leader>tcol :Tabularize /\:<CR>
 
 " vim:ft=vim

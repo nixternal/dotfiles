@@ -32,7 +32,7 @@ function! ToggleIndentationHighlight()
 endfunction
 
 " -- Shellcheck scripts
-nmap <Leader>s :!clear && shellcheck %<CR>
+nmap <Leader>sc :!clear && shellcheck %<CR>
 
 " -- TagBar
 nmap <F8> :TagbarToggle<CR>

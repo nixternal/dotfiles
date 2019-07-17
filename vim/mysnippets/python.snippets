@@ -1,0 +1,38 @@
+snippet ppp "Create PPP shell" b
+#!/usr/bin/env python
+# cython: language_level=2
+
+from a2c import a2c
+
+addins = """
+<configuration>
+	<variable name='class' value='$1' readonly='1'/>
+	<variable name='nickname' value='$1' readonly='1'/>
+</configuration>
+"""
+
+
+class $1(a2c):
+	def __init__(self, uuid):
+		a2c.__init__(self, uuid)
+
+	def _configured(self):
+		self._nickname.value = '{}-$1'.format(self._firstname())
+		if self._firstname() == 'base' and self._irchostvalue != '127.0.0.1':
+			self._irchost.value = '127.0.0.1'
+
+	def _addins(self):
+		self._configMergeString(addins)
+
+	def _initialized(self):
+		self._stateSet('running')
+
+	def running(self):
+		pass
+
+
+if __name__ == '__main__':
+	c = $1('$1')
+	c.run()
+	c.irc.stop()
+endsnippet

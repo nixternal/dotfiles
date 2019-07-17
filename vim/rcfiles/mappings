@@ -41,8 +41,8 @@ nmap <F8> :TagbarToggle<CR>
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
 
-" -- Skeletons
-nnoremap <Leader>html :-1read $HOME/.vim/.skeleton.html<CR>5jwf>a
+" -- Remove all unwanted whitespace
+nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 
 " -- Make life a little easier
 nmap <Leader>co :copen<CR>

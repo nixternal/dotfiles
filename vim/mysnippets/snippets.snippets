@@ -1,0 +1,17 @@
+# snippets.snippets - Snippets for snippets file types
+
+snippet _skel "Snippet file" b
+# `!v expand("%:t")` - Snippets for `!v expand("%:t:r")` file types
+
+$0
+
+# vim:ft=snippets
+endsnippet
+
+snippet snip "Snippet definition" b
+`!p snip.rv = "snippet"` ${1:Tab_trigger} "${2:Description}" ${3:b}
+${0:${VISUAL}}
+`!p snip.rv = "endsnippet"`
+endsnippet
+
+# vim:ft=snippets

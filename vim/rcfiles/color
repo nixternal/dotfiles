@@ -1,12 +1,20 @@
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+
 " -- Highlight TODO: FIXME and XXX:
 syn match MyTodo contained "\<\(TODO\FIXME\XXX\):)"
 hi def link MyTodo Todo
+
 " -- Show where column is longer than 80 characters
 highlight ColorColumn ctermbg=white ctermfg=red
+highlight ColorColumn guibg=white guifg=red
 call matchadd('ColorColumn', '\%81v', 100)
+
 " -- Search results highlight to make it easier to see where I am
 function! HLNext(blinktime)
     highlight WhiteOnRed ctermbg=red ctermfg=white
+    highlight guiWhiteOnRed guibg=red guifg=white
     let [bufnum, lnum, col, off] = getpos('.')
     let matchlen = strlen(matchstr(strpart(getline('.'),col-1),@/))
     let target_pat = '\c\%#'.@/

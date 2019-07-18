@@ -1,3 +1,5 @@
+# Copied from https://github.com/honza/vim-snippets
+
 import string
 import vim
 

@@ -41,6 +41,9 @@ nmap <F8> :TagbarToggle<CR>
 vmap <expr> ++ VMATH_YankAndAnalyse()
 nmap ++ vip++
 
+" -- Near copy-pasta experience
+nnoremap <Leader>p p`[v`]=
+
 " -- Remove all unwanted whitespace
 nnoremap <silent> <F5> :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s <Bar> :nohl <Bar> :unlet _s <CR>
 

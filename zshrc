@@ -107,7 +107,6 @@ alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias ta='tmux attach'
 alias top=htop
-alias -s {c,cpp,cfg,conf,html,css,less,sass,js,json,yml,yaml,php,py,service,ino,txt}=vim
 
 #-- ZSH ZStyle Configs
 zstyle ':completion:*:commands' rehash true

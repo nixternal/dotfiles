@@ -61,6 +61,7 @@ export VDPAU_DRIVER=va_gl
 export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
+export PATH=$PATH:/snap/bin
 #export PATH=$PATH:~/Android/Sdk/platform-tools
 
 #-- Source Highlight manpages

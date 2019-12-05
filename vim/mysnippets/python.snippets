@@ -20,7 +20,7 @@ class $1(a2c):
 
 	def _configured(self):
 		self._nickname.value = '{}-$1'.format(self._firstname())
-		if self._firstname() == 'base' and self._irchostvalue != '127.0.0.1':
+		if self._firstname() == 'base' and self._irchost.value != '127.0.0.1':
 			self._irchost.value = '127.0.0.1'
 
 	def _addins(self):

@@ -1,3 +1,3 @@
 #!/bin/sh
 ip addr show | awk '$1 == "inet" {gsub(/\/.*$/, "", $2); print $NF":\t"$2}'
-echo "ext:\t$(dig @ns1.google.com TXT o-o.myaddr.1.google.com +short -4 | xargs)"
+printf "ext:\t%s" "$(dig @ns1.google.com TXT o-o.myaddr.1.google.com +short -4 | xargs)"

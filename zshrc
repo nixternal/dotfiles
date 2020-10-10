@@ -3,6 +3,7 @@
 # ------------------------------------------------------------------------------
 export dotfiles=~/mystuff/dev/github/dotfiles
 export PATH=$PATH:$dotfiles/bin
+fpath=($dotfiles/completion_zsh $fpath)
 
 #------------------------------------------------------------------------------
 # ANTIGEN

@@ -49,6 +49,9 @@ TZ="America/Chicago"
 HOSTNAME="`hostname`"
 EDITOR="vim"
 
+eval "`pip completion --zsh`"
+compctl -K _pip_completion pip3
+
 #-- General Exports
 export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"

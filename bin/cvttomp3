@@ -1,0 +1,30 @@
+#!/bin/bash -e
+
+usage () {
+    printf "./cvttomp3 SRC_DIR DEST_DIR\n"
+    printf "    example: cvttomp3 ~/Music/nas/Willie_Nelson ~/Downloads/tmp\n"
+    exit 1
+}
+
+makedir () {
+    mkdir -p "$1"/"$2"
+}
+
+if [[ -z "$1" || -z "$2" ]]; then
+    usage
+fi
+
+ARTIST=$(basename "$1")
+
+for SUBDIR in "$1"/*; do
+    ALBUM=$(basename "$SUBDIR")
+    makedir "$ARTIST" "$ALBUM"
+    for FILE in "$1"/"$ALBUM"/*; do
+        if [[ "$FILE" == *.flac || "$FILE" == *.wav || "$FILE" == *.dsf ]]; then
+            FNAME=$(basename -- "$FILE")
+            #FEXT="${FNAME##*.}"
+            FNAME="${FNAME%.*}"
+            ffmpeg -i "$FILE" -ab 320k -map_metadata 0 -id3v2_version 3 "$2"/"$ARTIST"/"$ALBUM"/"$FNAME".mp3
+        fi
+    done
+done

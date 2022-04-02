@@ -1,0 +1,5 @@
+Plug 'liuchengxu/graphviz.vim'
+
+autocmd FileType dot set sw=2
+
+" vim:ft=vim

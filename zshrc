@@ -100,6 +100,8 @@ if [[ -z "$SSH_CLIENT" ]]; then
 fi
 
 #-- Aliases
+alias bp='$HOME/mystuff/dev/bp/BloodPressure.py'
+alias clear=' /usr/bin/clear'
 alias df=dfc
 alias dget='dget --insecure'
 alias diff=colordiff

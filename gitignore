@@ -8,4 +8,5 @@
 *.autosave
 .sass-cache
 *.netrwhist
+*.swp
 .ropeproject/

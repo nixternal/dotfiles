@@ -1,5 +1,5 @@
 Plug 'liuchengxu/graphviz.vim'
 
-autocmd FileType dot set sw=2
+autocmd FileType dot set sw=2 smartindent
 
 " vim:ft=vim

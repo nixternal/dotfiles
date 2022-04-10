@@ -57,5 +57,6 @@ nnoremap <Leader>pu :PlugUpdate<CR>
 nmap <Leader>tpipe :Tabularize /\|<CR>
 nmap <Leader>tcom :Tabularize /\,<CR>
 nmap <Leader>tcol :Tabularize /\:<CR>
+nmap <Leader>[ ysiw]ysa]]
 
 " vim:ft=vim

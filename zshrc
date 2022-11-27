@@ -94,9 +94,14 @@ if [[ -z "$SSH_CLIENT" ]]; then
     . $HOME/.local/bin/aws_zsh_completer.sh
     
     #-- VirtuaEnv (& wrapper)
+    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
     export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
     export PROJECT_HOME=$HOME/mystuff/dev/virtualenv-dev
-    . /usr/local/bin/virtualenvwrapper.sh
+    if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
+        . /usr/local/bin/virtualenvwrapper.sh
+    elif [ -e $HOME/.local/bin/virtualenvwrapper.sh ]; then
+        . $HOME/.local/bin/virtualenvwrapper.sh
+    fi
 fi
 
 #-- Aliases

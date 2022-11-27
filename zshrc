@@ -66,6 +66,7 @@ export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/snap/bin
+export PATH=$PATH:/usr/local/go/bin
 #export PATH=$PATH:~/Android/Sdk/platform-tools
 
 #-- Source Highlight manpages
@@ -76,11 +77,6 @@ export LESS_TERMCAP_se=$'\e[0m'
 export LESS_TERMCAP_so=$'\E[37;44m'
 export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[04;38;5;146m'
-
-#-- Go Language
-export GOPATH=$HOME/mystuff/dev/go-lang
-export GOROOT=$GOPATH/go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
 #-- Debian/Ubuntu Packaging Exports
 export DEBEMAIL=nixternal@ubuntu.com

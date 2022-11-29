@@ -87,7 +87,9 @@ export COMPONENTS="main restricted universe multiverse"
 
 if [[ -z "$SSH_CLIENT" ]]; then
     #-- AWS
-    . $HOME/.local/bin/aws_zsh_completer.sh
+    if [ -e $HOME/.local/bin/aws_zsh_completer.sh ]; then
+        . $HOME/.local/bin/aws_zsh_completer.sh
+    fi
     
     #-- VirtuaEnv (& wrapper)
     export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python

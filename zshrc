@@ -62,12 +62,10 @@ export LESS=' -RN '
 export VDPAU_DRIVER=va_gl
 
 #-- Paths
-export NODE_PATH=/usr/lib/node_modules/jsctags:$NODE_PATH
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:/usr/local/go/bin
-#export PATH=$PATH:~/Android/Sdk/platform-tools
 
 #-- Source Highlight manpages
 export LESS_TERMCAP_mb=$'\e[01;31m'

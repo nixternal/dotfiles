@@ -83,38 +83,6 @@ export PBUILDFOLDER=~/mystuff/dev/pbuilder
 export MIRRORSITE="http://us-east-1.ec2.archive.ubuntu.com/ubuntu/"
 export COMPONENTS="main restricted universe multiverse"
 
-if [[ -z "$SSH_CLIENT" ]]; then
-    #-- AWS
-    if [ -e $HOME/.local/bin/aws_zsh_completer.sh ]; then
-        . $HOME/.local/bin/aws_zsh_completer.sh
-    fi
-    
-    #-- VirtuaEnv (& wrapper)
-    export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-    export WORKON_HOME=$HOME/mystuff/dev/virtualenvs
-    export PROJECT_HOME=$HOME/mystuff/dev/virtualenv-dev
-    if [ -e /usr/local/bin/virtualenvwrapper.sh ]; then
-        . /usr/local/bin/virtualenvwrapper.sh
-    elif [ -e $HOME/.local/bin/virtualenvwrapper.sh ]; then
-        . $HOME/.local/bin/virtualenvwrapper.sh
-    fi
-fi
-
-#-- NVM lazy load so starting new shell doesn't take so long to load
-declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
-NODE_GLOBALS+=("node")
-NODE_GLOBALS+=("nvm")
-load_nvm() {
-    if [ -d "$HOME/.nvm" ]; then
-        export NVM_DIR=$HOME/.nvm
-        [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-        [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-    fi
-}
-for cmd in "${NODE_GLOBALS[@]}"; do
-    eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
-done
-
 #-- Aliases
 alias bp='$HOME/mystuff/dev/bp/BloodPressure.py'
 alias clear=' /usr/bin/clear'

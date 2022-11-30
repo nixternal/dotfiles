@@ -14,6 +14,12 @@ EDITOR="vim"
 eval "`pip completion --zsh`"
 compctl -K _pip_completion pip3
 
+#-- Really more for when ssh'd into a machine for weird home/pup/pdn/end issue
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[6~" prev
+bindkey "^[[5~" next
+bindkey "^[[4~" end-of-line
+
 #-- General Exports
 export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"

@@ -1,0 +1,15 @@
+#!/bin/sh
+if [ ! -e "/usr/bin/ffmpeg" ]; then
+    echo "Install FFMPEG!"
+    exit 1
+fi
+if [ ! "$1" ]; then
+    echo "flac2mp3 <input filename.flac> <output filename.mp3>"
+    exit 1
+fi
+out="$2"
+if [ ! "$2" ]; then
+    out=$(printf '%s' "$(basename "$1" .flac).mp3" | sed 's/[^0-9a-zA-Z.]//g')
+fi
+ffmpeg -i "$1" -ab 320k -map_metadata 0 -id3v2_version 3 "$out"
+exit "$?"

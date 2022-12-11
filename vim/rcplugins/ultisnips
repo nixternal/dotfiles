@@ -1,7 +1,7 @@
 Plug 'SirVer/ultisnips'
 
-let g:UltiSnipsExpandTrigger='<S-t>'
-let g:UltiSnipsListSnippets='<S-y>'
+let g:UltiSnipsExpandTrigger='<c-t>'
+let g:UltiSnipsListSnippets='<c-r>'
 let g:UltiSnipsJumpForwardTrigger='<S-j>'
 let g:UltiSnipsJumpBackwardTrigger='<S-k>'
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]

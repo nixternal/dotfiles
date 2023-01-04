@@ -20,4 +20,9 @@ autocmd BufWritePost * if ! &filetype | :filetype detect | endif
 " Disable automatic commenting on newline
 autocmd FileType * setlocal formatoptions-=r formatoptions-=o
 
+" Hide commented out lines # in certain files (Jan. 4, 2023)
+autocmd FileType conf
+    \ set foldmethod=expr |
+    \ set foldexpr=getline(v:lnum)=~'^\\s*#'
+
 " vim:ft=vim

@@ -1,0 +1,4 @@
+#!/bin/sh
+find "$HOME"/Music/nas/ \
+    -type f \( -name \*.flac -o -name \*.wav -o -iname \*.dsf \) \
+    | shuf -n 1

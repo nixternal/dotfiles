@@ -1,0 +1,12 @@
+{
+  "language": "en",
+  "dictionaries": [
+    "vim"
+  ],
+  "dictionaryDefinitions": [
+    {
+      "name": "vim",
+      "path": "/home/rich/.vim/dict/dict.add"
+    }
+  ]
+}

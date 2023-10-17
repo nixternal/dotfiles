@@ -1,7 +1,7 @@
 Plug 'python-mode/python-mode', { 'for': 'python', 'branch': 'develop' }
 
 let g:pymode=1
-let g:pymode_folding=1
+let g:pymode_folding=0
 let g:pymode_options_colorcolumn=0
 let g:pymode_rope_complete_on_dot=0
 let g:pymode_lint_options_mccabe = { 'complexity': 15 }

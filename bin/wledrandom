@@ -3,7 +3,7 @@ HOSTNAME='wled-dlamp1.local'
 if nc -z "$HOSTNAME" 80 2>/dev/null; then
     if curl -s "http://$HOSTNAME/json/state" | jq -r ".on"; then
         PALETTE=$(shuf -i 0-70 -n 1)
-        FX=$(shuf -i 0-117 -n 1)
+        FX=$(shuf -i 0-186 -n 1)
         curl -s "http://$HOSTNAME/win&FP=$PALETTE&FX=$FX" >/dev/null
     fi
 fi

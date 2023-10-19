@@ -1,8 +1,12 @@
 #!/bin/sh
+keyframes=0
 
 if [ "$1" = "-q" ]; then
     mplayer -vo null -ao null -frames 0 -quiet -really-quiet -identify $2
+    keyframes=$(ffprobe -loglevel error -select_streams v:0 -show_entries packet=pts_time,flags -of csv=print_section=0 $2 | wc -l)
 else
     mplayer -vo null -ao null -frames 0 -identify $1
+    keyframes=$(ffprobe -loglevel error -select_streams v:0 -show_entries packet=pts_time,flags -of csv=print_section=0 $1 | wc -l)
 fi
+echo "\nKEYFRAME COUNT: $keyframes\n"
 exit 0

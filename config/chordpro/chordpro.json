@@ -1,0 +1,583 @@
+{
+  "include": [
+    "guitar-ly"
+  ],
+  "settings": {
+    "strict": true,
+    "lineinfo": true,
+    "titles": "center",
+    "columns": 1,
+    "suppress-empty-chords": true,
+    "suppress-empty-lyrics": true,
+    "lyrics-only": false,
+    "memorize": false,
+    "inline-chords": false,
+    "inline-annotations": "%s",
+    "chords-under": false,
+    "transpose": 0,
+    "transcode": "",
+    "decapo": false,
+    "chordnames": "strict",
+    "notenames": false,
+    "chords-canonical": false,
+    "choruslabels": true,
+    "truesf": true
+  },
+  "metadata": {
+    "keys": [
+      "title",
+      "subtitle",
+      "artist",
+      "composer",
+      "lyricist",
+      "arranger",
+      "album",
+      "copyright",
+      "year",
+      "sorttitle",
+      "key",
+      "time",
+      "tempo",
+      "capo",
+      "duration"
+    ],
+    "strict": true,
+    "separator": "; ",
+    "autosplit": true
+  },
+  "meta": {},
+  "assets": {},
+  "dates": {
+    "today": {
+      "format": "%A, %B %e, %Y"
+    }
+  },
+  "user": {
+    "name": "",
+    "fullname": ""
+  },
+  "instrument": {
+    "type": "",
+    "description": ""
+  },
+  "tuning": [
+    "E2",
+    "A2",
+    "D3",
+    "G3",
+    "B3",
+    "E4"
+  ],
+  "notes": {
+    "system": "common",
+    "sharp": [
+      "C",
+      [
+        "C#",
+        "Cis",
+        "C♯"
+      ],
+      "D",
+      [
+        "D#",
+        "Dis",
+        "D♯"
+      ],
+      "E",
+      "F",
+      [
+        "F#",
+        "Fis",
+        "F♯"
+      ],
+      "G",
+      [
+        "G#",
+        "Gis",
+        "G♯"
+      ],
+      "A",
+      [
+        "A#",
+        "Ais",
+        "A♯"
+      ],
+      "B"
+    ],
+    "flat": [
+      "C",
+      [
+        "Db",
+        "Des",
+        "D♭"
+      ],
+      "D",
+      [
+        "Eb",
+        "Es",
+        "Ees",
+        "E♭"
+      ],
+      "E",
+      "F",
+      [
+        "Gb",
+        "Ges",
+        "G♭"
+      ],
+      "G",
+      [
+        "Ab",
+        "As",
+        "Aes",
+        "A♭"
+      ],
+      "A",
+      [
+        "Bb",
+        "Bes",
+        "B♭"
+      ],
+      "B"
+    ],
+    "movable": false
+  },
+  "chords": [],
+  "chord-formats": {
+    "common": "%{root|%{}%{qual|%{}}%{ext|%{}}%{bass|/%{}}|%{name}}",
+    "roman": "%{root|%{}%{qual|<sup>%{}</sup>}%{ext|<sup>%{}</sup>}%{bass|/<sub>%{}</sub>}|%{name}}",
+    "nashville": "%{root|%{}%{qual|<sup>%{}</sup>}%{ext|<sup>%{}</sup>}%{bass|/<sub>%{}</sub>}|%{name}}"
+  },
+  "diagrams": {
+    "show": "all",
+    "sorted": false,
+    "suppress": []
+  },
+  "diagnostics": {
+    "format": "\"%f\", line %n, %m\n\t%l"
+  },
+  "contents": [
+    {
+      "fields": [
+        "songindex"
+      ],
+      "label": "Table of Contents",
+      "line": "%{title}",
+      "pageno": "%{page}",
+      "fold": false,
+      "omit": false
+    },
+    {
+      "fields": [
+        "sorttitle",
+        "artist"
+      ],
+      "label": "Contents by Title",
+      "line": "%{title}%{artist| - %{}}",
+      "pageno": "%{page}",
+      "fold": false,
+      "omit": false
+    },
+    {
+      "fields": [
+        "artist",
+        "sorttitle"
+      ],
+      "label": "Contents by Artist",
+      "line": "%{artist|%{} - }%{title}",
+      "pageno": "%{page}",
+      "fold": false,
+      "omit": true
+    }
+  ],
+  "toc": {
+    "title": "Table of Contents",
+    "line": "%{title}",
+    "order": "page"
+  },
+  "delegates": {
+    "abc": {
+      "type": "image",
+      "module": "ABC",
+      "handler": "abc2svg",
+      "config": "default",
+      "preamble": [
+        "%%topspace 0",
+        "%%titlespace 0",
+        "%%musicspace 0",
+        "%%composerspace 0",
+        "%%infospace 0",
+        "%%textspace 0",
+        "%%leftmargin 0cm",
+        "%%rightmargin 0cm",
+        "%%staffsep 0",
+        "%%textfont pdf.fonts.text",
+        "%%gchordfont pdf.fonts.chord"
+      ],
+      "preprocess": {
+        "abc": [],
+        "svg": []
+      },
+      "omit": false
+    },
+    "ly": {
+      "type": "image",
+      "module": "Lilypond",
+      "handler": "ly2svg",
+      "config": "default",
+      "preamble": [
+        "\\version \"2.21.0\"",
+        "\\header { tagline = ##f }"
+      ],
+      "omit": false
+    }
+  },
+  "pdf": {
+    "library": "",
+    "info": {
+      "title": "%{title}",
+      "author": "",
+      "subject": "",
+      "keywords": ""
+    },
+    "papersize": "a4",
+    "theme": {
+      "foreground": "black",
+      "foreground-medium": "grey70",
+      "foreground-light": "grey90",
+      "background": "none"
+    },
+    "columnspace": 20,
+    "margintop": 80,
+    "marginbottom": 40,
+    "marginleft": 40,
+    "marginright": 40,
+    "headspace": 60,
+    "footspace": 20,
+    "head-first-only": false,
+    "spacing": {
+      "title": 1.2,
+      "lyrics": 1.2,
+      "chords": 1.2,
+      "diagramchords": 1.2,
+      "grid": 1.2,
+      "tab": 1,
+      "toc": 1.4,
+      "empty": 1
+    },
+    "chorus": {
+      "indent": 0,
+      "bar": {
+        "offset": 8,
+        "width": 1,
+        "color": "foreground"
+      },
+      "tag": "Chorus",
+      "recall": {
+        "choruslike": false,
+        "tag": "Chorus",
+        "type": "comment",
+        "quote": false
+      }
+    },
+    "labels": {
+      "width": "auto",
+      "align": "left",
+      "comment": ""
+    },
+    "chordscolumn": 0,
+    "capoheading": "%{capo|Capo: %{}}",
+    "titles-directive-ignore": false,
+    "diagrams": {
+      "show": "right",
+      "width": 10,
+      "height": 10,
+      "vcells": 5,
+      "linewidth": 0.1,
+      "nutwidth": 3,
+      "hspace": 3.95,
+      "vspace": 2,
+      "dotsize": 0.8,
+      "barwidth": 0.8,
+      "fingers": true
+    },
+    "kbdiagrams": {
+      "show": "bottom",
+      "width": 4,
+      "height": 20,
+      "keys": 14,
+      "base": "C",
+      "linewidth": 0.1,
+      "pressed": "foreground-medium",
+      "hspace": 3.95,
+      "vspace": 0.3
+    },
+    "grids": {
+      "cellbar": {
+        "width": 0,
+        "color": "foreground-medium"
+      },
+      "show": true,
+      "symbols": {
+        "color": "blue"
+      },
+      "volta": {
+        "span": 0.7,
+        "color": "blue"
+      }
+    },
+    "even-odd-pages": 1,
+    "pagealign-songs": 1,
+    "front-matter": "",
+    "back-matter": "",
+    "formats": {
+      "default": {
+        "title": [
+          "",
+          "",
+          ""
+        ],
+        "subtitle": [
+          "",
+          "",
+          ""
+        ],
+        "footer": [
+          "%{title}",
+          "",
+          "%{page}"
+        ],
+        "background": ""
+      },
+      "title": {
+        "title": [
+          "",
+          "%{title}",
+          ""
+        ],
+        "subtitle": [
+          "",
+          "%{subtitle}",
+          ""
+        ],
+        "footer": [
+          "",
+          "",
+          "%{page}"
+        ],
+        "background": ""
+      },
+      "first": {
+        "footer": [
+          "",
+          "",
+          ""
+        ],
+        "background": ""
+      }
+    },
+    "split-marker": [
+      "",
+      "",
+      ""
+    ],
+    "fontdir": [
+      "/home/rich/.perl5/lib/perl5/ChordPro/res/fonts",
+      "/usr/share/fonts/truetype/liberation"
+    ],
+    "fontconfig": {
+      "serif": {
+        "": "LiberationSerif-Regular.ttf",
+        "bold": "LiberationSerif-Bold.ttf",
+        "italic": "LiberationSerif-Italic.ttf",
+        "bolditalic": "LiberationSerif-BoldItalic.ttf"
+      },
+      "sans": {
+        "": "LiberationSans-Regular.ttf",
+        "bold": "LiberationSans-Bold.ttf",
+        "italic": "LiberationSans-Italic.ttf",
+        "bolditalic": "LiberationSans-BoldItalic.ttf"
+      },
+      "monospace": {
+        "": "LiberationMono-Regular.ttf",
+        "bold": "LiberationMono-Bold.ttf",
+        "italic": "LiberationMono-Italic.ttf",
+        "bolditalic": "LiberationMono-BoldItalic.ttf"
+      }
+    },
+    "fonts": {
+      "title": {
+        "description": "serif 14"
+      },
+      "text": {
+        "description": "sans 12"
+      },
+      "chord": {
+        "description": "monospace 10",
+        "color": "red"
+      },
+      "chordfingers": {
+        "file": "ChordProSymbols.ttf",
+        "numbercolor": "background"
+      },
+      "comment": {
+        "description": "sans 10",
+        "background": "foreground-light"
+      },
+      "comment_italic": {
+        "description": "sans italic 12"
+      },
+      "comment_box": {
+        "description": "sans 12",
+        "frame": 1
+      },
+      "tab": {
+        "description": "monospace 10"
+      },
+      "toc": {
+        "description": "serif 11"
+      },
+      "grid": {
+        "description": "monospace 10",
+        "color": "red"
+      },
+      "label": {
+        "description": "sans 12",
+        "color": "foreground-medium"
+      }
+    },
+    "outlines": [
+      {
+        "fields": [
+          "sorttitle",
+          "artist"
+        ],
+        "label": "By Title",
+        "line": "%{title}%{artist| - %{}}",
+        "collapse": false,
+        "letter": 5,
+        "fold": false
+      },
+      {
+        "fields": [
+          "artist",
+          "sorttitle"
+        ],
+        "label": "By Artist",
+        "line": "%{artist|%{} - }%{title}",
+        "collapse": false,
+        "letter": 5,
+        "fold": false
+      }
+    ],
+    "showlayout": false,
+    "csv": {
+      "fields": [
+        {
+          "name": "title",
+          "meta": "title"
+        },
+        {
+          "name": "pages",
+          "meta": "pagerange"
+        },
+        {
+          "name": "sort title",
+          "meta": "sorttitle"
+        },
+        {
+          "name": "artists",
+          "meta": "artist"
+        },
+        {
+          "name": "composers",
+          "meta": "composer"
+        },
+        {
+          "name": "collections",
+          "meta": "collection"
+        },
+        {
+          "name": "keys",
+          "meta": "key_actual"
+        },
+        {
+          "name": "years",
+          "meta": "year"
+        },
+        {
+          "name": "my_field",
+          "value": "text",
+          "omit": true
+        }
+      ],
+      "separator": ";",
+      "vseparator": "|",
+      "songsonly": true
+    }
+  },
+  "chordpro": {
+    "chorus": {
+      "recall": {
+        "tag": "",
+        "type": "",
+        "quote": false
+      }
+    }
+  },
+  "html": {
+    "styles": {
+      "display": "chordpro.css",
+      "print": "chordpro_print.css"
+    }
+  },
+  "latex": {
+    "template_include_path": [],
+    "templates": {
+      "songbook": "songbook.tt",
+      "comment": "comment.tt",
+      "image": "image.tt"
+    }
+  },
+  "text": {
+    "chorus": {
+      "recall": {
+        "tag": "",
+        "type": "",
+        "quote": false
+      }
+    }
+  },
+  "a2crd": {
+    "infer-titles": true,
+    "classifier": "pct_chords",
+    "tabstop": 8
+  },
+  "parser": {
+    "preprocess": {
+      "all": [],
+      "directive": [],
+      "songline": []
+    }
+  },
+  "debug": {
+    "chords": 0,
+    "config": 0,
+    "echo": 0,
+    "fonts": 0,
+    "images": 0,
+    "layout": 0,
+    "meta": 0,
+    "mma": 0,
+    "spacing": 0,
+    "song": 0,
+    "songfull": 0,
+    "csv": 0,
+    "abc": 0,
+    "ly": 0,
+    "svg": 0,
+    "x1": 0,
+    "x2": 0,
+    "x3": 0
+  }
+}

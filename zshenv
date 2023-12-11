@@ -34,6 +34,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/opt/lilypond-2.24.3/bin
 
 #-- Source Highlight manpages
 export LESS_TERMCAP_mb=$'\e[01;31m'
@@ -95,3 +96,5 @@ PERL5LIB="/home/rich/.perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB
 PERL_LOCAL_LIB_ROOT="/home/rich/.perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/rich/.perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/rich/.perl5"; export PERL_MM_OPT;
+#-- ChordPro
+PERL5LIB=$PERL5LIB:$HOME/.perl5/lib/perl5/ChordPro/lib; export PERL5LIB;

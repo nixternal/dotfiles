@@ -1,7 +1,6 @@
 # chordpro.snippets - Snippets for ChordPro file types
 
 snippet skel "Add ChordPro Skeleton" b
-{filename: `!p snip.rv = snip.basename`}
 {artist: `!p snip.rv = snip.basename.split('--')[0].replace('_', ' ')`}
 {title: `!p snip.rv = snip.basename.split('--')[1].replace('_', ' ')` - %{artist}}
 {key: $3}
@@ -53,7 +52,7 @@ scale=0.7
 endsnippet
 
 snippet image "Add ChordPro Image" b
-{image: src="../.build/%{filename}.png" scale="0.7" title="Rhythm"}
+{image: src="../.build/`!p snip.rv = snip.basename`.png" scale="0.7" title="Rhythm"}
 endsnippet
 
 # vim:ft=snippets

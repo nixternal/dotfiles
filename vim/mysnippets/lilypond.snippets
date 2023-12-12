@@ -8,8 +8,6 @@ snippet skel "Add Lilypond Guitar Rhythm Skeleton" b
 }
 doubleQuaver = \markup \rhythm { 8[ 8] }
 tupletI = \markup \rhythm { \tuplet 3/2 { 8( 8) 8 } }
-Up = _\markup \translate #'(-.2 . 0) \rotate #90 \char ##x279B
-Down = _\markup \translate #'(-.2 . 0) \rotate #-90 \char ##x279B
 
 \relative {
     \time 4/4
@@ -32,7 +30,7 @@ Down = _\markup \translate #'(-.2 . 0) \rotate #-90 \char ##x279B
         \textMark \markup { Swing \doubleQuaver = \tupletI }
         c8 c16 c
         c8 c16 c
-        c16\Down c\Up c c~ c16 c~ c c
+        c16 c c c~ c16 c~ c c
     }
 }
 endsnippet

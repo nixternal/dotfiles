@@ -1,0 +1,40 @@
+# lilypond.snippets - Snippets for lilypond file types
+
+snippet skel "Add Lilypond Guitar Rhythm Skeleton" b
+% `!p snip.rv = "{} - {}".format(snip.basename.split('--')[0].replace('_', ' '), snip.basename.split('--')[1].replace('_', ' '))`
+\version "2.24.3"
+\header {
+    tagline = ""
+}
+doubleQuaver = \markup \rhythm { 8[ 8] }
+tupletI = \markup \rhythm { \tuplet 3/2 { 8( 8) 8 } }
+Up = _\markup \translate #'(-.2 . 0) \rotate #90 \char ##x279B
+Down = _\markup \translate #'(-.2 . 0) \rotate #-90 \char ##x279B
+
+\relative {
+    \time 4/4
+    \tempo 4=67
+    \numericTimeSignature
+    \new Voice \with {
+        \consists Pitch_squash_engraver
+    } \relative c'' {
+        \improvisationOn
+        \textMark "First Measure"
+        c8 c16 c
+        c8 c16 c
+        c8 c16 c~ c16 c c c
+        \textMark "All Except Ending"
+        c8 c16 c
+        c8 c16 c
+        c16 c c c~ c16 c~ c c
+        \tempo 4=57
+        \textMark "Ending"
+        \textMark \markup { Swing \doubleQuaver = \tupletI }
+        c8 c16 c
+        c8 c16 c
+        c16\Down c\Up c c~ c16 c~ c c
+    }
+}
+endsnippet
+
+# vim:ft=snippets

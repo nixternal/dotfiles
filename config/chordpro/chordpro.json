@@ -1,6 +1,7 @@
 {
   "include": [
-    "guitar-ly"
+    "guitar-ly",
+    "guitar-rj.json"
   ],
   "settings": {
     "strict": true,

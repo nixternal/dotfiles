@@ -1,0 +1,21 @@
+{
+  "instrument": {
+    "description": "Guitar, 6 strings, standard tuning",
+    "type": "guitar"
+  },
+  "tuning": [ "E2", "A2", "D3", "G3", "B3", "E4" ],
+  "chords": [
+    {
+      "name": "Eadd9",
+      "base": 1,
+      "frets": [ 0, 2, 4, 1, 0, 0 ],
+      "fingers": [ 0, 2, 4, 1, 0, 0 ]
+    },
+    {
+      "name": "Emadd9",
+      "base": 1,
+      "frets": [ 0, 2, 4, 0, 0, 0 ],
+      "fingers": [ 0, 2, 4, 0, 0, 0 ]
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+# chordpro.snippets - Snippets for ChordPro file types
+
+snippet skel "Add ChordPro Skeleton" b
+{filename: $1}
+{artist: $2}
+{title: $3 - %{artist}}
+{key: $4}
+{capo: $5}
+{subtitle: Key: %{key} | Capo: %{capo}}
+endsnippet
+
+snippet verse "Add ChordPro Verse" b
+{sov: $1}
+$2
+{eof}
+endsnippet
+
+snippet chorus "Add ChordPro Chorus" b
+{soc: Chorus}
+$1
+{eoc}
+
+snippet grid "Add ChordPro Grid" b
+{start_of_grid}
+$1
+{end_of_grid}
+endsnippet
+
+snippet break "Add ChordPro Break" b
+{sob: $1}
+$2
+{eob}
+
+snippet lily "Add Lilypond Rhythm Section" b
+{start_of_ly: $1}
+scale=0.7
+\relative {
+	\time 4/4
+	\tempo 4=120
+	\numericTimeSignature
+	\new Voice \with {
+		\consists Pitch_squash_engraver
+	} \relative c'' {
+		\improvisationOn
+		%example: c4 c8 c~ c8 c c8 c
+		$2
+	}
+}
+{end_of_ly}
+endsnippet
+
+snippet image "Add ChordPro Image" b
+{image: src="../.build/%{filename}.png" scale="0.7" title="Rhythm"}
+endsnippet
+
+# vim:ft=snippets

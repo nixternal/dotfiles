@@ -1,11 +1,11 @@
 # chordpro.snippets - Snippets for ChordPro file types
 
 snippet skel "Add ChordPro Skeleton" b
-{filename: $1}
-{artist: $2}
-{title: $3 - %{artist}}
-{key: $4}
-{capo: $5}
+{filename: `!p snip.rv = snip.basename`}
+{artist: `!p snip.rv = snip.basename.split('--')[0].replace('_', ' ')`}
+{title: `!p snip.rv = snip.basename.split('--')[1].replace('_', ' ')` - %{artist}}
+{key: $3}
+{capo: $4}
 {subtitle: Key: %{key} | Capo: %{capo}}
 endsnippet
 

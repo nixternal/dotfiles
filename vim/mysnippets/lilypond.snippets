@@ -1,13 +1,10 @@
 # lilypond.snippets - Snippets for lilypond file types
 
 snippet skel "Add Lilypond Guitar Rhythm Skeleton" b
-% `!p snip.rv = "{} - {}".format(snip.basename.split('--')[0].replace('_', ' '), snip.basename.split('--')[1].replace('_', ' '))`
 \version "2.24.3"
 \header {
     tagline = ""
 }
-doubleQuaver = \markup \rhythm { 8[ 8] }
-tupletI = \markup \rhythm { \tuplet 3/2 { 8( 8) 8 } }
 
 \relative {
     \time 4/4
@@ -27,7 +24,7 @@ tupletI = \markup \rhythm { \tuplet 3/2 { 8( 8) 8 } }
         c16 c c c~ c16 c~ c c
         \tempo 4=57
         \textMark "Ending"
-        \textMark \markup { Swing \doubleQuaver = \tupletI }
+        \textMark \markup { Swing \rhythm { 8[ 8] } = \rhythm { \tuplet 3/2 { 8( 8) 8 } } }
         c8 c16 c
         c8 c16 c
         c16 c c c~ c16 c~ c c

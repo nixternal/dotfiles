@@ -2,11 +2,13 @@
 
 snippet skel "Add ChordPro Skeleton" b
 {artist: `!p snip.rv = snip.basename.split('--')[0].replace('_', ' ')`}
-{title: `!p snip.rv = snip.basename.split('--')[1].replace('_', ' ')` - %{artist}}
+{title: `!p snip.rv = snip.basename.split('--')[1].replace('_', ' ')`}
 {key: $3}
 {capo: $4}
-{subtitle: Key: %{key} | Capo: %{capo}}
-$5
+{time: $5}
+{tempo: $6}
+{subtitle: ][  Key: %{key}  ][  Capo: %{capo}  ][  Time: %{time}  ][  Tempo: %{tempo}  ][}
+$7
 endsnippet
 
 snippet verse "Add ChordPro Verse" b

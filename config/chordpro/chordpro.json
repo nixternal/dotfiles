@@ -411,7 +411,7 @@
         "description": "serif 14"
       },
       "text": {
-        "description": "sans 12"
+        "description": "sans 10"
       },
       "chord": {
         "description": "monospace 10",
@@ -426,24 +426,24 @@
         "background": "foreground-light"
       },
       "comment_italic": {
-        "description": "sans italic 12"
+        "description": "sans italic 10"
       },
       "comment_box": {
-        "description": "sans 12",
+        "description": "sans 10",
         "frame": 1
       },
       "tab": {
         "description": "monospace 10"
       },
       "toc": {
-        "description": "serif 11"
+        "description": "serif 12"
       },
       "grid": {
         "description": "monospace 10",
         "color": "red"
       },
       "label": {
-        "description": "sans 12",
+        "description": "sans 10",
         "color": "foreground-medium"
       }
     },

@@ -237,7 +237,7 @@
     "library": "",
     "info": {
       "title": "%{title}",
-      "author": "",
+      "author": "%{author}",
       "subject": "",
       "keywords": ""
     },
@@ -353,7 +353,7 @@
       "title": {
         "title": [
           "",
-          "%{title}",
+          "%{title} - %{artist}",
           ""
         ],
         "subtitle": [

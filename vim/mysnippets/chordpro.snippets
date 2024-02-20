@@ -1,14 +1,16 @@
 # chordpro.snippets - Snippets for ChordPro file types
 
 snippet skel "Add ChordPro Skeleton" b
+{author: Rich Johnson}
+{keywords: $1}
 {artist: `!p snip.rv = snip.basename.split('--')[0].replace('_', ' ')`}
 {title: `!p snip.rv = snip.basename.split('--')[1].replace('_', ' ')`}
-{key: $3}
-{capo: $4}
-{time: $5}
-{tempo: $6}
+{key: $2}
+{capo: $3}
+{time: $4}
+{tempo: $5}
 {subtitle: ][  Key: %{key}  ][  Capo: %{capo}  ][  Time: %{time}  ][  Tempo: %{tempo}  ][}
-$7
+$6
 endsnippet
 
 snippet verse "Add ChordPro Verse" b
@@ -55,6 +57,10 @@ endsnippet
 
 snippet image "Add ChordPro Image" b
 {image: src="../.build/`!p snip.rv = snip.basename`.png" scale="0.7" title="Rhythm"}
+endsnippet
+
+snippet define "Add chord and fingering" b
+{define: A/C# base-fret 1 frets x 4 2 2 2 x fingers 2 3 1 1 1 x}
 endsnippet
 
 # vim:ft=snippets

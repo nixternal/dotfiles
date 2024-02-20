@@ -26,6 +26,8 @@
   },
   "metadata": {
     "keys": [
+      "author",
+      "keywords",
       "title",
       "subtitle",
       "artist",
@@ -239,7 +241,7 @@
       "title": "%{title}",
       "author": "%{author}",
       "subject": "",
-      "keywords": ""
+      "keywords": "%{keywords}"
     },
     "papersize": "a4",
     "theme": {

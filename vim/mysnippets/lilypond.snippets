@@ -2,8 +2,12 @@
 
 snippet skel "Add Lilypond Guitar Rhythm Skeleton" b
 \version "2.24.3"
+
+#(set-default-paper-size "letter")
+
 \header {
-    tagline = ""
+	title = "$1"
+	subtitle = "$2"
 }
 
 \relative {

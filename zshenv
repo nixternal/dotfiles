@@ -27,7 +27,6 @@ export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
 export LESSOPEN="| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 export LESS=' -RN '
-export VDPAU_DRIVER=va_gl
 
 #-- Paths
 export PATH=$PATH:~/bin

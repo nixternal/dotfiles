@@ -97,3 +97,12 @@ PERL_MB_OPT="--install_base \"/home/rich/.perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/rich/.perl5"; export PERL_MM_OPT;
 #-- ChordPro
 PERL5LIB=$PERL5LIB:$HOME/.perl5/lib/perl5/ChordPro/lib; export PERL5LIB;
+
+#-- Virtual Env Wrapper
+if [ -f "$HOME/.local/bin/virtualenvwrapper.sh" ]; then
+    export WORKON_HOME="$HOME/mystuff/dev/virtualenv/Environments"
+    export PROJECT_HOME="$HOME/mystuff/dev/virtualenv/Projects"
+    export VIRTUALENVWRAPPER_PYTHON="$HOME/.local/share/pipx/venvs/virtualenvwrapper/bin/python3"
+    export VIRTUALENVWRAPPER_VIRTUALENV="$HOME/.local/share/pipx/venvs/virtualenvwrapper/bin/virtualenv"
+    source "$HOME/.local/bin/virtualenvwrapper.sh"
+fi

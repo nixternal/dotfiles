@@ -67,7 +67,7 @@ alias ll='ls -al'
 alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias ta='tmux attach'
-alias top=htop
+alias top=btop
 
 #-- Rust
 if [ -f "$HOME/.cargo/env" ];then

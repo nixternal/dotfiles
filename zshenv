@@ -87,6 +87,7 @@ if [ -d "$HOME/.nvm" ]; then
     for cmd in "${NODE_GLOBALS[@]}"; do
         eval "${cmd}(){ unset -f ${NODE_GLOBALS}; load_nvm; ${cmd} \$@ }"
     done
+    export PATH=$PATH:~/.nvm/versions/node/$(node -v)/bin
 fi
 
 #-- Perl

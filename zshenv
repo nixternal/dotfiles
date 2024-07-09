@@ -33,6 +33,7 @@ export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/snap/bin
 export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:~/go/bin
 export PATH=$PATH:/opt/lilypond-2.24.3/bin
 
 #-- Source Highlight manpages
@@ -68,6 +69,7 @@ alias ls='ls --color=auto '
 alias man='LC_ALL=C LANG=C man'
 alias ta='tmux attach'
 alias top=btop
+alias gg=geniusctl
 
 #-- Rust
 if [ -f "$HOME/.cargo/env" ];then

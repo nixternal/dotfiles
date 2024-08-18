@@ -1,0 +1,16 @@
+#!/bin/sh
+if [ $# -eq 0 ]; then
+    printf "You need the URL of the YouTube Playlist\n"
+    printf "\t$ yt2flac [YouTube Playlist URL]\n"
+    exit 1
+fi
+"$HOME"/.local/bin/yt-dlp --flat-playlist \
+    "$1" -j | jq -r '.id' \
+    | sed 's_^_https://youtu.be/_' > downloads.txt
+i=1
+while read -r line; do
+    yt-dlp -x --audio-format flac --audio-quality 0 "$line" -o "$i-%(title)s.%(ext)s"
+    i=$((i+1))
+done < downloads.txt
+rm downloads.txt
+rename 's/(?<!\d)(\d)\b/0$1/' *

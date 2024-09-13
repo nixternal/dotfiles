@@ -53,5 +53,7 @@ unsetopt hist_verify
 setopt globdots
 
 #-- ZSH Tweaks
+unsetopt hist_expire_dups_first
+setopt hist_ignore_all_dups
 #autoload -U compinit
 #compinit

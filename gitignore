@@ -10,3 +10,4 @@
 *.netrwhist
 *.swp
 .ropeproject/
+.flake8

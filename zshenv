@@ -21,7 +21,7 @@ bindkey "^[[5~" next
 bindkey "^[[4~" end-of-line
 
 #-- General Exports
-export TERM=xterm-256color
+#export TERM=xterm-256color
 export ACK_COLOR_FILENAME="bold white"
 export ACK_COLOR_MATH="bold red"
 export COLORFGBG="default;default"
@@ -35,6 +35,7 @@ export PATH=$PATH:/snap/bin
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:~/go/bin
 export PATH=$PATH:/opt/lilypond-2.24.3/bin
+export PATH=$PATH:/opt/nvim-linux64/bin
 
 #-- Source Highlight manpages
 export LESS_TERMCAP_mb=$'\e[01;31m'

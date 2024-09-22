@@ -46,5 +46,9 @@ keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "[B]uffer [N]ext" })
 keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "[B]uffer [P]revious" })
 keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "[B]uffer [X]close" })
 keymap.set("n", "<leader>br", ":b#<CR>", { desc = "[B]uffer [R]ecent" })
+keymap.set("n", "<leader>xa", ":%bd!<CR>", { desc = "[X]close [A]ll" })
+
+-- Really Quit!
+keymap.set("n", "<leader>qq", ":%bd!<CR>:q!<CR>", { desc = "[Q]uit [Q]uit!" })
 
 -- vim: ts=2 sts=2 sw=2 et

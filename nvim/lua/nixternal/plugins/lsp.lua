@@ -170,7 +170,7 @@ return {
         bashls = {},
         cssls = {},
         emmet_language_server = {},
-        -- clangd = {},
+        clangd = {},
         -- gopls = {},
         html = {},
         jsonls = {},
@@ -230,6 +230,10 @@ return {
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
+        },
+        ensure_installed = {
+          "arduino_language_server",
+          "clangd",
         },
       }
     end,

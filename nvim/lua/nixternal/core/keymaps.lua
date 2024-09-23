@@ -42,8 +42,8 @@ keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "[T]ab [P]revious" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open new [T]ab for current bu[F]fer" })
 
 -- Buffers
-keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "[B]uffer [N]ext" })
-keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "[B]uffer [P]revious" })
+keymap.set("n", "<leader>n", ":bn<CR>", { desc = "Buffer [N]ext" })
+keymap.set("n", "<leader>p", ":bp<CR>", { desc = "Buffer [P]revious" })
 keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "[B]uffer [X]close" })
 keymap.set("n", "<leader>br", ":b#<CR>", { desc = "[B]uffer [R]ecent" })
 keymap.set("n", "<leader>xa", ":%bd!<CR>", { desc = "[X]close [A]ll" })

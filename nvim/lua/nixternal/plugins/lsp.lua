@@ -1,3 +1,4 @@
+local cmp_nvim_lsp = require "cmp_nvim_lsp"
 return {
   {
     -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
@@ -165,19 +166,16 @@ return {
       --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      local fqbn = "arduino:esp32"
       local servers = {
         arduino_language_server = {
           cmd = {
-            "arduino-language-server",
+            "/home/rich/go/bin/arduino-language-server",
             "-clangd",
-            "/home/rich/.local/share/nvim/mason/bin/clangd",
+            "/usr/bin/clangd",
             "-cli",
             "/home/rich/bin/arduino-cli",
             "-cli-config",
             "/home/rich/.arduino15/arduino-cli.yaml",
-            "-fqbn",
-            fqbn
           },
         },
         bashls = {},

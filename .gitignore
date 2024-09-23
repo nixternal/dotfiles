@@ -2,3 +2,4 @@ vim/bundle
 privdotfiles/
 tmux/plugins
 vim/dict
+nvim/typos.toml

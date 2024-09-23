@@ -1,0 +1,36 @@
+# lilypond.snippets - Snippets for lilypond file types
+
+snippet skel "Add Lilypond Guitar Rhythm Skeleton" b
+  \version "2.24.3"
+  
+  #(set-default-paper-size "letter")
+  
+  \header {
+  	title = "$1"
+  	subtitle = "$2"
+  }
+  
+  \relative {
+      \time 4/4
+      \tempo 4=67
+      \numericTimeSignature
+      \new Voice \with {
+          \consists Pitch_squash_engraver
+      } \relative c'' {
+          \improvisationOn
+          \textMark "First Measure"
+          c8 c16 c
+          c8 c16 c
+          c8 c16 c~ c16 c c c
+          \textMark "All Except Ending"
+          c8 c16 c
+          c8 c16 c
+          c16 c c c~ c16 c~ c c
+          \tempo 4=57
+          \textMark "Ending"
+          \textMark \markup { Swing \rhythm { 8[ 8] } = \rhythm { \tuplet 3/2 { 8( 8) 8 } } }
+          c8 c16 c
+          c8 c16 c
+          c16 c c c~ c16 c~ c c
+      }
+  }

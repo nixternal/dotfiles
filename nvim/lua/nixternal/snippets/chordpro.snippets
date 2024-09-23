@@ -1,0 +1,49 @@
+# chordpro.snippets - Snippets for ChordPro file types
+
+snippet skel "Add ChordPro Skeleton" b
+  {author: Rich Johnson}
+  {keywords: $1}
+  {artist: ${TM_FILENAME_BASE/([^--]+)--([^--]+)/$1/}}
+  {title: ${TM_FILENAME_BASE/([^--]+)--([^--]+)/$2/}}
+  {key: $2}
+  {capo: $3}
+  {time: $4}
+  {tempo: $5}
+  {subtitle: ][  Key: %{key}  ][  Capo: %{capo}  ][  Time: %{time}  ][  Tempo: %{tempo}  ][}
+  $6
+snippet verse "Add ChordPro Verse" b
+  {sov: $1}
+  $2
+  {eov}
+snippet chorus "Add ChordPro Chorus" b
+  {soc: Chorus}
+  $1
+  {eoc}
+snippet grid "Add ChordPro Grid" b
+  {start_of_grid: $1}
+  $2
+  {end_of_grid}
+snippet bridge "Add ChordPro Bridge" b
+  {sob: $1}
+  $2
+  {eob}
+snippet lily "Add Lilypond Rhythm Section" b
+  {start_of_ly: $1}
+  scale=0.7
+  \relative {
+  	\time 4/4
+  	\tempo 4=120
+  	\numericTimeSignature
+  	\new Voice \with {
+  		\consists Pitch_squash_engraver
+  	} \relative c'' {
+  		\improvisationOn
+  		%example: c4 c8 c~ c8 c c8 c
+  		$2
+  	}
+  }
+  {end_of_ly}
+snippet image "Add ChordPro Image" b
+  {image: src="../.build/${TM_FILENAME_BASE}.png" scale="0.7" title="Rhythm"}
+snippet define "Add chord and fingering" b
+  {define: A/C# base-fret 1 frets x 4 2 2 2 x fingers 2 3 1 1 1 x}

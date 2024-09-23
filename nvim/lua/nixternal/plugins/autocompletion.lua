@@ -21,9 +21,9 @@ return { -- Autocompletion
         {
           'rafamadriz/friendly-snippets',
           config = function()
-            require('luasnip.loaders.from_vscode').lazy_load({ paths = { "~/.config/nvim/lua/nixternal/snippets" } })
-            require('luasnip.loaders.from_snipmate').lazy_load({ paths = { "~/.config/nvim/lua/nixternal/snippets" } })
-            require('luasnip.loaders.from_lua').lazy_load({ paths = { "~/.config/nvim/lua/nixternal/snippets" } })
+            require('luasnip.loaders.from_vscode').lazy_load()
+            require('luasnip.loaders.from_snipmate').lazy_load({ paths = { "./lua/nixternal/snippets" } })
+            require('luasnip.loaders.from_lua').lazy_load({ paths = { "./lua/nixternal/snippets" } })
           end,
         },
       },
@@ -74,10 +74,7 @@ return { -- Autocompletion
         --['<CR>'] = cmp.mapping.confirm { select = true },
         --['<Tab>'] = cmp.mapping.select_next_item(),
         --['<S-Tab>'] = cmp.mapping.select_prev_item(),
-
-        -- Manually trigger a completion from nvim-cmp.
-        --  Generally you don't need this, because nvim-cmp will display
-        --  completions whenever it has completion options available.
+-- Manually trigger a completion from nvim-cmp. Generally you don't need this, because nvim-cmp will display completions whenever it has completion options available.
         ['<C-Space>'] = cmp.mapping.complete {},
 
         -- Think of <c-l> as moving to the right of your snippet expansion.

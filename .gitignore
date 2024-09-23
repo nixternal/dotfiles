@@ -2,4 +2,5 @@ vim/bundle
 privdotfiles/
 tmux/plugins
 vim/dict
+nvim/lazy-lock.json
 nvim/typos.toml

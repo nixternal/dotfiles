@@ -14,6 +14,9 @@ return {
       hl.LineNrBelow = {
         fg = "#777777",
       }
+      hl.LineNr = {
+        fg = "#777777",
+      }
     end,
   },
   init = function()

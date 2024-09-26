@@ -1,5 +1,5 @@
 return {
-	"nvim-lua/plenary.nvim", -- lua functions that many plugins use
+  "nvim-lua/plenary.nvim", -- lua functions that many plugins use
   { "nvim-tree/nvim-web-devicons", enabled = vim.g.have_nerd_font },
   "echasnovski/mini.icons",
 }

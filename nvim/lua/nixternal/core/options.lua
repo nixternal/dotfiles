@@ -22,7 +22,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 
 -- Enable mouse mode
-opt.mouse = 'a'
+opt.mouse = 'c'
 
 -- Don't show the mode, since it's already in the status line
 opt.showmode = false

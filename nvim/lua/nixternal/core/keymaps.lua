@@ -22,8 +22,8 @@ keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 -- See ':help wincmd' for a list of all window commands
 
 -- Window Splits
-keymap.set("n", "<leader>wv", "<C-w>v", { desc = "Split [W]indow [V]ertically" })
-keymap.set("n", "<leader>ws", "<C-w>s", { desc = "Split [W]indow [H]orizontally" })
+keymap.set("n", "<leader>w|", "<C-w>v", { desc = "Split [W]indow [V]ertically" })
+keymap.set("n", "<leader>w-", "<C-w>s", { desc = "Split [W]indow [H]orizontally" })
 keymap.set("n", "<leader>w=", "<C-w>=", { desc = "Make [W]indow splits [=]equal width" })
 keymap.set("n", "<leader>wx", "<cmd>close<CR>", { desc = "[W]indow [X]close current split" })
 

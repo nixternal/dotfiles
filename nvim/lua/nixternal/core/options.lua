@@ -21,6 +21,10 @@ opt.spell = true
 -- Encoding
 opt.encoding = "utf-8"
 
+-- Word wrap - Default width 79
+opt.wrap = true
+opt.textwidth = 79
+
 -- Make line numbers default
 opt.number = true
 opt.relativenumber = true

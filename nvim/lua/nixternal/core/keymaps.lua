@@ -35,17 +35,17 @@ keymap.set("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to the lower window"
 keymap.set("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to the upper window" })
 
 -- Tabs
-keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "[T]ab [O]pen" })
-keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "[T]ab [X]close" })
-keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "[T]ab [N]ext" })
-keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "[T]ab [P]revious" })
 keymap.set("n", "<leader>tf", "<cmd>tabnew %<CR>", { desc = "Open new [T]ab for current bu[F]fer" })
+keymap.set("n", "<leader>tn", "<cmd>tabn<CR>", { desc = "[T]ab [N]ext" })
+keymap.set("n", "<leader>to", "<cmd>tabnew<CR>", { desc = "[T]ab [O]pen" })
+keymap.set("n", "<leader>tp", "<cmd>tabp<CR>", { desc = "[T]ab [P]revious" })
+keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "[T]ab [X]close" })
 
 -- Buffers
 keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "[B]uffer [N]ext" })
 keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "[B]uffer [P]revious" })
-keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "[B]uffer [X]close" })
 keymap.set("n", "<leader>br", ":b#<CR>", { desc = "[B]uffer [R]ecent" })
+keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "[B]uffer [X]close" })
 keymap.set("n", "<leader>xa", ":%bd!<CR>", { desc = "[X]close [A]ll" })
 
 -- Really Quit!

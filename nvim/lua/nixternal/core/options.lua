@@ -11,6 +11,16 @@ g.maplocalleader = " "
 -- Nerd Font
 g.have_nerd_font = true
 
+-- Enable 24-bit RGB color in the terminal
+opt.termguicolors = true
+
+-- Spelling
+opt.spelllang = "en_us"
+opt.spell = true
+
+-- Encoding
+opt.encoding = "utf-8"
+
 -- Make line numbers default
 opt.number = true
 opt.relativenumber = true

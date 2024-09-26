@@ -3,4 +3,5 @@ privdotfiles/
 tmux/plugins
 vim/dict
 nvim/lazy-lock.json
+nvim/spell/*
 nvim/typos.toml

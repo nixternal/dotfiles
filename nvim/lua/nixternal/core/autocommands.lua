@@ -51,4 +51,12 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
   command = [[%s/\s\+$//e]]
 })
 
+-- Custom commentstrings for filetypes not covered by default neovim
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = 'arduino',
+  callback = function()
+    vim.bo.commentstring = '/*%s*/'
+  end
+})
+
 -- vim: ts=2 sts=2 sw=2 et

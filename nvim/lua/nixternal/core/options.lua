@@ -64,7 +64,7 @@ opt.signcolumn = "yes"
 opt.updatetime = 250
 
 -- Decrease mapped sequence wait time. Displays which-key popup sooner
-opt.timeoutlen = 300
+opt.timeoutlen = 1000
 
 -- Configure how new splits should be opened
 opt.splitright = true
@@ -74,7 +74,7 @@ opt.splitbelow = true
 --   See ':help list'
 --   and ':help listchars'
 opt.list = true
-opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
 -- Preview substitutions live as you type
 opt.inccommand = "split"

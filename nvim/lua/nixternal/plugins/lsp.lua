@@ -167,29 +167,29 @@ return {
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        arduino_language_server = {
-          cmd = {
-            "/home/rich/go/bin/arduino-language-server",
-            "-clangd",
-            "/usr/bin/clangd",
-            "-cli",
-            "/home/rich/bin/arduino-cli",
-            "-cli-config",
-            "/home/rich/.arduino15/arduino-cli.yaml",
-          },
-        },
+        -- arduino_language_server = {
+        --   cmd = {
+        --     "/home/rich/go/bin/arduino-language-server",
+        --     "-clangd",
+        --     "/usr/bin/clangd",
+        --     "-cli",
+        --     "/home/rich/bin/arduino-cli",
+        --     "-cli-config",
+        --     "/home/rich/.arduino15/arduino-cli.yaml",
+        --   },
+        -- },
         bashls = {},
         cssls = {},
         emmet_language_server = {},
         clangd = {},
-        -- gopls = {},
+        gopls = {},
         html = {},
         jsonls = {},
         --ltex = {},
         pyright = {},
         ts_ls = {},
         --typos_lsp = {},
-        -- rust_analyzer = {},
+        rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:

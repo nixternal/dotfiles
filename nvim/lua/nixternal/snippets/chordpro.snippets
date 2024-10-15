@@ -10,6 +10,7 @@ snippet skel "Add ChordPro Skeleton" b
   {time: $4}
   {tempo: $5}
   {subtitle: ][  Key: %{key}  ][  Capo: %{capo}  ][  Time: %{time}  ][  Tempo: %{tempo}  ][}
+  `!var filename = t[0].match("^(.*)--(.*)$"); artist = substitute(filename[1], '_', ' ', 'g'); song = substitute(filename[2], '_', ' ', 'g'); artist . " - " . song`
   $6
 snippet verse "Add ChordPro Verse" b
   {sov: $1}

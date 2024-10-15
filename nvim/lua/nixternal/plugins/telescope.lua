@@ -50,6 +50,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
       --   },
       -- },
       -- pickers = {}
+      pickers = {
+        find_files = {
+          hidden = true
+        }
+      },
       defaults = {
         layout_strategy = 'vertical',
         layout_config = {

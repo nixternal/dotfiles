@@ -6,3 +6,4 @@ nvim/lazy-lock.json
 nvim/spell/*
 nvim/typos.toml
 zsh/.zprofile
+zsh/.zcompdump

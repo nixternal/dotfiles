@@ -40,6 +40,7 @@ zinit snippet OMZP::command-not-found
 #-- Set completions directory fpath
 fpath=($ZDOTDIR/completions $fpath)
 
+
 autoload -Uz compinit && compinit
 
 zinit cdreplay -q

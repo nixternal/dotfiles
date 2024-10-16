@@ -144,7 +144,7 @@ lazyload cargo rustc rustup -- "source ~/.cargo/env"
 
 #-- VirtualEnv, VirtualEnvWrapper
 [ -s ~/.local/bin/virtualenvwrapper.sh ] && \
-  export WORKON_HOME=~/.virtualenvs && \
-  export PROJECT_HOME=~/mystuff/dev/virtualenvs && \
+  export WORKON_HOME=~/mystuff/dev/virtualenvs/environments && \
+  export PROJECT_HOME=~/mystuff/dev/virtualenvs/projects && \
   export VIRTUALENVWRAPPER_SCRIPT=~/.local/bin/virtualenvwrapper.sh && \
-  . ~/.local/bin/virtualenvwrapper_lazy.sh
+  source ~/.local/bin/virtualenvwrapper_lazy.sh

@@ -138,7 +138,7 @@ lazyload nvm npm node vi nvim vim editor -- 'source ~/.nvm/nvm.sh'
 [ -d /usr/local/go/bin ] && export PATH=$PATH:/usr/local/go/bin:~/go/bin
 
 #-- Rust/Cargo
-lazyload cargo rustc rustup -- "source ~/.cargo/env"
+[ -s ~/.cargo/env ] && . ~/.cargo/env
 
 #-- Julia
 [ -d ~/.juliaup/bin ] && export PATH=$PATH:~/.juliaup/bin

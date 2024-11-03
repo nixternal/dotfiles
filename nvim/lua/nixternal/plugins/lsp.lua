@@ -176,6 +176,8 @@ return {
         --     "/home/rich/bin/arduino-cli",
         --     "-cli-config",
         --     "/home/rich/.arduino15/arduino-cli.yaml",
+        --     "-fqbn",
+        --     "esp32:esp32:esp32"
         --   },
         -- },
         bashls = {},

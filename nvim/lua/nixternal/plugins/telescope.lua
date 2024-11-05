@@ -66,11 +66,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
             },
           },
         },
-        mappings = {
-          i = {
-            ["x"] = require("telescope.actions").delete_buffer,
-          },
-        },
+        -- mappings = {
+        --   i = {
+        --     ["x"] = require("telescope.actions").delete_buffer,
+        --   },
+        -- },
       },
       extensions = {
         ['ui-select'] = {

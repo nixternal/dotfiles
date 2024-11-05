@@ -30,7 +30,8 @@ return { -- Highlight, edit, and navigate code
       enable = true,
       disable = {
         'ruby',
-        'yaml'
+        'yaml',
+        'python'
       }
     },
   },

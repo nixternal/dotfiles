@@ -36,6 +36,7 @@ zinit snippet OMZP::sudo
 zinit snippet OMZP::ubuntu
 zinit snippet OMZP::colorize
 zinit snippet OMZP::command-not-found
+zinit snippet OMZP::colored-man-pages
 
 #-- Set completions directory fpath
 fpath=($ZDOTDIR/completions $fpath)
@@ -95,15 +96,6 @@ export PATH=$PATH:$dotfiles/bin
 export PATH=$PATH:~/bin
 export PATH=$PATH:~/.local/bin
 export PATH=$PATH:/opt/nvim/bin
-
-#-- Source Highlight Messages
-export LESS_TERMCAP_mb=$'\e[01;31m'
-export LESS_TERMCAP_md=$'\e[01;38;5;74m'
-export LESS_TERMCAP_me=$'\e[0m'
-export LESS_TERMCAP_se=$'\e[0m'
-export LESS_TERMCAP_so=$'\E[37;44m'
-export LESS_TERMCAP_ue=$'\e[0m'
-export LESS_TERMCAP_us=$'\e[04;38;5;146m'
 
 #-- Debian/Ubuntu Packaging Exports
 export DEBEMAIL=nixternal@ubuntu.com

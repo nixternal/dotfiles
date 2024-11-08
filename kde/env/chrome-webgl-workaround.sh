@@ -1,1 +1,0 @@
-export LIBGL_DRI3_DISABLE=1

@@ -1,6 +1,7 @@
 --[[ Main Options ]]
 local g = vim.g
 local opt = vim.opt
+local ft = vim.filetype
 
 -- Set <space> as the leader key
 --   See ':help mapleader'
@@ -88,5 +89,12 @@ opt.scrolloff = 10
 -- Ignore Providers
 g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
+
+-- FileType Extensions
+ft.add {
+  extension = {
+    njk = 'html',
+  }
+}
 
 --  ts=2 sts=2 sw=2 et

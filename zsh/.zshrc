@@ -41,7 +41,6 @@ zinit snippet OMZP::colored-man-pages
 #-- Set completions directory fpath
 fpath=($ZDOTDIR/completions $fpath)
 
-
 autoload -Uz compinit && compinit
 
 zinit cdreplay -q
@@ -60,7 +59,7 @@ setopt hist_find_no_dups
 
 #-- Completion Styling
 zstyle ':completion:*' special-dirs false
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' rehash true

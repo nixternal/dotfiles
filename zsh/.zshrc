@@ -125,7 +125,7 @@ alias top=btop
 alias gg=geniusctl
 
 #-- NVM
-lazyload nvm npm node vi nvim vim editor -- 'source ~/.nvm/nvm.sh'
+lazyload nvm npm node vi nvim vim editor npx -- 'source ~/.nvm/nvm.sh'
 [ -s ~/.nvm/bash_completion ] && . ~/.nvm/bash_completion
 
 #-- Go

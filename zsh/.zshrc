@@ -14,6 +14,9 @@ source "${ZINIT_HOME}/zinit.zsh"
 #-- Powerlevel10k
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
+#-- Catppuccin Mocha Theme for zsh-syntax-highlighting
+source "${ZDOTDIR}/catppuccin_mocha-zsh-syntax-highlighting.zsh"
+
 #-- PLUGINS
 #   -- Fish shell like syntax highlighting for Zsh
 zinit light zsh-users/zsh-syntax-highlighting

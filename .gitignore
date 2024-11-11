@@ -1,9 +1,9 @@
-vim/bundle
+config/tmux/plugins
+config/nvim/lazy-lock.json
+config/nvim/spell/*
+config/nvim/typos.toml
+config/zsh/.zprofile
+config/zsh/.zcompdump
 privdotfiles/
-tmux/plugins
+vim/bundle
 vim/dict
-nvim/lazy-lock.json
-nvim/spell/*
-nvim/typos.toml
-zsh/.zprofile
-zsh/.zcompdump

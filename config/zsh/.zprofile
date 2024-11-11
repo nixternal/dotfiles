@@ -1,0 +1,1 @@
+/home/rich/mystuff/dev/github/dotfiles/privdotfiles/zprofile

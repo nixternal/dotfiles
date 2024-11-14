@@ -9,6 +9,7 @@ keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+keymap.set("n", "<leader>e", vim.diagnostic.open_float, { noremap=true, silent=true })
 
 -- Incremental LSP Renaming
 keymap.set("n", "<leader>cr", ":IncRename ")

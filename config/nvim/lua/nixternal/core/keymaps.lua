@@ -14,6 +14,9 @@ keymap.set("n", "<leader>e", vim.diagnostic.open_float, { noremap=true, silent=t
 -- Incremental LSP Renaming
 keymap.set("n", "<leader>cr", ":IncRename ")
 
+-- Open a terminal split
+keymap.set("n", "<leader>term", ":sp<bar>term<cr><c-w>J:resize20<cr>", { desc = "Open terminal window split @ 20 height"})
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

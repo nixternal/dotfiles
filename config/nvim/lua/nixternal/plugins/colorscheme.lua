@@ -33,6 +33,10 @@ return {
 --  },
   init = function()
     vim.cmd.colorscheme("catppuccin-mocha")
+    local hl_groups = {"DiagnosticUnderlineError"}
+    for _, hl in ipairs(hl_groups) do
+      vim.cmd.highlight(hl .. " gui=undercurl")
+    end
   end,
 }
 

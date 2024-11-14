@@ -27,7 +27,12 @@ ls.add_snippets(
           "{title: " .. title .. "}",
         }
       end, {}),
-      t({"", "{subtitle: ][  Key: "}), i(2), t({"  ][  Capo: "}), i(3), t({"  ][  Time: "}), i(4), t({"  ][  Tempo: "}), i(0), t({"}"})
+      t({"", "{key: "}), i(2), t({"}", ""}),
+      t({"{capo: "}), i(3), t({"}", ""}),
+      t({"{time: "}), i(4), t({"}", ""}),
+      t({"{tempo: "}), i(5), t({"}", ""}),
+      t({"{subtitle: ][  Key: %{key}  ][  Capo: %{capo}  ][  Time: %{time}  ][  Tempo: %{tempo}  ][}", ""}),
+      i(0)
     })
   }
 )

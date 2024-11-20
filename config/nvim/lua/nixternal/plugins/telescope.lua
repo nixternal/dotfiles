@@ -66,6 +66,11 @@ return { -- Fuzzy Finder (files, lsp, etc)
             },
           },
         },
+        file_ignore_patterns = {
+          "^node_modules/", "__pycache__",
+          "%.o", "%.a", "%.out", "%.class", "%.pyc",
+          "%.png", "%.jpg", "%.pdf", "%.mp4", "%.webp", "%.ico", "%.zip",
+        },
         -- mappings = {
         --   i = {
         --     ["x"] = require("telescope.actions").delete_buffer,

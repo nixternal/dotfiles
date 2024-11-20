@@ -68,6 +68,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
         },
         file_ignore_patterns = {
           "^node_modules/", "__pycache__",
+          "package%-lock.json",
           "%.o", "%.a", "%.out", "%.class", "%.pyc",
           "%.png", "%.jpg", "%.pdf", "%.mp4", "%.webp", "%.ico", "%.zip",
         },

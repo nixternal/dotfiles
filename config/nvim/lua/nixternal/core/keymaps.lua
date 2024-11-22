@@ -52,7 +52,7 @@ keymap.set("n", "<leader>tx", "<cmd>tabclose<CR>", { desc = "[T]ab [X]close" })
 keymap.set("n", "<leader>bn", ":bn<CR>", { desc = "[B]uffer [N]ext" })
 keymap.set("n", "<leader>bp", ":bp<CR>", { desc = "[B]uffer [P]revious" })
 keymap.set("n", "<leader>br", ":b#<CR>", { desc = "[B]uffer [R]ecent" })
-keymap.set("n", "<leader>bx", ":bd<CR>", { desc = "[B]uffer [X]close" })
+keymap.set("n", "<leader>bd", ":bd<CR>", { desc = "[B]uffer [D]elete" })
 keymap.set("n", "<leader>xa", ":%bd!<CR>", { desc = "[X]close [A]ll" })
 
 -- Really Quit!

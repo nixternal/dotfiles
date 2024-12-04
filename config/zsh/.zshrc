@@ -34,6 +34,7 @@ zinit light qoomon/zsh-lazyload
 HIST_STAMPS="%m/%d/%y %T"
 zinit snippet OMZL::history.zsh
 zinit snippet OMZL::git.zsh
+zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::sudo
 zinit snippet OMZP::ubuntu
@@ -72,6 +73,8 @@ setopt autocd
 #-- ZSH History Substring Search
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "^P" up-line-or-beginning-search
+bindkey "^N" down-line-or-beginning-search
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
 #-----------------------------------------------------------------------------

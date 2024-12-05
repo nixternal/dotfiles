@@ -44,3 +44,50 @@ snippet ppp "Create PPP shell" b
       c = ${TM_FILENAME_BASE}('${TM_FILENAME_BASE}')
       c.run()
       c.irc.stop()
+snippet aoc "Create Advent of Code skeleton" b
+#!/usr/bin/env python
+
+import os
+
+
+def read_puzzle_input() -> list:
+    """
+    Read the file and create a list.
+
+    :return: A list that contains stuff
+    :rtype: list
+    """
+    data = []
+    with open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "../input.txt"), "r") as file:
+        for line in file:
+            data.append(line)
+    return data
+
+
+def part_one(data: list) -> int:
+    """
+    Do Part 1.
+
+    :param list data: Data to be used
+    :return: Number of what was computed
+    :rtype: int
+    """
+    return 1
+
+
+def part_two(data: list) -> int:
+    """
+    Do Part 2.
+
+    :param list data: Data to be used
+    :return: Number of what was computed
+    :rtype: int
+    """
+    return 2
+
+
+if __name__ == "__main__":
+    data = read_puzzle_input()
+    print("Part 1:", part_one(data))  # answer
+    print("Part 2:", part_two(data))  # answer

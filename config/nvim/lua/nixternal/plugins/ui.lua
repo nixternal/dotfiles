@@ -33,6 +33,12 @@ return {
         lsp_doc_border = true,
         inc_rename = true,
       },
+      routes = {
+        {
+          view = "notify",
+          filter = { event = "msg_showmode" }
+        }
+      },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",

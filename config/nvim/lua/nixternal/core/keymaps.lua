@@ -17,6 +17,11 @@ keymap.set("n", "<leader>cr", ":IncRename ")
 -- Open a terminal split
 keymap.set("n", "<leader>term", ":sp<bar>term<cr><c-w>J:resize20<cr>", { desc = "Open terminal window split @ 20 height"})
 
+-- Markdown Preview
+keymap.set("n", "<leader>mp", "<cmd>MarkdownPreview<CR>", { desc = "[M]arkdown [P]review"})
+keymap.set("n", "<leader>ms", "<cmd>MarkdownPreviewStop<CR>", { desc = "[M]arkdown Preview [S]top"})
+keymap.set("n", "<leader>mt", "<cmd>MarkdownPreviewToggle<CR>", { desc = "[M]arkdown Preview [T]oggle"})
+
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
 -- is not what someone will guess without a bit more experience.

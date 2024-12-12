@@ -80,7 +80,8 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 #-----------------------------------------------------------------------------
 # MY TWEAKS
 #-----------------------------------------------------------------------------
-export dotfiles=~/mystuff/dev/github/dotfiles
+export github=~/mystuff/dev/github
+export dotfiles=$github/dotfiles
 
 unset SSH_AUTH_SOCK
 unset GPG_AGENT_INFO

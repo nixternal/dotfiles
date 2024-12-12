@@ -148,6 +148,8 @@ return {
         cssls = {},
         clangd = {},
         emmet_language_server = {},
+        eslint = {},
+        eslint_d = {},
         gopls = {},
         html = {},
         jsonls = {},
@@ -162,6 +164,7 @@ return {
         },
         pyright = {},
         rust_analyzer = {},
+        tailwindcss = {},
         ts_ls = {},
       }
 
@@ -174,8 +177,15 @@ return {
       -- so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        "flake8", -- Python
-        "stylua", -- Lua
+        "clang-format", -- C/C++/Java/JS/JSON/Obj-C/Protobuf/C# formatter
+        "flake8",       -- Python
+        "luacheck",     -- Lua linting & static analysis
+        "prettier",     -- Opinionated code formatter (Web stuff)
+        "pyflakes",     -- Python
+        "selene",       -- Lua Linter
+        "shellcheck",   -- Shell script static analysis
+        "shfmt",        -- Shell formatter
+        "stylua",       -- Lua
       })
       require("mason-tool-installer").setup { ensure_installed = ensure_installed }
 

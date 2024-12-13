@@ -22,6 +22,9 @@ keymap.set("n", "<leader>term", ":sp<bar>term<cr><c-w>J:resize20<cr>", {desc="Op
 -- mapping or just use <C-\><C-n> to exit terminal mode
 keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", {desc="Exit terminal mode"})
 
+-- nvim-tree
+keymap.set("n", "<leader>e", ":NvimTreeFindFileToggle<cr>", {desc="Nvim Tree Toggle"})
+
 --[[ Windows, Tabs, and Buffers ]]--
 
 -- Window Splits

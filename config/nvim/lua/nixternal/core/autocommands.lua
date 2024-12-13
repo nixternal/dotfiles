@@ -15,16 +15,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   end
 })
 
--- Return to the last edit position when opening files
-vim.api.nvim_create_autocmd("BufReadPost", {
-  pattern = "*",
-  callback = function()
-    if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
-      vim.cmd("normal! g`\"")
-    end
-  end
-})
-
 -- Highlight yanked text using the "IncSearch" highlight group for 250ms
 local HighlightYank = vim.api.nvim_create_augroup("HighlightYank", {})
 vim.api.nvim_create_autocmd("TextYankPost", {
@@ -35,6 +25,16 @@ vim.api.nvim_create_autocmd("TextYankPost", {
       higroup = "IncSearch",
       timeout = 250
     })
+  end
+})
+
+-- Return to the last edit position when opening files
+vim.api.nvim_create_autocmd("BufReadPost", {
+  pattern = "*",
+  callback = function()
+    if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+      vim.cmd("normal! g`\"")
+    end
   end
 })
 

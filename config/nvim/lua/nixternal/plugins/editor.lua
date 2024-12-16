@@ -147,4 +147,16 @@ return {
       })
     end
   },
+
+  -- Illuminate: Automatically highlight other uses of the word under the
+  -- cursor using either LSP, Tree-sitter, or regex matching
+  {
+    "RRethy/vim-illuminate",
+    config = function(_, opts)
+      require("illuminate").configure(opts)
+      vim.keymap.set("n", "<C-n>", require("illuminate").goto_next_reference)
+      vim.keymap.set("n", "<C-p>", require("illuminate").goto_prev_reference)
+      vim.keymap.set("n", "<C-i>", require("illuminate").textobj_select)
+    end,
+  },
 }

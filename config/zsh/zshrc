@@ -73,6 +73,8 @@ setopt autocd
 #-- ZSH History Substring Search
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey "^K" history-substring-search-up
+bindkey "^J" history-substring-search-down
 bindkey "^P" up-line-or-beginning-search
 bindkey "^N" down-line-or-beginning-search
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1

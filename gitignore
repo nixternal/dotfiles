@@ -11,3 +11,4 @@
 *.swp
 .ropeproject/
 .flake8
+pyrightconfig.json

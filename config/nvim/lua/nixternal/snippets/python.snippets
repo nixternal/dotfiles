@@ -4,9 +4,11 @@ snippet multicomment "Create a multiline comment" b
   """
   $1
   """
+
 snippet name "Create if name == main" b
   if __name__ == '__main__':
       $1
+
 snippet ppp "Create PPP shell" b
   #!/usr/bin/env python
   # cython: language_level=2
@@ -44,6 +46,7 @@ snippet ppp "Create PPP shell" b
       c = ${TM_FILENAME_BASE}('${TM_FILENAME_BASE}')
       c.run()
       c.irc.stop()
+
 snippet aoc "Create Advent of Code skeleton" b
   #!/usr/bin/env python
 
@@ -54,11 +57,11 @@ snippet aoc "Create Advent of Code skeleton" b
 
 
   def part_one(data: list) -> int:
-      return 1
+      return -1
 
 
   def part_two(data: list) -> int:
-      return 2
+      return -2
 
 
   if __name__ == "__main__":

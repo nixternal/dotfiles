@@ -56,6 +56,9 @@ return {
   -- noice: Replace the UI for messages, cmdline and the popupmenu.
   {
     "folke/noice.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim"
+    },
     opts = {
       lsp = {
         override = {
@@ -67,9 +70,12 @@ return {
         lsp_doc_border = true,
         inc_rename = true,
       },
-    },
-    dependencies = {
-      "MunifTanjim/nui.nvim"
+      -- routes = {
+      --   {
+      --     filter = { event = "msg_show" },
+      --     view = "messages",
+      --   },
+      -- },
     },
   },
 

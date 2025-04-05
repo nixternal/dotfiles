@@ -144,6 +144,13 @@ return {
       -- [[  LANGUAGE SERVERS ]] --
       -- Enable the following language servers
       local servers = {
+        arduino_language_server = {
+          vim.fn.expand("~/.local/share/nvim/mason/bin/arduino-language-server"),
+          "-clangd",      "/usr/bin/clangd",
+          "-cli",         vim.fn.expand("~/bin/arduino-cli"),
+          "-cli-config",  vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
+          "-fqbn",        "esp8266:esp8266:nodemcu"
+        },
         bashls = {},
         cssls = {},
         clangd = {},

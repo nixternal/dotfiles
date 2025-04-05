@@ -118,7 +118,7 @@ export COMPONENTS="main restricted universe multiverse"
 #-- Aliases
 alias bp='$HOME/mystuff/dev/bp/BloodPressure.py'
 alias clear=' /usr/bin/clear'
-alias df=dfc
+alias df=duf
 alias dget='dget --insecure'
 alias diff=colordiff
 alias dmesg='dmesg -T'

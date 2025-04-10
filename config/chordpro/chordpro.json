@@ -385,7 +385,7 @@
       ""
     ],
     "fontdir": [
-      "/home/rich/.perl5/lib/perl5/ChordPro/res/fonts",
+      "/usr/local/share/perl/5.38.2/ChordPro/res/fonts"
       "/usr/share/fonts/truetype/liberation"
     ],
     "fontconfig": {

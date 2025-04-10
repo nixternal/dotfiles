@@ -115,7 +115,6 @@ export MIRRORSITE="http://us-east-1.ec2.archive.ubuntu.com/ubuntu/"
 export COMPONENTS="main restricted universe multiverse"
 
 #-- Aliases
-alias bp='$HOME/mystuff/dev/bp/BloodPressure.py'
 alias clear=' /usr/bin/clear'
 alias df=duf
 alias dget='dget --insecure'

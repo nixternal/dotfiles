@@ -122,7 +122,7 @@ alias df=duf
 alias dget='dget --insecure'
 alias diff=colordiff
 alias dmesg='dmesg -T'
-alias dynamicrange='/home/rich/mystuff/dev/SRC/dr14_t.meter/dr14_tmeter'
+alias dynamicrange='/home/rich/mystuff/dev/github/SOURCES/dr14_t.meter/dr14_tmeter'
 alias exit=' exit'
 alias grep='/bin/grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
 alias ip='ip -c'

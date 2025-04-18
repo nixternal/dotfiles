@@ -159,4 +159,9 @@ return {
       vim.keymap.set("n", "<C-i>", require("illuminate").textobj_select)
     end,
   },
+
+  -- Vim-Fugitive
+  {
+    "tpope/vim-fugitive"
+  },
 }

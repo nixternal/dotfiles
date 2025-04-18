@@ -136,11 +136,11 @@ return {
         { '<leader>b', group = '[B]uffer' },
         { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
         { '<leader>d', group = '[D]ocument' },
+        { '<leader>g', group = '[G]it Hunk', mode = { 'n', 'v' } },
         { '<leader>r', group = '[R]ename' },
         { '<leader>s', group = '[S]earch' },
-        { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle/[T]ab/[T]rouble' },
-        { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
+        { '<leader>w', group = '[W]orkspace' },
       },
     },
   },
@@ -192,6 +192,52 @@ return {
     },
     config = function()
       require("nvim-tree").setup {}
+    end,
+  },
+
+  -- Gitsigns
+  {
+    "lewis6991/gitsigns.nvim",
+    config = function()
+      require("gitsigns").setup{
+        numhl = true,
+        linehl = true,
+        current_line_blame = false,  -- Toggle w/ :Gitsigns toggle_current_line_blame
+        current_line_blame_opts = {
+          virt_text = true,
+        },
+        on_attach = function(bufnr)
+          local gitsigns = require("gitsigns")
+
+          local function map(mode, l, r, opts)
+            opts = opts or {}
+            opts.buffer = bufnr
+            vim.keymap.set(mode, l, r, opts)
+          end
+
+          -- Navigation
+          map("n", "]c", function()
+            if vim.wo.diff then
+              vim.cmd.normal({"]c", bang = true})
+            else
+              gitsigns.nav_hunk("next")
+            end
+          end)
+
+          map("n", "[c", function()
+            if vim.wo.diff then
+              vim.cmd.normal({"[c", bang = true})
+            else
+              gitsigns.nav_hunk("prev")
+            end
+          end)
+
+          -- Actions
+          vim.keymap.set("n", "<leader>gb", gitsigns.toggle_current_line_blame, {desc="[B]lame Toggle"})
+          vim.keymap.set("n", "<leader>gd", gitsigns.diffthis, {desc="[D]iff View"})
+          vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk, {desc="[P]review Hunk"})
+        end
+      }
     end,
   },
 }

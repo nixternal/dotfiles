@@ -47,7 +47,7 @@
     t = tag -n                      # show tags with <n> lines of each tag msg
 
 [format]
-    pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
+    # pretty = format:%C(blue)%ad%Creset %C(yellow)%h%C(green)%d%Creset %C(blue)%s %C(magenta) [%an]%Creset
 
 [mergetool]
     prompt = false
@@ -82,8 +82,8 @@
 	required = true
 	clean = git-lfs clean %f
 [credential "https://github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential
 [credential "https://gist.github.com"]
-	helper = 
+	helper =
 	helper = !/usr/bin/gh auth git-credential

@@ -45,3 +45,12 @@ vim.api.nvim_create_autocmd({"BufWritePre"}, {
   pattern = "*",
   command = [[%s/\s\+$//e]]
 })
+
+-- LspRestart: Restart LSP on Save. Definitely fixes import foobar working
+-- after pip installing foobar.
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.py",
+  callback = function()
+    vim.cmd("LspRestart")
+  end,
+})

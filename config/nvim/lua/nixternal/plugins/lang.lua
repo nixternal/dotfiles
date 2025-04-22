@@ -158,6 +158,7 @@ return {
         eslint = {},
         eslint_d = {},
         gopls = {},
+        harper_ls = {},
         html = {},
         jsonls = {},
         lua_ls = {

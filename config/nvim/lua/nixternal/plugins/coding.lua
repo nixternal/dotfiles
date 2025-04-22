@@ -179,7 +179,12 @@ return {
 		config = function()
 			local lint = require("lint")
 			lint.linters_by_ft = {
-				python = { "flake8" },
+				javascript = { "eslint_d" },
+				javascriptreact = { "eslint_d" },
+				python = { "flake8", "pylint" },
+				svelte = { "eslint_d" },
+				typescript = { "eslint_d" },
+				typescriptreact = { "eslint_d" },
 			}
 
 			local lint_augroup = vim.api.nvim_create_augroup("lint", { clear = true })
@@ -191,9 +196,9 @@ return {
 				end,
 			})
 
-			vim.keymap.set("n", "<leader>l", function()
+			vim.keymap.set("n", "<leader>cl", function()
 				lint.try_lint()
-			end, { desc = "Trigger linting for current file" })
+			end, { desc = "Trigger [C]ode [L]inting for current file" })
 		end,
 	},
 

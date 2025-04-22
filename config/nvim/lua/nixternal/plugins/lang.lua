@@ -205,11 +205,13 @@ return {
 			vim.list_extend(ensure_installed, {
 				"black", -- Python
 				"clang-format", -- C/C++/Java/JS/JSON/Obj-C/Protobuf/C# formatter
+				"eslint_d", -- Javascript
 				"flake8", -- Python
 				"isort", -- Python
 				"luacheck", -- Lua linting & static analysis
 				"prettier", -- Opinionated code formatter (Web stuff)
 				"pyflakes", -- Python
+				"pylint", -- Python
 				"selene", -- Lua Linter
 				"shellcheck", -- Shell script static analysis
 				"shfmt", -- Shell formatter

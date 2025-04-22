@@ -155,9 +155,9 @@ return {
   },
 
   -- Icon provider that is part of the mini.nvim library.
-  {
-    "echasnovski/mini.icons"
-  },
+  -- {
+  --   "echasnovski/mini.icons"
+  -- },
 
   -- FileType icons for the various plugins that use them
   {
@@ -189,6 +189,7 @@ return {
     lazy = false,
     requires = {
       "nvim-tree/nvim-web-devicons"
+      -- "echasnovski/mini.icons"
     },
     config = function()
       require("nvim-tree").setup {}
@@ -202,7 +203,7 @@ return {
       require("gitsigns").setup{
         numhl = true,
         linehl = true,
-        current_line_blame = false,  -- Toggle w/ :Gitsigns toggle_current_line_blame
+        current_line_blame = false,  -- Toggle :Gitsigns toggle_current_line_blame
         current_line_blame_opts = {
           virt_text = true,
         },

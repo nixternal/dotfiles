@@ -12,10 +12,10 @@ keymap.set("n", "<leader>cr", ":IncRename ")
 
 -- Open a terminal split
 keymap.set(
-	"n",
-	"<leader>term",
-	":sp<bar>term<cr><c-w>J:resize20<cr>",
-	{ desc = "Open terminal window split @ 20 height" }
+  "n",
+  "<leader>term",
+  ":sp<bar>term<cr><c-w>J:resize20<cr>",
+  { desc = "Open terminal window split @ 20 height" }
 )
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit

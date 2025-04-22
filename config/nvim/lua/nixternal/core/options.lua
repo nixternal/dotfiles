@@ -88,7 +88,7 @@ g.loaded_ruby_provider = 0
 
 -- FileType Extensions
 ft.add({
-	extension = {
-		njk = "html",
-	},
+  extension = {
+    njk = "html",
+  },
 })

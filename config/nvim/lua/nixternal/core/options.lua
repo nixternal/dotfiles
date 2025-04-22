@@ -3,8 +3,8 @@ local opt = vim.opt
 local ft = vim.filetype
 
 -- Set Leader Key: <space>
-g.mapleader = ' '
-g.maplocalleader = ' '
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- Nerd Font
 g.have_nerd_font = true
@@ -13,11 +13,11 @@ g.have_nerd_font = true
 opt.termguicolors = true
 
 -- Spelling
-opt.spelllang = 'en_us'
+opt.spelllang = "en_us"
 opt.spell = true
 
 -- Encoding
-opt.encoding = 'utf-8'
+opt.encoding = "utf-8"
 
 -- Word Wrap: 79
 opt.wrap = true
@@ -34,7 +34,7 @@ opt.shiftwidth = 2
 opt.expandtab = true
 
 -- Mouse Mode
-opt.mouse = 'c'
+opt.mouse = "c"
 
 -- Don't show the mode since it it is already in the status line
 opt.showmode = false
@@ -56,7 +56,7 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Keep signcolumn on by default
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 -- Decrease update time
 opt.updatetime = 250
@@ -71,10 +71,10 @@ opt.splitbelow = true
 -- Set how neovim will display certain whitespace characters in the editor
 --   See ':help list' and ':help listchars'
 opt.list = true
-opt.listchars = {tab = '» ', trail = '·', nbsp = '␣'}
+opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live as you type
-opt.inccommand = 'split'
+opt.inccommand = "split"
 
 -- Show which line your cursor is on
 opt.cursorline = true
@@ -87,8 +87,8 @@ g.loaded_perl_provider = 0
 g.loaded_ruby_provider = 0
 
 -- FileType Extensions
-ft.add {
-  extension = {
-    njk = 'html',
-  }
-}
+ft.add({
+	extension = {
+		njk = "html",
+	},
+})

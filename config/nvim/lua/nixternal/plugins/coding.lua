@@ -181,7 +181,7 @@ return {
 			lint.linters_by_ft = {
 				javascript = { "eslint_d" },
 				javascriptreact = { "eslint_d" },
-				python = { "flake8", "pylint" },
+				python = { "flake8" },
 				svelte = { "eslint_d" },
 				typescript = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
@@ -217,7 +217,7 @@ return {
 					json = { "prettier" },
 					lua = { "stylua" },
 					markdown = { "prettier" },
-					python = { "isort", "black" },
+					python = { "isort", "autopep8" },
 					svelte = { "prettier" },
 					typescript = { "prettier" },
 					typescriptreact = { "prettier" },

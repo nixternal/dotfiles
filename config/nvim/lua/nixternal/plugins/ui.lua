@@ -202,7 +202,7 @@ return {
 		config = function()
 			require("gitsigns").setup({
 				numhl = true,
-				linehl = true,
+				-- linehl = true,
 				current_line_blame = false, -- Toggle :Gitsigns toggle_current_line_blame
 				current_line_blame_opts = {
 					virt_text = true,

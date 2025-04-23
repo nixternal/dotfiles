@@ -163,14 +163,14 @@ return {
         eslint_d = {},
         gopls = {},
         harper_ls = {
-        	settings = {
-        		["harper-ls"] = {
-        			linters = {
-        				SentenceCapitalization = false,
-        				SpellCheck = false,
-        			},
-        		},
-        	},
+          settings = {
+            ["harper-ls"] = {
+              linters = {
+                SentenceCapitalization = false,
+                SpellCheck = false,
+              },
+            },
+          },
         },
         html = {},
         jsonls = {},

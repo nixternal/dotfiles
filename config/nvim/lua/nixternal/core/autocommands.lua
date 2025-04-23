@@ -1,4 +1,4 @@
--- Disable 'auto-comments' on new line
+-- Disable 'auto-comments' on newline
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",
   callback = function()

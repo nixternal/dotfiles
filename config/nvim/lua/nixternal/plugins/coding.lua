@@ -218,7 +218,7 @@ return {
           json = { "prettier" },
           lua = { "stylua" },
           markdown = { "prettier" },
-          python = { "isort", "black" },
+          python = { "ruff_format" },
           svelte = { "prettier" },
           typescript = { "prettier" },
           typescriptreact = { "prettier" },

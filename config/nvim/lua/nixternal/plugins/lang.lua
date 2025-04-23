@@ -162,16 +162,16 @@ return {
         eslint = {},
         eslint_d = {},
         gopls = {},
-        harper_ls = {
-          settings = {
-            ["harper-ls"] = {
-              linters = {
-                SentenceCapitalization = false,
-                SpellCheck = false,
-              },
-            },
-          },
-        },
+        -- harper_ls = {
+        --   settings = {
+        --     ["harper-ls"] = {
+        --       linters = {
+        --         SentenceCapitalization = false,
+        --         SpellCheck = false,
+        --       },
+        --     },
+        --   },
+        -- },
         html = {},
         jsonls = {},
         lua_ls = {
@@ -208,6 +208,7 @@ return {
         "prettier", -- Opinionated code formatter (Web stuff)
         "pyflakes", -- Python
         "pylint", -- Python
+        "ruff", -- Python
         "selene", -- Lua Linter
         "shellcheck", -- Shell script static analysis
         "shfmt", -- Shell formatter

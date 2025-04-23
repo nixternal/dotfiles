@@ -150,9 +150,10 @@ return {
       indent = {
         enable = true,
         disable = {
-          -- "python",
+          "css",
+          "python",
           "ruby",
-          -- "yaml",
+          "yaml",
         },
       },
     },

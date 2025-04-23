@@ -253,4 +253,14 @@ return {
     "karb94/neoscroll.nvim",
     opts = {},
   },
+
+  -- ToggleTerm - plugin to help easily manage multiple terminal windows
+  {
+    "akinsho/toggleterm.nvim",
+    version = "*",
+    opts = {
+      open_mapping = [[<c-t>]], -- C-t to toggle
+      direction = "float",
+    },
+  },
 }

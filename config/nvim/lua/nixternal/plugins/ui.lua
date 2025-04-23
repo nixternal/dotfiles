@@ -241,4 +241,16 @@ return {
       })
     end,
   },
+
+  -- Smear Cursor - plugin to animate the cursor with a smear effect
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {},
+  },
+
+  -- Neoscroll - smooth scrolling plugin
+  {
+    "karb94/neoscroll.nvim",
+    opts = {},
+  },
 }

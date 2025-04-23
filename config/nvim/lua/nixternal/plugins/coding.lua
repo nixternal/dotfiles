@@ -182,7 +182,7 @@ return {
       lint.linters_by_ft = {
         javascript = { "eslint_d" },
         javascriptreact = { "eslint_d" },
-        python = { "ruff" },
+        -- python = { "ruff" },
         svelte = { "eslint_d" },
         typescript = { "eslint_d" },
         typescriptreact = { "eslint_d" },
@@ -218,11 +218,33 @@ return {
           json = { "prettier" },
           lua = { "stylua" },
           markdown = { "prettier" },
-          python = { "ruff_format" },
+          -- python = { "ruff_format" },
+          python = { "ruff_organize_imports", "ruff_format" },
           svelte = { "prettier" },
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
           yaml = { "prettier" },
+        },
+        formatters = {
+          ruff_organize_imports = {
+            command = "ruff",
+            args = {
+              "check",
+              "--force-exclude",
+              "--select=I001",
+              "--fix",
+              "--exit-zero",
+              "--stdin-filename",
+              "$FILENAME",
+              "-",
+            },
+            stdin = true,
+            cwd = require("conform.util").root_file({
+              "pyproject.toml",
+              "ruff.toml",
+              ".ruff.toml",
+            }),
+          },
         },
         -- formatters = {
         --   black = {

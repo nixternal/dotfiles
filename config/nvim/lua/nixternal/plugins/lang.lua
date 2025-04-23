@@ -162,16 +162,16 @@ return {
         eslint = {},
         eslint_d = {},
         gopls = {},
-        -- harper_ls = {
-        -- 	settings = {
-        -- 		["harper-ls"] = {
-        -- 			linters = {
-        -- 				SentenceCapitalization = false,
-        -- 				SpellCheck = false,
-        -- 			},
-        -- 		},
-        -- 	},
-        -- },
+        harper_ls = {
+        	settings = {
+        		["harper-ls"] = {
+        			linters = {
+        				SentenceCapitalization = false,
+        				SpellCheck = false,
+        			},
+        		},
+        	},
+        },
         html = {},
         jsonls = {},
         lua_ls = {

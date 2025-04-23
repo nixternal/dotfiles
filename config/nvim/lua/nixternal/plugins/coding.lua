@@ -150,9 +150,9 @@ return {
       indent = {
         enable = true,
         disable = {
-          "python",
+          -- "python",
           "ruby",
-          "yaml",
+          -- "yaml",
         },
       },
     },
@@ -199,6 +199,48 @@ return {
       vim.keymap.set("n", "<leader>cl", function()
         lint.try_lint()
       end, { desc = "Trigger [C]ode [L]inting for current file" })
+    end,
+  },
+
+  -- conform.nvim - Lightweight yet powerful formatter plugin
+  {
+    "stevearc/conform.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    config = function()
+      local conform = require("conform")
+      conform.setup({
+        formatters_by_ft = {
+          css = { "prettier " },
+          html = { "prettier" },
+          javascript = { "prettier" },
+          javascriptreact = { "prettier" },
+          json = { "prettier" },
+          lua = { "stylua" },
+          markdown = { "prettier" },
+          python = { "isort", "black" },
+          svelte = { "prettier" },
+          typescript = { "prettier" },
+          typescriptreact = { "prettier" },
+          yaml = { "prettier" },
+        },
+        -- formatters = {
+        --   black = {
+        --     prepend_args = { "--line-length", "79" },
+        --   },
+        -- },
+        -- format_on_save = {
+        --   async = false,
+        --   lsp_fallback = true,
+        --   timeout_ms = 500,
+        -- },
+      })
+      vim.keymap.set({ "n", "v" }, "<leader>cp", function()
+        conform.format({
+          async = false,
+          lsp_fallback = true,
+          timeout_ms = 500,
+        })
+      end, { desc = "Make [C]ode [P]retty" })
     end,
   },
 }

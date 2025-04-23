@@ -183,7 +183,6 @@ return {
             },
           },
         },
-        pyright = {},
         rust_analyzer = {},
         tailwindcss = {},
         ts_ls = {},
@@ -198,16 +197,10 @@ return {
       -- so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        -- "black", -- Python
-        "autopep8", -- Python
         "clang-format", -- C/C++/Java/JS/JSON/Obj-C/Protobuf/C# formatter
         "eslint_d", -- Javascript
-        "flake8", -- Python
-        "isort", -- Python
         "luacheck", -- Lua linting & static analysis
         "prettier", -- Opinionated code formatter (Web stuff)
-        "pyflakes", -- Python
-        "pylint", -- Python
         "ruff", -- Python
         "selene", -- Lua Linter
         "shellcheck", -- Shell script static analysis

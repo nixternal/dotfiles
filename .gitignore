@@ -4,6 +4,7 @@ config/nvim/spell/*
 config/nvim/typos.toml
 config/zsh/.zprofile
 config/zsh/.zcompdump
+config/zsh/completions/*
 privdotfiles/
 vim/bundle
 vim/dict

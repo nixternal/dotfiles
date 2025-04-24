@@ -151,7 +151,7 @@ return {
         enable = true,
         disable = {
           "css",
-          "python",
+          -- "python",
           "ruby",
           "yaml",
         },

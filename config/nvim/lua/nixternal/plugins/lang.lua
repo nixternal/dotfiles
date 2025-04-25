@@ -145,15 +145,28 @@ return {
       -- Enable the following language servers
       local servers = {
         arduino_language_server = {
-          vim.fn.expand("~/.local/share/nvim/mason/bin/arduino-language-server"),
-          "-clangd",
-          "/usr/bin/clangd",
-          "-cli",
-          vim.fn.expand("~/bin/arduino-cli"),
-          "-cli-config",
-          vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
-          "-fqbn",
-          "esp8266:esp8266:nodemcu",
+          cmd = {
+            vim.fn.expand("~/.local/share/nvim/mason/bin/arduino-language-server"),
+            "-clangd",
+            vim.fn.expand("~/.local/share/nvim/mason/bin/clangd"),
+            "-cli",
+            vim.fn.expand("~/.local/bin/arduino-cli"),
+            "-cli-config",
+            vim.fn.expand("~/.arduino15/arduino-cli.yaml"),
+            -- Use sketch.yaml with "default_fqbn: 'esp8266:esp8266:nodemcu'"
+            -- for each sketch. Use the proper fqbn of course for the board
+            -- connected and being used
+            -- "-fqbn",
+            -- "esp8266:esp8266:nodemcu",
+          },
+          capabilities = {
+            textDocument = {
+              semanticTokens = vim.NIL,
+            },
+            workspace = {
+              semanticTokens = vim.NIL,
+            },
+          },
         },
         bashls = {},
         cssls = {},

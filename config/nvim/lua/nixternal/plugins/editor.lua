@@ -76,6 +76,7 @@ return {
       vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "[S]earch [K]eymaps" })
       vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "[S]earch [R]esume" })
       vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "[S]earch [S]elect Telescope" })
+      vim.keymap.set("n", "<leader>st", "<cmd>TodoTelescope<cr>", { desc = "[S]earch [T]odo Comments" })
       vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "[S]earch Current [W]ord" })
       vim.keymap.set("n", "<leader>sy", "<cmd>Telescope notify<cr>", { desc = "[S]earch Notifications Histor[Y]" })
       vim.keymap.set("n", "<leader>s.", builtin.oldfiles, { desc = "[S]earch Recent Files ('.' for repeat)" })
@@ -108,6 +109,7 @@ return {
     cmd = "Trouble",
     keys = {
       { "<leader>tt", "<cmd>Trouble diagnostics toggle<cr>", desc = "Diagnostics (Trouble)" },
+      { "<leader>td", "<cmd>Trouble todo toggle<cr>", desc = "[T]rouble To[D]o" },
     },
   },
 

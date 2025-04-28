@@ -214,6 +214,7 @@ return {
             },
           },
         },
+        ruff = {},
         rust_analyzer = {},
         tailwindcss = {},
         ts_ls = {},

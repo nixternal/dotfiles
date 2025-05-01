@@ -8,6 +8,8 @@ return {
       integrations = {
         cmp = true,
         fidget = true,
+        gitsigns = true,
+        illuminate = true,
         lsp_trouble = true,
         mason = true,
         mini = {
@@ -17,10 +19,12 @@ return {
         noice = true,
         notify = true,
         nvim_surround = true,
+        nvimtree = true,
         telescope = {
           enabled = true,
         },
         treesitter = true,
+        treesitter_context = true,
         which_key = true,
       },
     },

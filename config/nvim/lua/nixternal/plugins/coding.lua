@@ -251,11 +251,11 @@ return {
         --     prepend_args = { "--line-length", "79" },
         --   },
         -- },
-        format_on_save = {
-          async = false,
-          lsp_fallback = true,
-          timeout_ms = 500,
-        },
+        -- format_on_save = {
+        --   async = false,
+        --   lsp_fallback = true,
+        --   timeout_ms = 500,
+        -- },
       })
       vim.keymap.set({ "n", "v" }, "<leader>cp", function()
         conform.format({

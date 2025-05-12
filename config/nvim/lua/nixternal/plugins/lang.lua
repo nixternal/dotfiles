@@ -28,7 +28,7 @@ return {
       -- DAP servers, linters, and formatters
       {
         "williamboman/mason.nvim",
-        config = true,
+        opts = {},
       },
 
       -- Extension to mason.nvim that makes it easier to use lspconfig with
@@ -223,7 +223,6 @@ return {
       -- Ensure the servers & tools above are installed. To check the current
       -- status of installed tools and/or manually install other tools, you can
       -- run ":Mason". You can press "g?" for help in this menu.
-      require("mason").setup()
 
       -- You can add other tools here that you want Mason to install for you,
       -- so that they are available from within Neovim.

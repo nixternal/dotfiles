@@ -27,13 +27,13 @@ return {
       -- Mason: Portable package manager that installs & manages LSP servers,
       -- DAP servers, linters, and formatters
       {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         opts = {},
       },
 
       -- Extension to mason.nvim that makes it easier to use lspconfig with
       -- mason.nvim
-      "williamboman/mason-lspconfig.nvim",
+      "mason-org/mason-lspconfig.nvim",
 
       -- Install and upgrade 3rd party tools automatically
       "WhoIsSethDaniel/mason-tool-installer.nvim",

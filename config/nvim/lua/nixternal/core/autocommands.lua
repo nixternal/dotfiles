@@ -1,3 +1,16 @@
+-- Re-detect file type on write if no filetype dected
+--   this is for when you create file: foo and do #!/bin/sh
+--   this will detect the file as a shell file on write. Good
+--   for when you don't use an extension with the file name
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*",
+  callback = function()
+    if vim.bo.filetype == "" then
+      vim.cmd("filetype detect")
+    end
+  end,
+})
+
 -- Disable 'auto-comments' on newline
 vim.api.nvim_create_autocmd("FileType", {
   pattern = "*",

@@ -34,5 +34,7 @@ snippet lily "Add Lilypond Rhythm Section" b
   {end_of_ly}
 snippet image "Add ChordPro Image" b
   {image: src="../.build/${TM_FILENAME_BASE}.png" scale="0.7" title="Rhythm"}
-snippet define "Add chord and fingering" b
+snippet chord "Add chord and fingering" b
   {define: A/C# base-fret 1 frets x 4 2 2 2 x fingers 2 3 1 1 1 x}
+snippet chordsinglestrum "Add a single strum chord" b
+  {define: A base-fret 1 frets x x x x x x fingers x x x x x x}

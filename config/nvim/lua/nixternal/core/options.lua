@@ -93,3 +93,8 @@ ft.add({
     njk = "html",
   },
 })
+
+-- LSP Logging
+-- vim.lsp.set_log_level("warn")    <- Default
+-- vim.lsp.set_log_level("debug")
+vim.lsp.set_log_level("off")

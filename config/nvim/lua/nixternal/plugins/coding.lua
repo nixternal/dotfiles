@@ -266,4 +266,14 @@ return {
       end, { desc = "Make [C]ode [P]retty" })
     end,
   },
+
+  -- uv.nvim - Plugin providing integration with the "uv" Python package
+  -- manager
+  {
+    "benomahony/uv.nvim",
+    ft = { "python" },
+    opts = {
+      picker_integration = true,
+    },
+  },
 }

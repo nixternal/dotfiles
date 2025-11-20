@@ -68,3 +68,30 @@ snippet aoc "Create Advent of Code skeleton" b
       data = read_puzzle_input()
       print("Part 1:", part_one(data))  # answer
       print("Part 2:", part_two(data))  # answer
+
+snippet everybodycodes "Create Everybody Codes skeleton" b
+  #!/usr/bin/env python
+
+
+  def read_puzzle_input() -> list:
+      with open("${TM_FILENAME_BASE}.in", "r") as file:
+          return file.read().split("\n\n")
+
+
+  def part_one(data: list) -> int:
+      return -1
+
+
+  def part_two(data: list) -> int:
+      return -2
+
+
+  def part_three(data: list) -> int:
+      return -3
+
+
+  if __name__ == "__main__":
+      data = read_puzzle_input()
+      print("Part 1:", part_one(data))  # answer
+      print("Part 2:", part_two(data))  # answer
+      print("Part 3:", part_three(data))  # answer

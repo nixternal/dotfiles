@@ -150,6 +150,13 @@ pomodoro() {
 alias wo="pomodoro 'work'"
 alias br="pomodoro 'break'"
 
+#-- Commandlinefu.com Search
+fu() {
+  cmd=$1
+  b64=$(echo -n "$cmd" | base64)
+  curl -s "https://www.commandlinefu.com/commands/matching/$1/$b64/plaintext" | pygmentize -O style=catppuccin-mocha
+}
+
 #-- NVM
 lazyload nvm npm node vi nvim vim editor npx -- 'source ~/.nvm/nvm.sh'
 [ -s ~/.nvm/bash_completion ] && . ~/.nvm/bash_completion

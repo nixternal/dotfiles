@@ -175,3 +175,6 @@ lazyload nvm npm node vi nvim vim editor npx -- 'source ~/.nvm/nvm.sh'
 
 #-- PlatformIO
 eval "$(_PIO_COMPLETE=zsh_source pio)"
+
+#-- Fuzzy Finder 'fzf'
+[ -s ~/.local/bin/fzf ] && source <(fzf --zsh)

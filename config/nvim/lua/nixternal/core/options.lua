@@ -95,6 +95,6 @@ ft.add({
 })
 
 -- LSP Logging
--- vim.lsp.set_log_level("warn")    <- Default
+vim.lsp.set_log_level("warn")    -- Default
 -- vim.lsp.set_log_level("debug")
-vim.lsp.set_log_level("off")
+-- vim.lsp.set_log_level("off")

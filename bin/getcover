@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+shopt -s nullglob
+
+files=(*.flac *.wav)
+[ ${#files[@]} -eq 0 ] && exit 1
+
+file="${files[0]}"
+
+case "${file##*.}" in
+flac)
+  ID=$(exiftool -s3 -DiscogsReleaseId "$file")
+  ;;
+wav)
+  ID=$(ffprobe -v error -show_entries format_tags=DISCOGS_RELEASE_ID -of default=noprint_wrappers=1:nokey=1 "$file")
+  ;;
+esac
+URL=$(curl -s https://api.discogs.com/releases/"$ID" --user-agent "FooBarApp/3.0" | jq -r ".images[0].uri")
+wget "$URL" -O cover.jpg --quiet

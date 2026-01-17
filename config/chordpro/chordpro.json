@@ -605,6 +605,10 @@ pdf {
     // Diagrams for all chords of the song can be shown at the `"top"`, `"bottom"` or `"right"` side of the first page, or `"below"` the last song line. Set to `false` to not show any diagrams.
     show : right
 
+    // Alignment for "top", "bottom" and "below".
+    // Possible values are "left" (default), "right", "center" and "spread".
+    align : right
+
     // Width of each diagram cell.
     width : 10
 
@@ -635,6 +639,10 @@ pdf {
     // Show finger settings, if available.
     // `"below"` displays finger settings below the diagram, rather than in the finger dot.
     fingers : true
+
+    // Position for the fret base, left (default) or right.
+    fretbaseposition : right
+
   }
 
   // Appearance of chord diagrams for keyboards.
@@ -725,7 +733,7 @@ pdf {
       subtitle : [ "" "" "" ]
 
       // It uses the `fonts.footer` font.
-      footer : [ "%{title}" "" "%{page}" ]
+      footer : [ "%{title} - %{artist}" "" "%{page}" ]
 
       // Page background.
       // This can be used to designate an existing PDF document to be used as the background of the output page. It has the form `filename` or `filename:page`. Page numbers count from one.
@@ -1157,5 +1165,3 @@ debug {
   // A boolean value represented as an integer, `0` for `false` and `1` for `true`.
   x3 : 0
 }
-
-// End of Config.

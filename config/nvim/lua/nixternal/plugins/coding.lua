@@ -224,6 +224,7 @@ return {
           typescript = { "prettier" },
           typescriptreact = { "prettier" },
           yaml = { "prettier" },
+          -- yaml = { "yamlfmt" },
         },
         formatters = {
           ruff_organize_imports = {

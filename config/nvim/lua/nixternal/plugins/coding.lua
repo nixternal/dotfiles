@@ -20,7 +20,10 @@ return {
             config = function()
               require("luasnip.loaders.from_vscode").lazy_load()
               require("luasnip.loaders.from_snipmate").lazy_load({
-                paths = { "./lua/nixternal/snippets" },
+                paths = {
+                  "./lua/nixternal/snippets",
+                  "/home/rich/mystuff/dev/github/dotfiles/privdotfiles/snippets"
+                },
               })
               require("luasnip.loaders.from_lua").lazy_load({ paths = { "./lua/nixternal/snippets" } })
             end,

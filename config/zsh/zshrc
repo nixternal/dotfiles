@@ -178,3 +178,6 @@ eval "$(_PIO_COMPLETE=zsh_source pio)"
 
 #-- Fuzzy Finder 'fzf'
 [ -s ~/.local/bin/fzf ] && source <(fzf --zsh)
+
+#-- opencode
+[ -d $HOME/.opencode/bin ] && export PATH=/home/rich/.opencode/bin:$PATH

@@ -52,6 +52,9 @@ zinit cdreplay -q
 #-- To customize prompt, run 'p10k configure' or edit '.p10k.zsh'
 [[ ! -f ~/.config/zsh/.p10k.zsh ]] || source ~/.config/zsh/.p10k.zsh
 
+#-- Set the OS_ICON for Neon to the correct one.
+POWERLEVEL9K_LINUX_NEON_ICON='\uF331'
+
 #-- Fix Right Prompt Indent so it sticks all the way to the right
 ZLE_RPROMPT_INDENT=0
 

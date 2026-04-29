@@ -64,6 +64,6 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.py",
   callback = function()
-    vim.cmd("LspRestart")
+    vim.cmd("lsp restart")
   end,
 })

@@ -9,3 +9,4 @@ config/zsh/completions/*
 privdotfiles/
 vim/bundle
 vim/dict
+*.log

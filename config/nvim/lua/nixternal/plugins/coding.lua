@@ -22,7 +22,7 @@ return {
               require("luasnip.loaders.from_snipmate").lazy_load({
                 paths = {
                   "./lua/nixternal/snippets",
-                  "/home/rich/mystuff/dev/github/dotfiles/privdotfiles/snippets"
+                  "/home/rich/mystuff/dev/github/dotfiles/privdotfiles/snippets",
                 },
               })
               require("luasnip.loaders.from_lua").lazy_load({ paths = { "./lua/nixternal/snippets" } })
@@ -106,24 +106,34 @@ return {
   -- code
   {
     "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     build = ":TSUpdate",
-    main = "nvim-treesitter.configs",
-    opts = {
-      ensure_installed = {
+    config = function()
+      local ts_langs = {
         "arduino",
         "bash",
         "c",
         "cmake",
+        "comment",
         "cpp",
         "css",
         "csv",
         "cue",
         "desktop",
         "diff",
+        "dockerfile",
+        "dot",
+        "git_config",
+        "git_rebase",
+        "gitattributes",
+        "gitcommit",
         "gitignore",
         "go",
         "html",
+        "ini",
         "javascript",
+        "jinja",
+        "jinja_inline",
         "json",
         "latex",
         "lua",
@@ -131,35 +141,46 @@ return {
         "make",
         "markdown",
         "markdown_inline",
+        "meson",
+        "nginx",
+        "perl",
         "php",
+        "php_only",
         "python",
         "query",
         "regex",
+        "robots_txt",
+        "ruby",
         "rust",
+        "sql",
+        "ssh_config",
         "tmux",
         "typescript",
+        "udev",
         "vim",
         "vimdoc",
+        "vue",
         "xml",
         "yaml",
-      },
-      auto_install = true,
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = {
-          "ruby",
+        "zsh",
+      }
+
+      -- Initialize the basic module
+      require("nvim-treesitter").setup({
+        auto_install = true,
+        highlight = {
+          enable = true,
+          additional_vim_regex_highlighting = { "ruby" },
         },
-      },
-      indent = {
-        enable = true,
-        disable = {
-          "css",
-          -- "python",
-          "ruby",
-          "yaml",
+        indent = {
+          enable = true,
+          disable = { "css", "ruby", "yaml" },
         },
-      },
-    },
+      })
+
+      -- Modern explicit way to force `ensure_installed` execution safely
+      require("nvim-treesitter").install(ts_langs)
+    end,
   },
 
   -- Use Treesitter to auto close and auto rename HTML tag

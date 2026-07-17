@@ -267,4 +267,10 @@ return {
       direction = "float",
     },
   },
+
+  -- Markview - Hackable markdown, Typst, LaTeX, HTML (inline) & AsciiDoc previewer
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = false,
+  },
 }

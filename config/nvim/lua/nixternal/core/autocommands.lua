@@ -67,3 +67,15 @@ vim.api.nvim_create_autocmd({ "BufWritePre" }, {
 --     vim.cmd("lsp restart")
 --   end,
 -- })
+
+-- Tree Sitter Tmux plugin hack
+vim.api.nvim_create_autocmd('User', { pattern = 'TSUpdate',
+callback = function()
+  require('nvim-treesitter.parsers').tmux = {
+    install_info = {
+      revision = '26c21424955a719bfdbb3f595265a5322200c261',
+      url = 'https://github.com/Freed-Wu/tree-sitter-tmux',
+      branch = 'main',
+    },
+  }
+end})

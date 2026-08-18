@@ -3,7 +3,6 @@ return {
   {
     "nvim-telescope/telescope.nvim",
     event = "VimEnter",
-    branch = "0.1.x",
     dependencies = {
       {
         -- FZF sorter for telescrope. If encountering errors, see

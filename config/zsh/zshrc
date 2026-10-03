@@ -17,13 +17,17 @@ zinit ice depth=1; zinit light romkatv/powerlevel10k
 #-- Catppuccin Mocha Theme for zsh-syntax-highlighting
 source "${ZDOTDIR}/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 
+#-- Deja - predictive inline shell autosuggestions - replaces zsh-autosuggestions
+zinit ice wait"0" lucid depth=1 pick"deja.plugin.zsh"
+zinit light Giammarco-Ferranti/deja
+
 #-- PLUGINS
 #   -- Fish shell like syntax highlighting for Zsh
 zinit light zsh-users/zsh-syntax-highlighting
 #   -- Additional completion definitions for Zsh
 zinit light zsh-users/zsh-completions
 #   -- Fish-like autosuggestions for Zsh
-zinit light zsh-users/zsh-autosuggestions
+#zinit light zsh-users/zsh-autosuggestions
 #   -- ZSH port of Fish history search (up arrow)
 zinit light zsh-users/zsh-history-substring-search
 #   -- Lazy load commands and speed up start time of zsh

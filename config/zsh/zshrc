@@ -20,6 +20,7 @@ source "${ZDOTDIR}/catppuccin_mocha-zsh-syntax-highlighting.zsh"
 #-- Deja - predictive inline shell autosuggestions - replaces zsh-autosuggestions
 zinit ice wait"0" lucid depth=1 pick"deja.plugin.zsh"
 zinit light Giammarco-Ferranti/deja
+export DEJA_ACCEPT_KEY= DEJA_CYCLE_KEY=
 
 #-- PLUGINS
 #   -- Fish shell like syntax highlighting for Zsh

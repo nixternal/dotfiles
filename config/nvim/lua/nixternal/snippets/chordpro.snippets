@@ -21,7 +21,7 @@ snippet lily "Add Lilypond Rhythm Section" b
   scale=0.7
   \relative {
   	\time 4/4
-  	\tempo 4=120
+  	\tempo 4 = %{tempo}
   	\numericTimeSignature
   	\new Voice \with {
   		\consists Pitch_squash_engraver
